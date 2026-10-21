@@ -1,0 +1,39 @@
+name: NobiTerminal packages build
+
+on:
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: 'Space-separated package names to build (aarch64)'
+        required: true
+        default: 'git krb5 ldns libdb libedit libexpat libresolv-wrapper openssh termux-auth'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL || true
+          df -h
+
+      - name: Build package builder image
+        run: docker build -t ghcr.io/termux/package-builder:latest scripts/
+
+      - name: Build packages (deps from source, no -I)
+        run: |
+          chmod +x scripts/run-docker.sh build-package.sh
+          ./scripts/run-docker.sh ./build-package.sh -a aarch64 -C -o output ${{ inputs.packages }}
+
+      - name: List output
+        run: ls -la output/
+
+      - name: Upload debs
+        uses: actions/upload-artifact@v4
+        with:
+          name: nobiterminal-debs-aarch64
+          path: output/*.deb
+          if-no-files-found: error

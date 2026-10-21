@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Library for simplifying DNS programming and supporting r
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1.9.2
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://www.nlnetlabs.nl/downloads/ldns/ldns-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=b524fa21994b6e834200ceb8c27f1b84bda5982fe35706f058196c079db94d5d
 TERMUX_PKG_DEPENDS="openssl, resolv-conf"
