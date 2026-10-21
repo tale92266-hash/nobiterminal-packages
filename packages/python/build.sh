@@ -8,6 +8,7 @@ TERMUX_PKG_VERSION=(
 	"3.14.8"
 	"f358ab52bf2932ad55b1a72a29c9762169e6ac47"
 )
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=(
 	"https://www.python.org/ftp/python/${TERMUX_PKG_VERSION[0]}/Python-${TERMUX_PKG_VERSION[0]}.tar.xz"
 	"https://salsa.debian.org/cpython-team/python3-defaults/-/archive/${TERMUX_PKG_VERSION[1]}/python3-defaults-${TERMUX_PKG_VERSION[1]}.tar.gz"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Library for asynchronous DNS requests (including name re
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.34.9"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/c-ares/c-ares/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=453bab9eb8c2bd4343b527dd97dbd77e1fab6608781dda2dbbfde7e480882c97
 TERMUX_PKG_AUTO_UPDATE=true
