@@ -1,0 +1,45 @@
+#!/bin/bash
+# nobi-dev-setup - one-tap development setup for NobiTerminal: installs
+# the main development packages from the NobiTerminal repo, one by one.
+# A package that fails (or is not in the repo yet) is reported in the
+# summary and never stops the rest.
+set -u
+export DEBIAN_FRONTEND=noninteractive
+
+PACKAGES="git python nodejs libllvm vim tmux"
+NOBI_LIST="$PREFIX/etc/apt/sources.list.d/nobi.list"
+NOBI_REPO_LINE='deb [trusted=yes] https://tale92266-hash.github.io/nobiterminal-repo ./'
+
+echo "=== NobiTerminal Dev Ready setup ==="
+
+# Make sure the NobiTerminal repo source exists.
+if [ ! -f "$NOBI_LIST" ]; then
+    mkdir -p "$(dirname "$NOBI_LIST")"
+    echo "$NOBI_REPO_LINE" > "$NOBI_LIST"
+    echo "Added the NobiTerminal repo source: $NOBI_LIST"
+fi
+
+echo "Updating package lists..."
+apt-get update
+
+INSTALLED=""
+ALREADY=""
+FAILED=""
+for pkg in $PACKAGES; do
+    if dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q "install ok installed"; then
+        echo "$pkg: already installed, skipping."
+        ALREADY="$ALREADY $pkg"
+    elif apt-get install -y "$pkg" < /dev/null; then
+        echo "$pkg: installed."
+        INSTALLED="$INSTALLED $pkg"
+    else
+        echo "$pkg: FAILED (not available in the repo yet, or a download problem)."
+        FAILED="$FAILED $pkg"
+    fi
+done
+
+echo "=== Dev Ready summary ==="
+echo "Installed now:${INSTALLED:- none}"
+echo "Already present:${ALREADY:- none}"
+echo "Failed or not yet available:${FAILED:- none}"
+echo "Done. Tip: the clang compiler is part of the libllvm package."
