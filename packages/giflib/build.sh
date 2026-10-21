@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A library for reading and writing gif images"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="6.1.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://downloads.sourceforge.net/project/giflib/giflib-6.x/giflib-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=b65b66b99f0424b93525f987386f22fc5efb9da2bfc92ad4a532249aaffbab0e
 TERMUX_PKG_BREAKS="giflib-dev"

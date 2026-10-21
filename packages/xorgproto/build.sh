@@ -1,30 +1,39 @@
 # X11 package
 TERMUX_PKG_HOMEPAGE=https://xorg.freedesktop.org/
-TERMUX_PKG_DESCRIPTION="X.Org X11 Protocol headers"
-TERMUX_PKG_LICENSE="MIT"
-TERMUX_PKG_LICENSE_FILE="COPYING-bigreqsproto, COPYING-compositeproto, COPYING-damageproto, COPYING-dmxproto, COPYING-dri2proto, COPYING-dri3proto, COPYING-evieproto, COPYING-fixesproto, COPYING-fontcacheproto, COPYING-fontsproto, COPYING-glproto, COPYING-inputproto, COPYING-kbproto, COPYING-lg3dproto, COPYING-pmproto, COPYING-presentproto, COPYING-printproto, COPYING-randrproto, COPYING-recordproto, COPYING-renderproto, COPYING-resourceproto, COPYING-scrnsaverproto, COPYING-trapproto, COPYING-videoproto, COPYING-x11proto, COPYING-xcmiscproto, COPYING-xextproto, COPYING-xf86bigfontproto, COPYING-xf86dgaproto, COPYING-xf86driproto, COPYING-xf86miscproto, COPYING-xf86rushproto, COPYING-xf86vidmodeproto, COPYING-xineramaproto, COPYING-xwaylandproto"
+TERMUX_PKG_DESCRIPTION="X11 client-side library"
+TERMUX_PKG_LICENSE="MIT, X11"
+TERMUX_PKG_LICENSE_FILE="COPYING"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="2026.1"
-TERMUX_PKG_SRCURL=https://xorg.freedesktop.org/archive/individual/proto/xorgproto-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=f9bfe4a9ed8c8ab9d2a3b0d49797f046052dadd06b7a8b45dbffaffb137e8290
+TERMUX_PKG_VERSION="1.8.14"
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL=https://xorg.freedesktop.org/releases/individual/lib/libX11-${TERMUX_PKG_VERSION}.tar.xz
+TERMUX_PKG_SHA256=bbc78c46217174655c2b32b138ad119f3ac15f50808b4d0b3a2677a4b1afc950
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_DEPENDS="xorg-util-macros"
-TERMUX_PKG_CONFLICTS="x11-proto"
-TERMUX_PKG_REPLACES="x11-proto"
-TERMUX_PKG_NO_DEVELSPLIT=true
-TERMUX_PKG_PLATFORM_INDEPENDENT=true
-
-TERMUX_PKG_EXTRA_CONFIGURE_ARGS="-Dlegacy=true"
-
-TERMUX_PKG_RM_AFTER_INSTALL="
-include/X11/extensions/apple*
-include/X11/extensions/windows*
-include/X11/extensions/XKBgeom.h
-lib/pkgconfig/applewmproto.pc
-lib/pkgconfig/windowswmproto.pc
+# building all reverse dependencies of libx11 requires xorgproto
+# and the x11.pc file of libx11 explicitly marks a dependency on xorgproto
+TERMUX_PKG_DEPENDS="libandroid-support, libxcb, xorgproto"
+TERMUX_PKG_BUILD_DEPENDS="xorg-util-macros, xtrans"
+TERMUX_PKG_RECOMMENDS="xorg-xauth"
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+ac_cv_path_RAWCPP=/usr/bin/cpp
+--enable-malloc0returnsnull
 "
 
-termux_step_pre_configure() {
-	# Use meson instead of autotools.
-	rm -f "$TERMUX_PKG_SRCDIR"/configure
+termux_step_post_massage() {
+	# Regression test for broken XLC_LOCALE files. Do not remove.
+	local f
+	for f in share/X11/locale/*/XLC_LOCALE; do
+		if [ ! -f "${f}" ]; then
+			termux_error_exit "File not found: ${f}"
+		fi
+		if LC_ALL=C grep -E 'ct_encoding.*;\s*$' "${f}"; then
+			termux_error_exit "Broken XLC_LOCALE file found: ${f}"
+		fi
+	done
+
+	# Seems like some programs in the wild try to dlopen(3) `libX11.so.6`.
+	cd ${TERMUX_PKG_MASSAGEDIR}/${TERMUX_PREFIX}/lib || exit 1
+	if [ ! -e "./libX11.so.6" ]; then
+		ln -sf libX11.so libX11.so.6
+	fi
 }

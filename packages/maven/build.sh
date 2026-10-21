@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A Java software project management and comprehension too
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.10.0"
+TERMUX_PKG_REVISION=1
 _JLINE_VERSION=4.4.5
 TERMUX_PKG_SRCURL=(https://dlcdn.apache.org/maven/maven-3/${TERMUX_PKG_VERSION}/binaries/apache-maven-${TERMUX_PKG_VERSION}-bin.tar.gz
                    https://github.com/jline/jline3/archive/refs/tags/${_JLINE_VERSION}.tar.gz)

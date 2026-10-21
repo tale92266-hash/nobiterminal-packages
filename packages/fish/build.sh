@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="The user-friendly command line shell"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="4.9.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/fish-shell/fish-shell/releases/download/$TERMUX_PKG_VERSION/fish-${TERMUX_PKG_VERSION}.tar.xz"
 TERMUX_PKG_SHA256=20998a25f73217ddcc19f499055fd587e9912d1ad6e7109120fbcf2871f0b98c
 # fish calls 'tput' from ncurses-utils, at least when cancelling (Ctrl+C) a command line.

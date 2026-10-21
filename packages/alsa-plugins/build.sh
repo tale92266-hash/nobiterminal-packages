@@ -1,20 +1,18 @@
 TERMUX_PKG_HOMEPAGE=https://www.alsa-project.org
-TERMUX_PKG_DESCRIPTION="The Advanced Linux Sound Architecture (ALSA) - plugins"
+TERMUX_PKG_DESCRIPTION="The Advanced Linux Sound Architecture (ALSA) - library"
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="1.2.12"
+TERMUX_PKG_VERSION="1.2.16.1"
 TERMUX_PKG_REVISION=1
-TERMUX_PKG_SRCURL="https://github.com/alsa-project/alsa-plugins/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
-TERMUX_PKG_SHA256=55fccb55e6e195d73e93924b327f66d371001175c5bff70fdfd90bc026d496ba
-TERMUX_PKG_DEPENDS="libandroid-sysv-semaphore, libandroid-shmem, alsa-lib, pulseaudio"
+TERMUX_PKG_SRCURL="https://github.com/alsa-project/alsa-lib/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
+TERMUX_PKG_SHA256=8df8253c6349cf309903c1dd7752efe783c1f456913c9d722bdb5731271c0988
+TERMUX_PKG_DEPENDS="libandroid-sysv-semaphore, libandroid-shmem"
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_UPDATE_TAG_TYPE="newest-tag"
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --disable-static
 --with-versioned=no
 --with-tmpdir=$TERMUX_PREFIX/tmp
---disable-oss
---disable-arcamav
 "
 
 termux_step_pre_configure() {
@@ -25,8 +23,4 @@ termux_step_pre_configure() {
 	# -landroid-shmem is for depending packages in compile time
 	LDFLAGS+=" -landroid-sysv-semaphore -landroid-shmem"
 	autoreconf -fi
-}
-
-termux_step_post_make_install() {
-	cp ${TERMUX_PKG_BUILDER_DIR}/99-pulseaudio-default.conf ${TERMUX_PREFIX}/etc/alsa/conf.d/99-pulseaudio-default.conf
 }

@@ -1,18 +1,21 @@
-TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/bison/
-TERMUX_PKG_DESCRIPTION="General-purpose parser generator"
+TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/autoconf/autoconf.html
+TERMUX_PKG_DESCRIPTION="Creator of shell scripts to configure source code packages"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=3.8.2
-TERMUX_PKG_REVISION=4
-TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/bison/bison-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2
-TERMUX_PKG_DEPENDS="m4"
-TERMUX_PKG_BUILD_IN_SRC=true
-TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
-M4=m4
-ac_cv_have_decl_posix_spawn=no
-ac_cv_header_spawn_h=no
-"
-
-TERMUX_PKG_RM_AFTER_INSTALL="share/info/dir"
+TERMUX_PKG_VERSION="2.73"
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/autoconf/autoconf-${TERMUX_PKG_VERSION}.tar.xz
+TERMUX_PKG_SHA256=9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
+TERMUX_PKG_AUTO_UPDATE=true
+TERMUX_PKG_DEPENDS="m4, make, perl"
+TERMUX_PKG_PLATFORM_INDEPENDENT=true
 TERMUX_PKG_GROUPS="base-devel"
+
+termux_step_post_get_source() {
+	perl -p -i -e "s|/bin/sh|$TERMUX_PREFIX/bin/sh|" lib/*/*.m4
+}
+
+termux_step_post_massage() {
+	perl -p -i -e "s|/usr/bin/m4|$TERMUX_PREFIX/bin/m4|" bin/*
+	perl -p -i -e "s|CONFIG_SHELL-/bin/sh|CONFIG_SHELL-$TERMUX_PREFIX/bin/sh|" bin/autoconf
+}

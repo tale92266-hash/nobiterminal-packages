@@ -8,6 +8,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 # - vim-gtk
 # - weechat
 TERMUX_PKG_VERSION="4.0.7"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://cache.ruby-lang.org/pub/ruby/${TERMUX_PKG_VERSION%.*}/ruby-$TERMUX_PKG_VERSION.tar.xz"
 TERMUX_PKG_SHA256=47ef59413f7a4587ba6a6b78b14036eb5e36eec2ec0b90964801e88d56a3d375
 # libbffi is used by the fiddle extension module:

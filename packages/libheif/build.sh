@@ -1,37 +1,23 @@
-TERMUX_PKG_HOMEPAGE=https://github.com/strukturag/libheif
-TERMUX_PKG_DESCRIPTION="HEIF (HEIC/AVIF) image encoding and decoding library"
+TERMUX_PKG_HOMEPAGE=https://github.com/strukturag/libde265
+TERMUX_PKG_DESCRIPTION="H.265/HEVC video stream decoder library"
 TERMUX_PKG_LICENSE="LGPL-3.0, MIT"
 TERMUX_PKG_LICENSE_FILE="COPYING"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="1.23.6"
-TERMUX_PKG_SRCURL=https://github.com/strukturag/libheif/releases/download/v${TERMUX_PKG_VERSION}/libheif-${TERMUX_PKG_VERSION}.tar.gz
-TERMUX_PKG_SHA256=4484346dc5995319dbc11e3a1c35d0a2ec46511ce370900869337fd2c7033125
+TERMUX_PKG_VERSION="1.1.3"
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL="https://github.com/strukturag/libde265/releases/download/v$TERMUX_PKG_VERSION/libde265-$TERMUX_PKG_VERSION.tar.gz"
+TERMUX_PKG_SHA256=554228bd17788c99a7e63b37ab5634722190e6e2bf60c1dcb01cef328e133905
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_DEPENDS="gdk-pixbuf, glib, libaom, libc++, libdav1d, libde265, librav1e, libx264, libx265"
-TERMUX_PKG_BUILD_DEPENDS="libaom-static"
-TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
--DENABLE_PLUGIN_LOADING=OFF
-"
+TERMUX_PKG_DEPENDS="libc++"
 
-termux_step_pre_configure() {
-	# SOVERSION suffix is needed for SONAME of shared libs to avoid conflict
-	# with system ones (in /system/lib64 or /system/lib):
-	TERMUX_PKG_EXTRA_CONFIGURE_ARGS+=" -DCMAKE_SYSTEM_NAME=Linux"
-}
-
-termux_step_post_massage() {
+termux_step_post_get_source() {
 	# Do not forget to bump revision of reverse dependencies and rebuild them
 	# after SOVERSION is changed.
-	local _SOVERSION_GUARD_FILES="lib/libheif.so.1"
-	local f
-	for f in ${_SOVERSION_GUARD_FILES}; do
-		if [ ! -e "${f}" ]; then
-			termux_error_exit "SOVERSION guard check failed."
-		fi
-	done
+	local _SOVERSION=0
 
-	# Check if SONAME is properly set:
-	if ! readelf -d lib/libheif.so | grep -q '(SONAME).*\[libheif\.so\.'; then
-		termux_error_exit "SONAME for libheif.so is not properly set."
+	local v
+	v=$(sed -En 's/^set\(DE265_SOVERSION ([0-9]+)\)$/\1/p' CMakeLists.txt)
+	if [[ "${v:-}" != "${_SOVERSION}" ]]; then
+		termux_error_exit "SOVERSION guard check failed."
 	fi
 }

@@ -6,7 +6,7 @@ TERMUX_PKG_VERSION=(
 	"1.1.0" # Version
 	"2"     # Luarocks spec revision
 )
-TERMUX_PKG_REVISION=6
+TERMUX_PKG_REVISION=7
 TERMUX_PKG_SRCURL="https://luarocks.org/manifests/gvvaughan/lpeg-${TERMUX_PKG_VERSION[0]}-${TERMUX_PKG_VERSION[1]}.src.rock"
 TERMUX_PKG_SHA256=836d315b920a5cdd62e21786c6c9fad547c4faa131d5583ebca64f0b6595ee76
 TERMUX_PKG_DEPENDS="lua55"

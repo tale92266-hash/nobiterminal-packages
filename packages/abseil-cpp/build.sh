@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 # Do not forget to rebuild revdeps along with EVERY "major" version bump.
 TERMUX_PKG_VERSION="20260817.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/abseil/abseil-cpp/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=f7e05179df39c45434cad433f5783840bb3788ef322976f9138bc6b72b3a107d
 # updating this will break libprotobuf

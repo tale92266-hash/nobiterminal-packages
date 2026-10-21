@@ -1,11 +1,39 @@
 # X11 package
 TERMUX_PKG_HOMEPAGE=https://xorg.freedesktop.org/
-TERMUX_PKG_DESCRIPTION="X11 Display Manager Control Protocol library"
-TERMUX_PKG_LICENSE="MIT"
+TERMUX_PKG_DESCRIPTION="X11 client-side library"
+TERMUX_PKG_LICENSE="MIT, X11"
+TERMUX_PKG_LICENSE_FILE="COPYING"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="1.1.5"
-TERMUX_PKG_REVISION=2
-TERMUX_PKG_SRCURL=https://xorg.freedesktop.org/archive/individual/lib/libXdmcp-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=d8a5222828c3adab70adf69a5583f1d32eb5ece04304f7f8392b6a353aa2228c
+TERMUX_PKG_VERSION="1.8.14"
+TERMUX_PKG_REVISION=1
+TERMUX_PKG_SRCURL=https://xorg.freedesktop.org/releases/individual/lib/libX11-${TERMUX_PKG_VERSION}.tar.xz
+TERMUX_PKG_SHA256=bbc78c46217174655c2b32b138ad119f3ac15f50808b4d0b3a2677a4b1afc950
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_BUILD_DEPENDS="xorgproto, xorg-util-macros"
+# building all reverse dependencies of libx11 requires xorgproto
+# and the x11.pc file of libx11 explicitly marks a dependency on xorgproto
+TERMUX_PKG_DEPENDS="libandroid-support, libxcb, xorgproto"
+TERMUX_PKG_BUILD_DEPENDS="xorg-util-macros, xtrans"
+TERMUX_PKG_RECOMMENDS="xorg-xauth"
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+ac_cv_path_RAWCPP=/usr/bin/cpp
+--enable-malloc0returnsnull
+"
+
+termux_step_post_massage() {
+	# Regression test for broken XLC_LOCALE files. Do not remove.
+	local f
+	for f in share/X11/locale/*/XLC_LOCALE; do
+		if [ ! -f "${f}" ]; then
+			termux_error_exit "File not found: ${f}"
+		fi
+		if LC_ALL=C grep -E 'ct_encoding.*;\s*$' "${f}"; then
+			termux_error_exit "Broken XLC_LOCALE file found: ${f}"
+		fi
+	done
+
+	# Seems like some programs in the wild try to dlopen(3) `libX11.so.6`.
+	cd ${TERMUX_PKG_MASSAGEDIR}/${TERMUX_PREFIX}/lib || exit 1
+	if [ ! -e "./libX11.so.6" ]; then
+		ln -sf libX11.so libX11.so.6
+	fi
+}
