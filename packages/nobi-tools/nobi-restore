@@ -1,0 +1,114 @@
+#!/bin/bash
+# nobi-restore - restore a NobiTerminal setup from a backup made by
+# nobi-backup: configuration files first, then every package from the
+# saved list that is not installed yet.
+set -u
+export DEBIAN_FRONTEND=noninteractive
+
+BACKUP_DIR="$HOME/nobi-backups"
+SHARED_DIR="$HOME/storage/shared/NobiTerminal"
+NOBI_LIST="$PREFIX/etc/apt/sources.list.d/nobi.list"
+NOBI_REPO_LINE='deb [trusted=yes] https://tale92266-hash.github.io/nobiterminal-repo ./'
+
+echo "=== NobiTerminal restore ==="
+
+# 1. Find the backup archive: the argument, or the newest one available.
+ARCHIVE="${1:-}"
+if [ -z "$ARCHIVE" ]; then
+    ARCHIVE="$(ls -t "$BACKUP_DIR"/nobi-backup-*.zip "$BACKUP_DIR"/nobi-backup-*.tar.gz \
+                  "$SHARED_DIR"/nobi-backup-*.zip "$SHARED_DIR"/nobi-backup-*.tar.gz 2>/dev/null | head -n 1)"
+fi
+if [ -z "$ARCHIVE" ] || [ ! -f "$ARCHIVE" ]; then
+    echo "No backup found. Run nobi-backup first, or pass a backup file: nobi-restore <file>"
+    exit 1
+fi
+echo "Using backup: $ARCHIVE"
+
+WORK_DIR="$(mktemp -d)"
+trap 'rm -rf "$WORK_DIR"' EXIT
+
+case "$ARCHIVE" in
+    *.zip)
+        if ! command -v unzip >/dev/null 2>&1; then
+            echo "This backup is a zip file but 'unzip' is not installed. Install it with: pkg install unzip"
+            exit 1
+        fi
+        unzip -q "$ARCHIVE" -d "$WORK_DIR"
+        ;;
+    *.tar.gz)
+        tar -xzf "$ARCHIVE" -C "$WORK_DIR"
+        ;;
+    *)
+        echo "Unknown backup format: $ARCHIVE"
+        exit 1
+        ;;
+esac
+
+# 2. Restore the configuration files.
+RESTORED=0
+restore_file() {
+    # $1: path inside the archive, $2: absolute destination path
+    if [ -f "$WORK_DIR/$1" ]; then
+        mkdir -p "$(dirname "$2")"
+        cp "$WORK_DIR/$1" "$2"
+        echo "Restored: $2"
+        RESTORED=$((RESTORED + 1))
+    fi
+}
+
+restore_file "prefix/etc/apt/sources.list" "$PREFIX/etc/apt/sources.list"
+if [ -d "$WORK_DIR/prefix/etc/apt/sources.list.d" ]; then
+    for file in "$WORK_DIR"/prefix/etc/apt/sources.list.d/*; do
+        [ -f "$file" ] && restore_file "prefix/etc/apt/sources.list.d/$(basename "$file")" "$PREFIX/etc/apt/sources.list.d/$(basename "$file")"
+    done
+fi
+restore_file "prefix/etc/motd" "$PREFIX/etc/motd"
+restore_file "home/.bashrc" "$HOME/.bashrc"
+restore_file "home/.termux/termux.properties" "$HOME/.termux/termux.properties"
+restore_file "home/.termux/colors.properties" "$HOME/.termux/colors.properties"
+restore_file "home/.termux/font.ttf" "$HOME/.termux/font.ttf"
+
+# 3. Make sure the NobiTerminal repo source exists.
+if [ ! -f "$NOBI_LIST" ]; then
+    mkdir -p "$(dirname "$NOBI_LIST")"
+    echo "$NOBI_REPO_LINE" > "$NOBI_LIST"
+    echo "Added the NobiTerminal repo source: $NOBI_LIST"
+fi
+
+# 4. Install the saved packages that are not installed yet. A package
+# that fails is reported in the summary and never stops the rest.
+if [ ! -f "$WORK_DIR/packages.txt" ]; then
+    echo "The backup has no packages.txt; only configuration files were restored."
+    echo "Done. Restored $RESTORED configuration file(s)."
+    exit 0
+fi
+
+echo "Updating package lists..."
+apt-get update
+
+INSTALLED=0
+SKIPPED=0
+FAILED=""
+while IFS= read -r pkg; do
+    [ -z "$pkg" ] && continue
+    if dpkg-query -W -f='${Status}' "$pkg" 2>/dev/null | grep -q "install ok installed"; then
+        SKIPPED=$((SKIPPED + 1))
+        continue
+    fi
+    echo "Installing: $pkg"
+    if apt-get install -y "$pkg" < /dev/null; then
+        INSTALLED=$((INSTALLED + 1))
+    else
+        FAILED="$FAILED $pkg"
+    fi
+done < "$WORK_DIR/packages.txt"
+
+echo "=== Restore summary ==="
+echo "Configuration files restored: $RESTORED"
+echo "Packages installed: $INSTALLED"
+echo "Packages already present: $SKIPPED"
+if [ -n "$FAILED" ]; then
+    echo "Packages that could not be installed:$FAILED"
+    echo "(They may not be available in the repos yet.)"
+fi
+echo "Done."

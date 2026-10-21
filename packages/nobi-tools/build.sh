@@ -1,0 +1,14 @@
+TERMUX_PKG_HOMEPAGE=https://github.com/tale92266-hash/nobiterminal-packages
+TERMUX_PKG_DESCRIPTION="NobiTerminal setup tools (backup, restore and dev setup scripts)"
+TERMUX_PKG_LICENSE="GPL-3.0"
+TERMUX_PKG_MAINTAINER="NobiTerminal"
+TERMUX_PKG_VERSION=1.0.0
+TERMUX_PKG_PLATFORM_INDEPENDENT=true
+TERMUX_PKG_SKIP_SRC_EXTRACT=true
+TERMUX_PKG_BUILD_IN_SRC=true
+
+termux_step_make_install() {
+	install -Dm755 "$TERMUX_PKG_BUILDER_DIR/nobi-backup" "$TERMUX_PREFIX/bin/nobi-backup"
+	install -Dm755 "$TERMUX_PKG_BUILDER_DIR/nobi-restore" "$TERMUX_PREFIX/bin/nobi-restore"
+	install -Dm755 "$TERMUX_PKG_BUILDER_DIR/nobi-dev-setup" "$TERMUX_PREFIX/bin/nobi-dev-setup"
+}

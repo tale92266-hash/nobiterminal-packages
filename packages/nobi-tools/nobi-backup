@@ -1,0 +1,61 @@
+#!/bin/bash
+# nobi-backup - back up the NobiTerminal setup: the installed package
+# list and the user configuration files, in a single archive.
+set -u
+
+BACKUP_DIR="$HOME/nobi-backups"
+SHARED_DIR="$HOME/storage/shared/NobiTerminal"
+TIMESTAMP="$(date +%Y%m%d-%H%M%S)"
+
+mkdir -p "$BACKUP_DIR"
+WORK_DIR="$(mktemp -d)"
+trap 'rm -rf "$WORK_DIR"' EXIT
+
+echo "=== NobiTerminal backup ==="
+
+# Installed packages list (one package name per line).
+dpkg-query -W -f='${Package}\n' > "$WORK_DIR/packages.txt"
+PACKAGE_COUNT="$(grep -c . "$WORK_DIR/packages.txt")"
+echo "Saved list of $PACKAGE_COUNT installed packages."
+
+# Configuration files. Files that do not exist are skipped.
+add_file() {
+    # $1: absolute source path, $2: path inside the archive
+    if [ -f "$1" ]; then
+        mkdir -p "$WORK_DIR/$(dirname "$2")"
+        cp "$1" "$WORK_DIR/$2"
+        echo "Included: $2"
+    fi
+}
+
+add_file "$PREFIX/etc/apt/sources.list" "prefix/etc/apt/sources.list"
+for file in "$PREFIX"/etc/apt/sources.list.d/*; do
+    [ -f "$file" ] && add_file "$file" "prefix/etc/apt/sources.list.d/$(basename "$file")"
+done
+add_file "$PREFIX/etc/motd" "prefix/etc/motd"
+add_file "$HOME/.bashrc" "home/.bashrc"
+add_file "$HOME/.termux/termux.properties" "home/.termux/termux.properties"
+add_file "$HOME/.termux/colors.properties" "home/.termux/colors.properties"
+add_file "$HOME/.termux/font.ttf" "home/.termux/font.ttf"
+
+# Archive: zip when the zip package is installed, tar.gz otherwise
+# (tar and gzip are always part of the bootstrap).
+if command -v zip >/dev/null 2>&1; then
+    ARCHIVE="$BACKUP_DIR/nobi-backup-$TIMESTAMP.zip"
+    (cd "$WORK_DIR" && zip -qr "$ARCHIVE" .)
+else
+    ARCHIVE="$BACKUP_DIR/nobi-backup-$TIMESTAMP.tar.gz"
+    tar -czf "$ARCHIVE" -C "$WORK_DIR" .
+fi
+
+echo "Backup created: $ARCHIVE ($(du -h "$ARCHIVE" | cut -f1))"
+
+# Also copy the archive to shared storage when termux-setup-storage
+# has been run, so the backup survives an app reinstall.
+if [ -d "$HOME/storage/shared" ]; then
+    mkdir -p "$SHARED_DIR"
+    cp "$ARCHIVE" "$SHARED_DIR/"
+    echo "Copy in shared storage: $SHARED_DIR/$(basename "$ARCHIVE")"
+fi
+
+echo "Done. $PACKAGE_COUNT packages and the configuration files listed above are in the backup."
