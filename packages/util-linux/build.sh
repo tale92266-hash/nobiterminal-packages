@@ -11,6 +11,7 @@ TERMUX_PKG_LICENSE_FILE="
 "
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.42.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://www.kernel.org/pub/linux/utils/util-linux/v${TERMUX_PKG_VERSION:0:4}/util-linux-${TERMUX_PKG_VERSION}.tar.xz"
 TERMUX_PKG_SHA256=fbd62a100ab7bb8746ba0661255c3c48185b1e9021507c624da01fbc696330ec
 # <dependency>: <binaries linking to that dependency>

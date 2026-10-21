@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Utilities to find files meeting specified criteria and p
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=4.11.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/findutils/findutils-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=bfd19cb06cc71f3352d567e90284d8cdac02ac89774bbeadf0b533b0c11432fd
 TERMUX_PKG_DEPENDS="libandroid-support"
