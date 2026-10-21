@@ -1,40 +1,32 @@
-TERMUX_PKG_HOMEPAGE=https://android.googlesource.com/platform/frameworks/base/+/main/native/android
-TERMUX_PKG_DESCRIPTION="Stub libandroid.so for non-Android certified environment"
-TERMUX_PKG_LICENSE="NCSA"
+TERMUX_PKG_HOMEPAGE=https://android.googlesource.com/platform/bionic/+/refs/heads/master/libc/bionic/sys_sem.cpp
+TERMUX_PKG_DESCRIPTION="A shared library providing System V semaphores"
+TERMUX_PKG_LICENSE="BSD 2-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_REVISION=3
-# Version should be equal to TERMUX_NDK_{VERSION_NUM,REVISION} in
-# scripts/properties.sh
-TERMUX_PKG_VERSION=30
+TERMUX_PKG_VERSION=0.1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_AUTO_UPDATE=false
-TERMUX_PKG_CONFLICTS="libandroid"
-TERMUX_PKG_REPLACES="libandroid"
-TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_SKIP_SRC_EXTRACT=true
-TERMUX_PKG_API_LEVEL=28
+TERMUX_PKG_BUILD_IN_SRC=true
+
+termux_step_post_get_source() {
+	local f
+	for f in LICENSE sys_sem.{c,h}; do
+		cp $TERMUX_PKG_BUILDER_DIR/${f} ./
+	done
+}
+
+termux_step_pre_configure() {
+	CPPFLAGS+=" -D__USE_GNU"
+	CFLAGS+=" -fPIC"
+}
 
 termux_step_make() {
-	local common_flags=(
-		$CFLAGS $LDFLAGS
-		-Wno-deprecated-declarations
-		-Wl,--no-use-android-relr-tags
-		-Wl,--pack-dyn-relocs=android
-	)
+	$CC $CFLAGS $CPPFLAGS sys_sem.c -c
+	$CC $CFLAGS sys_sem.o -shared $LDFLAGS -o libandroid-sysv-semaphore.so
+	$AR cru libandroid-sysv-semaphore.a sys_sem.o
+}
 
-	# The wrappers share a single namespace, so that a process is never left
-	# with two copies of libbinder.so and thus two ProcessState singletons.
-	"${CC}" -shared -fPIC \
-		-o "${TERMUX_PREFIX}/lib/libtermux-platform-ns.so" \
-		"${TERMUX_PKG_BUILDER_DIR}/platform-ns.c" \
-		"${common_flags[@]}"
-
-	local stub
-	for stub in android mediandk OpenSLES binder_ndk; do
-		"${CC}" -shared -fPIC \
-			-o "${TERMUX_PREFIX}/lib/lib${stub}.so" \
-			"${TERMUX_PKG_BUILDER_DIR}/lib${stub}-wrapper.c" \
-			-I"${TERMUX_PKG_BUILDER_DIR}" \
-			"${common_flags[@]}" \
-			-ltermux-platform-ns
-	done
+termux_step_make_install() {
+	install -Dm600 -t $TERMUX_PREFIX/lib libandroid-sysv-semaphore.{a,so}
+	install -Dm600 -T sys_sem.h $TERMUX_PREFIX/include/sys/sem.h
 }

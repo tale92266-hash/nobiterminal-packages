@@ -1,17 +1,18 @@
-TERMUX_PKG_HOMEPAGE=https://sourceforge.net/projects/soxr/
-TERMUX_PKG_DESCRIPTION="High quality, one-dimensional sample-rate conversion library"
-TERMUX_PKG_LICENSE="LGPL-2.1"
+TERMUX_PKG_HOMEPAGE=https://sourceforge.net/projects/infozip/
+TERMUX_PKG_DESCRIPTION="Tools for working with zip files"
+TERMUX_PKG_LICENSE="BSD"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="0.1.3"
-TERMUX_PKG_REVISION=9
-TERMUX_PKG_SRCURL=https://sourceforge.net/projects/soxr/files/soxr-$TERMUX_PKG_VERSION-Source.tar.xz
-TERMUX_PKG_SHA256=b111c15fdc8c029989330ff559184198c161100a59312f5dc19ddeb9b5a15889
-TERMUX_PKG_BREAKS="libsoxr-dev"
-TERMUX_PKG_REPLACES="libsoxr-dev"
-TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
--DCMAKE_POLICY_VERSION_MINIMUM=3.5
-"
+TERMUX_PKG_VERSION="3.0"
+TERMUX_PKG_REVISION=8
+TERMUX_PKG_SRCURL="https://downloads.sourceforge.net/infozip/zip${TERMUX_PKG_VERSION/.}.tar.gz"
+TERMUX_PKG_SHA256=f0e8bb1f9b7eb0b01285495a2699df3a4b766784c1765a8f1aeedf63c0806369
+TERMUX_PKG_DEPENDS="libandroid-support, libbz2"
+TERMUX_PKG_BUILD_IN_SRC=true
 
-termux_step_pre_configure() {
-	LDFLAGS+=" -fopenmp -static-openmp"
+termux_step_configure() {
+	cp unix/Makefile Makefile
+}
+
+termux_step_make() {
+	LD="$CC $LDFLAGS" CC="$CC $CFLAGS $CPPFLAGS $LDFLAGS" make -j $TERMUX_PKG_MAKE_PROCESSES generic
 }

@@ -1,21 +1,15 @@
-TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/autoconf/autoconf.html
-TERMUX_PKG_DESCRIPTION="Creator of shell scripts to configure source code packages"
-TERMUX_PKG_LICENSE="GPL-3.0"
+TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/bc/
+TERMUX_PKG_DESCRIPTION="Arbitrary precision numeric processing language"
+TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="2.73"
-TERMUX_PKG_REVISION=1
-TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/autoconf/autoconf-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
+TERMUX_PKG_VERSION="1.08.2"
+TERMUX_PKG_REVISION=2
+TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/bc/bc-${TERMUX_PKG_VERSION}.tar.gz
+TERMUX_PKG_SHA256=ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_DEPENDS="m4, make, perl"
-TERMUX_PKG_PLATFORM_INDEPENDENT=true
-TERMUX_PKG_GROUPS="base-devel"
-
-termux_step_post_get_source() {
-	perl -p -i -e "s|/bin/sh|$TERMUX_PREFIX/bin/sh|" lib/*/*.m4
-}
-
-termux_step_post_massage() {
-	perl -p -i -e "s|/usr/bin/m4|$TERMUX_PREFIX/bin/m4|" bin/*
-	perl -p -i -e "s|CONFIG_SHELL-/bin/sh|CONFIG_SHELL-$TERMUX_PREFIX/bin/sh|" bin/autoconf
-}
+TERMUX_PKG_DEPENDS="readline,flex"
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+--infodir=$TERMUX_PREFIX/share/info
+--mandir=$TERMUX_PREFIX/share/man
+--with-readline
+"

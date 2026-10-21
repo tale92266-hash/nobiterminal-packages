@@ -2,16 +2,16 @@ TERMUX_PKG_HOMEPAGE=https://openjdk.java.net
 TERMUX_PKG_DESCRIPTION="Java development kit and runtime"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="17.0.21"
+TERMUX_PKG_VERSION="21.0.13"
 TERMUX_PKG_REVISION=1
-TERMUX_PKG_SRCURL=https://github.com/openjdk/jdk17u/archive/refs/tags/jdk-${TERMUX_PKG_VERSION}-ga.tar.gz
-TERMUX_PKG_SHA256=f2d18152bbd924a329e76000065904dd6bcca3deb716e91834864a1f00d9ed99
+TERMUX_PKG_SRCURL="https://github.com/openjdk/jdk21u/archive/refs/tags/jdk-${TERMUX_PKG_VERSION}-ga.tar.gz"
+TERMUX_PKG_SHA256=a10eb756f12542b530db90e15aff44c72cd572ba02c47496affb5e3510814935
 TERMUX_PKG_AUTO_UPDATE=true
-TERMUX_PKG_UPDATE_VERSION_REGEXP='17\.\d+\.\d+(?=-ga)'
+TERMUX_PKG_UPDATE_VERSION_REGEXP='21\.\d+\.\d+(?=-ga)'
 TERMUX_PKG_DEPENDS="libandroid-shmem, libandroid-spawn, libiconv, libjpeg-turbo, zlib, littlecms, alsa-plugins"
 TERMUX_PKG_BUILD_DEPENDS="cups, fontconfig, libxrandr, libxt, xorgproto, alsa-lib"
-# openjdk-17-x is recommended because X11 separation is still very experimental.
-TERMUX_PKG_RECOMMENDS="ca-certificates-java, openjdk-17-x, resolv-conf"
+# openjdk-21-x is recommended because X11 separation is still very experimental.
+TERMUX_PKG_RECOMMENDS="ca-certificates-java, openjdk-21-x, resolv-conf"
 TERMUX_PKG_SUGGESTS="cups"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_HAS_DEBUG=false
@@ -33,7 +33,7 @@ termux_step_pre_configure() {
 
 termux_step_configure() {
 	local jdk_ldflags="-L${TERMUX_PREFIX}/lib \
-		-Wl,-rpath=$TERMUX_PREFIX/lib/jvm/java-17-openjdk/lib \
+		-Wl,-rpath=$TERMUX_PREFIX/lib/jvm/java-21-openjdk/lib \
 		-Wl,-rpath=${TERMUX_PREFIX}/lib -Wl,--enable-new-dtags"
 	bash ./configure \
 		--disable-precompiled-headers \
@@ -86,43 +86,43 @@ termux_step_make() {
 }
 
 termux_step_make_install() {
-	rm -rf $TERMUX_PREFIX/lib/jvm/java-17-openjdk
-	mkdir -p $TERMUX_PREFIX/lib/jvm/java-17-openjdk
+	rm -rf  $TERMUX_PREFIX/lib/jvm/java-21-openjdk
+	mkdir -p $TERMUX_PREFIX/lib/jvm/java-21-openjdk
 	cp -r build/linux-${TERMUX_ARCH/i686/x86}-server-release/images/jdk/* \
-		$TERMUX_PREFIX/lib/jvm/java-17-openjdk/
-	find $TERMUX_PREFIX/lib/jvm/java-17-openjdk/ -name "*.debuginfo" -delete
+		$TERMUX_PREFIX/lib/jvm/java-21-openjdk/
+	find $TERMUX_PREFIX/lib/jvm/java-21-openjdk/ -name "*.debuginfo" -delete
 
 	# Dependent projects may need JAVA_HOME.
-	mkdir -p $TERMUX_PREFIX/lib/jvm/java-17-openjdk/etc/profile.d
-	echo "export JAVA_HOME=$TERMUX_PREFIX/lib/jvm/java-17-openjdk/" > \
-		$TERMUX_PREFIX/lib/jvm/java-17-openjdk/etc/profile.d/java.sh
+	mkdir -p $TERMUX_PREFIX/lib/jvm/java-21-openjdk/etc/profile.d
+	echo "export JAVA_HOME=$TERMUX_PREFIX/lib/jvm/java-21-openjdk/" > \
+		$TERMUX_PREFIX/lib/jvm/java-21-openjdk/etc/profile.d/java.sh
 }
 
 termux_step_post_make_install() {
-	cd $TERMUX_PREFIX/lib/jvm/java-17-openjdk/man/man1
+	cd $TERMUX_PREFIX/lib/jvm/java-21-openjdk/man/man1
 	for manpage in *.1; do
 		gzip "$manpage"
 	done
 
 	# Make sure that our alternatives file is up to date.
-	binaries="$(find $TERMUX_PREFIX/lib/jvm/java-17-openjdk/bin -executable -type f | xargs -I{} basename "{}" | xargs echo)"
-	manpages="$(find $TERMUX_PREFIX/lib/jvm/java-17-openjdk/man/man1 -name "*.1.gz" | xargs -I{} basename "{}" | xargs echo)"
+	binaries="$(find $TERMUX_PREFIX/lib/jvm/java-21-openjdk/bin -executable -type f | xargs -I{} basename "{}" | xargs echo)"
+	manpages="$(find $TERMUX_PREFIX/lib/jvm/java-21-openjdk/man/man1 -name "*.1.gz" | xargs -I{} basename "{}" | xargs echo)"
 
 	local failure=false
 	for binary in $binaries; do
-		grep -q "lib/jvm/java-17-openjdk/bin/${binary}$" "$TERMUX_PKG_BUILDER_DIR"/openjdk-17.alternatives || {
-			echo "ERROR: Missing entry for binary: $binary in openjdk-17.alternatives"
+		grep -q "lib/jvm/java-21-openjdk/bin/${binary}$" "$TERMUX_PKG_BUILDER_DIR"/openjdk-21.alternatives || {
+			echo "ERROR: Missing entry for binary: $binary in openjdk-21.alternatives"
 			failure=true
 		}
 	done
 	for manpage in $manpages; do
-		grep -q "lib/jvm/java-17-openjdk/man/man1/${manpage}$" "$TERMUX_PKG_BUILDER_DIR"/openjdk-17.alternatives || {
-			echo "ERROR: Missing entry for manpage: $manpage in openjdk-17.alternatives"
+		grep -q "lib/jvm/java-21-openjdk/man/man1/${manpage}$" "$TERMUX_PKG_BUILDER_DIR"/openjdk-21.alternatives || {
+			echo "ERROR: Missing entry for manpage: $manpage in openjdk-21.alternatives"
 			failure=true
 		}
 	done
 	if [[ "$failure" = true ]]; then
-		termux_error_exit "openjdk-17.alternatives is not up to date, please update it."
+		termux_error_exit "openjdk-21.alternatives is not up to date, please update it."
 	fi
 }
 
@@ -192,7 +192,7 @@ termux_step_create_debscripts() {
 		serialver.1.gz
 	)
 	# For older versions
-	echo 'if [ "$#" = "3" ] && dpkg --compare-versions "$2" le "17.0.15-1"; then' > ./preinst
+	echo 'if [ "$#" = "3" ] && dpkg --compare-versions "$2" le "21.0.7-2"; then' > ./preinst
 	echo '  echo "Removing older alternatives for openjdk-21 and openjdk-17"' >> ./preinst
 	echo '  echo "This may take a while if mandoc package is installed, please wait..."' >> ./preinst
 	echo '  echo "Newer versions of openjdk-21 and openjdk-17 change how alternatives are handled."' >> ./preinst

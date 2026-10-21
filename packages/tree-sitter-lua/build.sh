@@ -1,11 +1,11 @@
-TERMUX_PKG_HOMEPAGE=https://github.com/tree-sitter/tree-sitter-c
-TERMUX_PKG_DESCRIPTION="C grammar for tree-sitter"
+TERMUX_PKG_HOMEPAGE=https://github.com/tree-sitter-grammars/tree-sitter-lua
+TERMUX_PKG_DESCRIPTION="Lua grammar for tree-sitter"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Joshua Kahn <tom@termux.dev>"
-TERMUX_PKG_VERSION="0.24.2"
-TERMUX_PKG_REVISION=2
-TERMUX_PKG_SRCURL="https://github.com/tree-sitter/tree-sitter-c/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
-TERMUX_PKG_SHA256=2eeb4db31f8fa0865e45488503d13403923bcb485a1bdb637abff8c42dd97364
+TERMUX_PKG_VERSION="0.5.0"
+TERMUX_PKG_REVISION=3
+TERMUX_PKG_SRCURL="https://github.com/tree-sitter-grammars/tree-sitter-lua/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
+TERMUX_PKG_SHA256=cf01b93f4b61b96a6d27942cf28eeda4cbce7d503c3bef773a8930b3d778a2d9
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_UPDATE_TAG_TYPE='newest-tag'
 TERMUX_PKG_BUILD_IN_SRC=true

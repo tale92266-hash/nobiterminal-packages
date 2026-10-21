@@ -1,14 +1,15 @@
 TERMUX_PKG_HOMEPAGE=https://www.lua.org/
-TERMUX_PKG_DESCRIPTION="Lua scripting language 5.3.x"
+TERMUX_PKG_DESCRIPTION="Lua scripting language 5.4.x"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION=5.3.6
-TERMUX_PKG_REVISION=11
+TERMUX_PKG_VERSION=5.4.9
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://www.lua.org/ftp/lua-${TERMUX_PKG_VERSION}.tar.gz"
-TERMUX_PKG_SHA256=fc5fd69bb8736323f026672b1b7235da613d7177e72558893a0bdcd320466d60
+TERMUX_PKG_SHA256=2335b6c582a52654f94612bf10d2f4672805d05329aa6568b1d8cd9e5c6fb8e6
+TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_BUILD_IN_SRC=true
-TERMUX_PKG_BREAKS="liblua-dev, liblua53"
-TERMUX_PKG_REPLACES="liblua-dev, liblua53"
+TERMUX_PKG_BREAKS="liblua-dev, liblua54"
+TERMUX_PKG_REPLACES="liblua-dev, liblua54"
 TERMUX_PKG_BUILD_DEPENDS="readline"
 
 termux_step_pre_configure() {
@@ -40,29 +41,29 @@ termux_step_configure() {
 termux_step_make() {
 	local LUA_VERSION="${TERMUX_PKG_VERSION%.*}"
 
-	# Build Lua 5.3
+	# Build Lua 5.5
 	make -j "$TERMUX_PKG_MAKE_PROCESSES" \
-		MYCFLAGS="$CFLAGS -DLUA_COMPAT_5_2 -fPIC" \
+		MYCFLAGS="$CFLAGS -DLUA_COMPAT_5_3 -fPIC" \
 		MYLDFLAGS="$LDFLAGS" \
 		LUA_A="liblua${LUA_VERSION}.a"\
 		LUA_SO="liblua${LUA_VERSION}.so"\
-		linux
+		linux-readline
 
 	# Build liblua++
 	cd "${TERMUX_PKG_TMPDIR}/lua++-${TERMUX_PKG_VERSION}" && \
 	make -j "$TERMUX_PKG_MAKE_PROCESSES" \
 		CC="$CXX" \
-		MYCFLAGS="$CXXFLAGS -DLUA_COMPAT_5_2 -fPIC" \
+		MYCFLAGS="$CXXFLAGS -DLUA_COMPAT_5_3 -fPIC" \
 		MYLDFLAGS="$LDFLAGS" \
 		LUA_A="liblua++${LUA_VERSION}.a" \
 		LUA_SO="liblua++${LUA_VERSION}.so" \
-		linux
+		linux-readline
 }
 
 termux_step_make_install() {
 	local LUA_VERSION="${TERMUX_PKG_VERSION%.*}"
 
-	# Install Lua 5.3
+	# Install Lua 5.5
 	make \
 		TO_BIN="lua${LUA_VERSION} luac${LUA_VERSION}" \
 		TO_LIB="liblua${LUA_VERSION}.so liblua${LUA_VERSION}.so.${LUA_VERSION} liblua${LUA_VERSION}.so.${TERMUX_PKG_VERSION} liblua${LUA_VERSION}.a" \
