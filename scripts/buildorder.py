@@ -143,33 +143,53 @@ class TermuxPackage(object):
     def __repr__(self):
         return "<{} '{}'>".format(self.__class__.__name__, self.name)
 
-    def recursive_dependencies(self, pkgs_map, dir_root=None):
+    def recursive_dependencies(self, pkgs_map, dir_root=None, _visiting=None):
         "All the dependencies of the package, both direct and indirect."
         result = []
         is_root = dir_root == None
         if is_root:
             dir_root = self.dir
-        if is_root or not self.fast_build_mode or not self.separate_subdeps:
-            for subpkg in self.subpkgs:
-                if f"{self.name}-static" != subpkg.name:
-                    self.deps.add(subpkg.name)
-                    self.deps |= subpkg.deps
-            self.deps -= self.antideps
-            self.deps.discard(self.name)
-            if not self.fast_build_mode or self.dir == dir_root:
-                self.deps.difference_update([subpkg.name for subpkg in self.subpkgs])
-        for dependency_name in sorted(self.deps):
-            if termux_global_library == "true" and termux_pkg_library == "glibc" and not has_prefix_glibc(dependency_name):
-                mod_dependency_name = add_prefix_glibc_to_pkgname(dependency_name)
-                dependency_name = mod_dependency_name if mod_dependency_name in pkgs_map else dependency_name
-            if dependency_name not in self.pkgs_cache:
-                self.pkgs_cache.append(dependency_name)
-                dependency_package = pkgs_map[dependency_name]
-                if dependency_package.dir != dir_root and dependency_package.only_installing and not self.fast_build_mode:
-                    continue
-                result += dependency_package.recursive_dependencies(pkgs_map, dir_root)
-                if dependency_package.accept_dep_scr or dependency_package.dir != dir_root:
-                    result += [dependency_package]
+        if _visiting is None:
+            _visiting = set()
+        # _visiting tracks the current DFS stack so dependency cycles
+        # (e.g. pulseaudio -> libsndfile -> libmpg123 -> pulseaudio via
+        # TERMUX_PKG_BUILD_DEPENDS) are broken correctly. Without this, a
+        # re-entrant call sees a polluted pkgs_cache and the resulting order
+        # violates topological sorting (a dependency ends up AFTER the
+        # package that needs it), which breaks from-source builds because
+        # nested build-package.sh invocations run with -s (skip depcheck).
+        _visiting.add(self.name)
+        try:
+            if is_root or not self.fast_build_mode or not self.separate_subdeps:
+                for subpkg in self.subpkgs:
+                    if f"{self.name}-static" != subpkg.name:
+                        self.deps.add(subpkg.name)
+                        self.deps |= subpkg.deps
+                self.deps -= self.antideps
+                self.deps.discard(self.name)
+                if not self.fast_build_mode or self.dir == dir_root:
+                    self.deps.difference_update([subpkg.name for subpkg in self.subpkgs])
+            for dependency_name in sorted(self.deps):
+                if termux_global_library == "true" and termux_pkg_library == "glibc" and not has_prefix_glibc(dependency_name):
+                    mod_dependency_name = add_prefix_glibc_to_pkgname(dependency_name)
+                    dependency_name = mod_dependency_name if mod_dependency_name in pkgs_map else dependency_name
+                if dependency_name not in self.pkgs_cache:
+                    self.pkgs_cache.append(dependency_name)
+                    if dependency_name in _visiting:
+                        # Back-edge of a dependency cycle: skip it here. The
+                        # package is already on the DFS stack, so the outer
+                        # frame will position it correctly (after its own
+                        # dependencies). Recursing would produce a misordered
+                        # list.
+                        continue
+                    dependency_package = pkgs_map[dependency_name]
+                    if dependency_package.dir != dir_root and dependency_package.only_installing and not self.fast_build_mode:
+                        continue
+                    result += dependency_package.recursive_dependencies(pkgs_map, dir_root, _visiting)
+                    if dependency_package.accept_dep_scr or dependency_package.dir != dir_root:
+                        result += [dependency_package]
+        finally:
+            _visiting.discard(self.name)
         return unique_everseen(result)
 
 class TermuxSubPackage:
