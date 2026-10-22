@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A highly customizable changelog generator that follows C
 TERMUX_PKG_LICENSE="MIT, Apache-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2.14.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/orhun/git-cliff/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=fbbb1f8ade8e9affeaacd632bedc94ac898fb726516f2f5a86d1bfba947635f4
 TERMUX_PKG_DEPENDS="libgit2, zlib"

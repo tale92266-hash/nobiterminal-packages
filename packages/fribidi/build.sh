@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Implementation of the Unicode Bidirectional Algorithm"
 TERMUX_PKG_LICENSE="LGPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.0.17"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/fribidi/fribidi/releases/download/v$TERMUX_PKG_VERSION/fribidi-$TERMUX_PKG_VERSION.tar.xz
 TERMUX_PKG_SHA256=6949dcde27d41cebad1fd741fcafc36d55a1020d2d872d4a6eb3914caabbada2
 TERMUX_PKG_AUTO_UPDATE=true

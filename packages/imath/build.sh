@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Library for vector/matrix and math operations, plus the 
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.2.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/AcademySoftwareFoundation/Imath/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=e10c12b3f21f45bf08e09d4215d9c7691368d747beebd840de0b6fefed2df9f8
 TERMUX_PKG_DEPENDS="libc++"

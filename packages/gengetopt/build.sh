@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="gengetopt is a tool to write command line option parsing
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.23.1
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/gengetopt/gengetopt-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=3b9def48422bd45f78af95936200b7f9287369a3db76c4907c42fe10f4922ab6
 TERMUX_PKG_AUTO_UPDATE=true

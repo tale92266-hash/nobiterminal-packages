@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Provides many low-level data structures which are helpfu
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.5.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://downloads.sourceforge.net/project/dict/libmaa/libmaa-${TERMUX_PKG_VERSION}/libmaa-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=3a30e25f038e99c4715125545516490d991fe3a505825cc832b1a956e31bf669
 TERMUX_PKG_AUTO_UPDATE=false # This package requires mkcmake which is not accessible while building packages

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Camera RAW to DNG file format converter"
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="Florian Wagner <florian@wagner-flo.de>"
 TERMUX_PKG_VERSION="0.8.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/dnglab/dnglab/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=432b8ac8f553289e06c0d78b37ae6f9546e80b736ef879f2ee66b66345590c4d
 TERMUX_PKG_AUTO_UPDATE=true

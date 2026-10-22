@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Self-contained stacktrace library for C++11 and newer"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.0.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_SRCURL="https://github.com/jeremy-rifkin/cpptrace/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=5c9f5b301e903714a4d01f1057b9543fa540f7bfcc5e3f8bd1748e652e24f9ea

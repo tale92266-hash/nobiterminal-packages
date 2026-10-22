@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Shader-based audio visualizer for the terminal"
 TERMUX_PKG_LICENSE="GPL-3.0-or-later"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.0.0.20260922+g1b98379"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/yuri-xyz/chroma/archive/${TERMUX_PKG_VERSION##*+g}.tar.gz"
 TERMUX_PKG_SHA256=59a7ba7283ec17eea3e4abc8383433d3f50d8eeb1a0d4928ee739bad0d22d92a
 TERMUX_PKG_BUILD_IN_SRC=true

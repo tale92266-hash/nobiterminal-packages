@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="An abstract base class to a generic linear programming (
 TERMUX_PKG_LICENSE="EPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1:0.108.12"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/coin-or/Osi/archive/refs/tags/releases/${TERMUX_PKG_VERSION#*:}.tar.gz
 TERMUX_PKG_SHA256=1d80d0b4275f2e1ceefc6dda66b8616e3a8c8b07a926ef4456db4a0d55249333
 TERMUX_PKG_AUTO_UPDATE=true

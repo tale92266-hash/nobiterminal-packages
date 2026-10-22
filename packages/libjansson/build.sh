@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="C library for encoding, decoding and manipulating JSON d
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.15.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/akheron/jansson/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=dbf95cb0af903f4fb8b61507d96b45b67db7d1479688ede352e1d571394d06f7
 TERMUX_PKG_AUTO_UPDATE=true

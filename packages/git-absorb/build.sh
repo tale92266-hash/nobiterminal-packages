@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="git commit --fixup, but automatic"
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.9.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/tummychow/git-absorb/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=a0f74e6306d7fbd746d2b4a6856621d46a7f82e3e88b6bb8b6fc0480cf811f53
 TERMUX_PKG_DEPENDS="zlib"

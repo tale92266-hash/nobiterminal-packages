@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="difft: A structural diff that understands syntax"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.71.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/Wilfred/difftastic/archive/refs/tags/$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=d6afd26103c6492a91307dc6779c7dd0ca4d4c85499f81d7dc53fdfa5107331d
 TERMUX_PKG_AUTO_UPDATE=true

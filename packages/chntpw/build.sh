@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Offline Windows NT Password & Registry Editor"
 TERMUX_PKG_LICENSE="GPL-2.0-only, LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@xingguangcuican6666"
 TERMUX_PKG_VERSION="140201"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://pogostick.net/~pnh/ntpasswd/chntpw-source-$TERMUX_PKG_VERSION.zip"
 TERMUX_PKG_SHA256=96e20905443e24cba2f21e51162df71dd993a1c02bfa12b1be2d0801a4ee2ccc
 # NOTE: dependency on openssl/libgcrypt is disabled by default because the code associated with

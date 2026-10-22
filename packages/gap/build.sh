@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="GAP is a system for computational discrete algebra, with
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="4.16.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/gap-system/gap/releases/download/v${TERMUX_PKG_VERSION}/gap-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=df7d116f03c426dac24bf7c76ea11416b29c5a48eac12f97811d80ec215f7f69
 TERMUX_PKG_AUTO_UPDATE=true

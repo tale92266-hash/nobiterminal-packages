@@ -4,6 +4,7 @@ TERMUX_PKG_GROUPS="science"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.7"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://sourceforge.net/projects/geographiclib/files/distrib-C%2B%2B/GeographicLib-$TERMUX_PKG_VERSION.tar.gz/download"
 TERMUX_PKG_SHA256=f35158cfb8bbc18ddc4930ee4db754b0a50d8d8d8b6700a5cad0dc987546764d
 TERMUX_PKG_AUTO_UPDATE=true

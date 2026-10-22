@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A syntax-highlighter for git and diff output"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Joshua Kahn <tom@termux.dev>"
 TERMUX_PKG_VERSION="0.20.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/dandavison/delta/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=d9d502396e3595ee8fd926f1ed2e54ac9935baabd3569a3753efab36304f90fa
 TERMUX_PKG_AUTO_UPDATE=true

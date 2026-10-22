@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A set of general-purpose C programming libraries"
 TERMUX_PKG_LICENSE="ISC"
 TERMUX_PKG_MAINTAINER="Jules Amonith <examosa@fastmail.com>"
 TERMUX_PKG_VERSION=2.16.0.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://skarnet.org/software/skalibs/skalibs-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=90a3deda94a40d7d6a4495fe6feaf91c0185e0428d59cbd150a1a468741269aa
 TERMUX_PKG_AUTO_UPDATE=true

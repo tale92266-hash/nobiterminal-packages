@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A distributed, interactive, smart revision control syste
 TERMUX_PKG_LICENSE="GPL-2.0-or-later"
 TERMUX_PKG_MAINTAINER="Aditya Alok <alok@termux.dev>"
 TERMUX_PKG_VERSION="2.18.5"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://hackage.haskell.org/package/darcs-${TERMUX_PKG_VERSION}/darcs-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=e310692989e313191824f532a26c5eae712217444214266503d5eb5867f951ab
 TERMUX_PKG_AUTO_UPDATE=false

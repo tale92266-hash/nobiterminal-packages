@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A small scripting language, to be used with an exec chai
 TERMUX_PKG_LICENSE="ISC"
 TERMUX_PKG_MAINTAINER="Jules Amonith <examosa@fastmail.com>"
 TERMUX_PKG_VERSION=2.10.0.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://skarnet.org/software/execline/execline-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=561be2ce578604644e2263a889bbdf4736e7980401ee88556a7f9017c166dbab
 TERMUX_PKG_AUTO_UPDATE=true

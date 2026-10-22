@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Font system for multiple languages"
 TERMUX_PKG_LICENSE="LGPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.3.15"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/silnrsi/graphite/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=ad47ac120d0fbd80dbc93669afd1074fbbf68af8d1bedf936cf1a433c170f565
 TERMUX_PKG_AUTO_UPDATE=true

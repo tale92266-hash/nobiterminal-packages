@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Elixir is a dynamic, functional language designed for bu
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.20.4"
+TERMUX_PKG_REVISION=1
 _ERLANG_MAJOR_VERSION=$(. "$TERMUX_SCRIPTDIR"/packages/erlang/build.sh; echo "${TERMUX_PKG_VERSION%%.*}")
 TERMUX_PKG_SRCURL=https://github.com/elixir-lang/elixir/releases/download/v${TERMUX_PKG_VERSION}/elixir-otp-${_ERLANG_MAJOR_VERSION}.zip
 TERMUX_PKG_SHA256=7863c546cda13fecc949e562e326042451dacf8fd8698a36783cb71eeb223b46

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Offers parsing of ini files from the C level"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="4.3.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/ndevilla/iniparser/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=e9eb6be555c30fbef87e5a07333fcff6ef8c5bbbdc5710321bbad7ebae0612a7
 TERMUX_PKG_AUTO_UPDATE=true

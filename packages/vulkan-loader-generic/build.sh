@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Vulkan Loader"
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.4.365"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/KhronosGroup/Vulkan-Loader/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=df0358f57c1936e4abd262a7327ba1f80ffb424dbbdcbcb01bb9288511f31eef
 TERMUX_PKG_BUILD_DEPENDS="vulkan-headers (=${TERMUX_PKG_VERSION}), libx11, libxcb, libxrandr"

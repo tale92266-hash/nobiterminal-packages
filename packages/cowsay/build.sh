@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Program which generates ASCII pictures of a cow with a m
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.8.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/cowsay-org/cowsay/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=c15bc10712835d3a9bcda780dc9453362567bf48d1185905dc7ef2334d79aadd
 TERMUX_PKG_DEPENDS="perl"

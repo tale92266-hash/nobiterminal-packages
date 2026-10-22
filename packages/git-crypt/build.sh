@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Enables transparent encryption and decryption of files f
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=0.8.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://www.agwa.name/projects/git-crypt/downloads/git-crypt-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=540d424f87bed7994a4551a8c24b16e50d3248a5b7c3fd8ceffe94bfd4af0ad9
 TERMUX_PKG_DEPENDS="git, libc++, openssl"

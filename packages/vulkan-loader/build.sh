@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A metapackage that provides vulkan loader library"
 TERMUX_PKG_LICENSE="Public Domain"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=0.0.3
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_DEPENDS="vulkan-loader-generic | vulkan-loader-android"
 TERMUX_PKG_ANTI_BUILD_DEPENDS="vulkan-loader-android, vulkan-loader-generic"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Provides the specification and reference implementation 
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.5.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=85a291b9b8563fabef1aa3f6e912d744ce1d4b9fd5a8f978eda194cd51b15ae9
 TERMUX_PKG_DEPENDS="imath, libc++, zlib"

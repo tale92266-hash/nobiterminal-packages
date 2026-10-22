@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="S3-compatible object store for small self-hosted geo-dis
 TERMUX_PKG_LICENSE="AGPL-3.0-only"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.4.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://git.deuxfleurs.fr/Deuxfleurs/garage/archive/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=9149931f0e567a66cd96c33b6349e8f1900279ec6ae57c60bfd29d450104c553
 TERMUX_PKG_AUTO_UPDATE=true

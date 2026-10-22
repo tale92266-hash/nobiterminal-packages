@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Library for handling DWARF Debugging Information Format"
 TERMUX_PKG_LICENSE="BSD 2-Clause, BSD 3-Clause, GPL-2.0-only, LGPL-2.1-only, Public Domain"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.3.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_SRCURL="https://github.com/davea42/libdwarf-code/releases/download/v$TERMUX_PKG_VERSION/libdwarf-$TERMUX_PKG_VERSION.tar.xz"
 TERMUX_PKG_SHA256=bde13d1c49be6f2467326a6e0b3919247471455d16eefc3c6be26c7d4baca36a

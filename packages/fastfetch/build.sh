@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A maintained, feature-rich and performance oriented, neo
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.70.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=8aa01bd3faff2be1d94f231d76489ce6d9f781f51f6e93eafe82359d6d8669af
 TERMUX_PKG_BUILD_DEPENDS="chafa, dbus, freetype, glib, imagemagick, libandroid-wordexp-static, libelf, libxcb, libxrandr, mesa-dev, ocl-icd, opencl-headers, pulseaudio, vulkan-headers, vulkan-loader-generic, zlib"

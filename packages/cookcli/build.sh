@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A suite of tools to create shopping lists and maintain f
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.38.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/cooklang/cookcli/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=f644dc4b7e20d214bfb1eea07adb48a1480aa8e5d3ce67be0e2135a1a615f10a
 TERMUX_PKG_DEPENDS="openssl"

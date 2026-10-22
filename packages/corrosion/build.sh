@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Tool for integrating Rust into an existing CMake project
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.6.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/corrosion-rs/corrosion/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=e9e95b1ee2bad52681f347993fb1a5af5cce458c5ce8a2636c9e476e4babf8e3
 TERMUX_PKG_AUTO_UPDATE=true

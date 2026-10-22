@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Cross-platform Git credential storage for multiple hosti
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.0.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/git-ecosystem/git-credential-manager/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=fb51d6c47996c624e95b4ee08fddac8bc7da2b45233b085ce1bd534719017ece
 TERMUX_PKG_BUILD_IN_SRC=true

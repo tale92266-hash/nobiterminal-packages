@@ -5,6 +5,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 # libceres-solver hardcodes the exact Eigen version: always bump its revision
 # and rebuild it when bumping version.
 TERMUX_PKG_VERSION="3.4.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SHA256=b93c667d1b69265cdb4d9f30ec21f8facbbe8b307cf34c0b9942834c6d4fdbe2
 TERMUX_PKG_SRCURL=https://gitlab.com/libeigen/eigen/-/archive/${TERMUX_PKG_VERSION}/eigen-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_AUTO_UPDATE=false

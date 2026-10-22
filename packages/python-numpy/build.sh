@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 # Revbump revdeps after updating
 TERMUX_PKG_VERSION="2.5.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/numpy/numpy/releases/download/v$TERMUX_PKG_VERSION/numpy-$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a
 TERMUX_PKG_DEPENDS="libc++, libopenblas, python"

@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="Apache-2.0, MIT"
 TERMUX_PKG_LICENSE_FILE="../LICENSE, ../NOTICE"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.163.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/openai/codex/archive/refs/tags/rust-v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=5990ddb133184ce5e470c741d14f1eeb24a0b6cd36685ef78fb772cf83cab7fc
 TERMUX_PKG_DEPENDS="git, libc++, openssl"
