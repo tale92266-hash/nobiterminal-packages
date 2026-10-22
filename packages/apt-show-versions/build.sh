@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Lists available package versions with distribution"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.22.16"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://salsa.debian.org/debian/apt-show-versions/-/archive/$TERMUX_PKG_VERSION/apt-show-versions-$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=15308503b113209a551e495f9ca8cf002acf8d3e4ce31df58e1fcc4fa7713310
 TERMUX_PKG_DEPENDS="apt, libapt-pkg-perl, perl"

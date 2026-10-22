@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A command line filter program which draws ASCII art boxe
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.3.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/ascii-boxes/boxes/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=9318ef65f555ee3d893176349a4219f1f1260ce24d4100aeb667a546f61fc183
 TERMUX_PKG_DEPENDS="libunistring, ncurses, pcre2"

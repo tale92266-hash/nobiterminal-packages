@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Safely store secrets in Git/Mercurial/Subversion"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1:1.20220610
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/StackExchange/blackbox/archive/refs/tags/v${TERMUX_PKG_VERSION:2}.tar.gz
 TERMUX_PKG_SHA256=f1efcca6680159f244eb44fdb78e92b521760b875fa5a36e4c433b93ed0f87c1
 TERMUX_PKG_DEPENDS="gnupg"

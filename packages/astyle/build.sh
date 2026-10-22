@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Source code formatter for C-like programming languages"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.6.19"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://gitlab.com/saalen/astyle/-/archive/${TERMUX_PKG_VERSION}/astyle-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=7bb1fa11ce24fb94db139bb49e73fd05604b28cd7fb75c0dcbf6661e52d3e43e
 TERMUX_PKG_AUTO_UPDATE=true

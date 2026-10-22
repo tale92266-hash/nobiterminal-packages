@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Snowball compiler and stemming algorithms"
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.1.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/snowballstem/snowball/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=d8714aa91ed4333654708472a7a98b529c867a8f99b05c5e66febf4ca72c44c7
 TERMUX_PKG_AUTO_UPDATE=true

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A background code checker for Rust, designed for minimal
 TERMUX_PKG_LICENSE="AGPL-3.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="3.26.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/Canop/bacon/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=d86249d01175f83ce30c7d52d36ed3422855c7eef00907161e673d490955702d
 TERMUX_PKG_AUTO_UPDATE=true

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Small configuration file parser library for C"
 TERMUX_PKG_LICENSE="LGPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/martinh/libconfuse/releases/download/v$TERMUX_PKG_VERSION/confuse-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=d98a793f4cafc1b3c18e2509ba54f6cb9ac6291b181bcda152dc987cb78f43ec
 TERMUX_PKG_AUTO_UPDATE=true

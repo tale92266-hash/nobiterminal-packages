@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Append lines from stdin to a file if these lines do not 
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@flosnvjx"
 TERMUX_PKG_VERSION="0.2.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/ysf/anewer/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=2f4021c76084ff7a3a4b43f45ab806c3de4766283ba23b6993534c67b38b3d11
 TERMUX_PKG_BUILD_IN_SRC=true

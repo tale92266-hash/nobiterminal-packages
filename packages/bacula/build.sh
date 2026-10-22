@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Bacula backup software"
 TERMUX_PKG_LICENSE="AGPL-3.0-only"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="17.0.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://gitlab.bacula.org/bacula-community-edition/bacula-community/-/archive/Release-${TERMUX_PKG_VERSION}/bacula-community-Release-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=7577f2d9b2d0e4daa826473ad63d652095ca2d862e517b947cc2d38bada5726a
 TERMUX_PKG_DEPENDS="libc++, liblzo, openssl, zlib"

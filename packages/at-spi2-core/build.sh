@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Assistive Technology Service Provider Interface (AT-SPI)
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.62.1"
+TERMUX_PKG_REVISION=1
 # https://download.gnome.org/sources/at-spi2-core/${TERMUX_PKG_VERSION%.*}/at-spi2-core-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SRCURL=https://gitlab.gnome.org/GNOME/at-spi2-core/-/archive/${TERMUX_PKG_VERSION}/at-spi2-core-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=54ac3f44ce3b053b0778e0e6c15357f8c8ff293dad84e1a67d793e02d9f4f4ef

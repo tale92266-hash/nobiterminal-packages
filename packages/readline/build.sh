@@ -6,6 +6,7 @@ TERMUX_PKG_DEPENDS="libandroid-support, ncurses"
 TERMUX_PKG_BREAKS="bash (<< 5.0), readline-dev"
 TERMUX_PKG_REPLACES="readline-dev"
 TERMUX_PKG_VERSION=8.3.6
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://mirrors.kernel.org/gnu/readline/readline-${TERMUX_PKG_VERSION%.*}.tar.gz"
 TERMUX_PKG_SHA256=fe5383204467828cd495ee8d1d3c037a7eba1389c22bc6a041f627976f9061cc
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="--with-curses --enable-multibyte bash_cv_wcwidth_broken=no"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A metapackage that installs essential development tools"
 TERMUX_PKG_LICENSE="Public Domain"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=4.1
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_DEPENDS="clang, make, pkg-config"
 TERMUX_PKG_RECOMMENDS="autoconf, automake, bc, bison, cmake, flex, gperf, libtool, m4"
