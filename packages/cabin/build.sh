@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A package manager and build system for C/C++"
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.17.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/cabinpkg/cabin/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=226a228cadc3f5451492751db766d8e999de5f73c9e2a90226037741056b594c
 TERMUX_PKG_SUGGESTS="clang, make, pkg-config"
