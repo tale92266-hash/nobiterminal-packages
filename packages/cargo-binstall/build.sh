@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Tool to fetch and install precompiled musl-based static 
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.26.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=69c4f4399ce2a5747d216adfaf85b557aa4d1b91d9014b52885d0fad458dc06f
 TERMUX_PKG_DEPENDS="resolv-conf"
