@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Database of hardware identification and configuration da
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.412"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/vcrhonek/hwdata/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=f0c64cd7e31d70a5fb3a52e53ab50a61e74c0421a6381eaa45114eec3bde5fe7
 TERMUX_PKG_AUTO_UPDATE=true

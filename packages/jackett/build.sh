@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="API Support for your favorite torrent trackers"
 TERMUX_PKG_LICENSE="GPL-2.0-or-later"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.24.2875"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/Jackett/Jackett/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=2dd49fbafeb5521838154fcab9b399bab21b4608810bdbdd1c0dc072b826e44d
 TERMUX_PKG_DEPENDS="aspnetcore-runtime-9.0, dotnet-host, dotnet-runtime-9.0"

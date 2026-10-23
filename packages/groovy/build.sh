@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A powerful multi-faceted programming language for the JV
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="6.0.0"
+TERMUX_PKG_REVISION=1
 _JLINE_VERSION=4.4.5
 TERMUX_PKG_SRCURL=(https://downloads.apache.org/groovy/$TERMUX_PKG_VERSION/distribution/apache-groovy-binary-$TERMUX_PKG_VERSION.zip
                    https://github.com/jline/jline3/archive/refs/tags/${_JLINE_VERSION}.tar.gz)

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A lightweight library that provides an easy to use imple
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.36"
+TERMUX_PKG_REVISION=1
 # https://downloads.sourceforge.net/liblo/liblo-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SRCURL=https://github.com/radarsat1/liblo/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=31b48e5fc61e9fc953c906f5abce97200cde86fba630f755c9fd9d1d7724a6d2

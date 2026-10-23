@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A simple C++ library for terminal based user interface"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="7.0.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/ArthurSonzogni/FTXUI/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=e7c62ffe19009759821b4f0f8df7f2a6fb83784c3a9f1477d81f56d3ee723c88
 TERMUX_PKG_DEPENDS="libc++"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A logging framework for C++ patterned after Apache log4j
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.8.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/apache/logging-log4cxx/archive/refs/tags/rel/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=88cfc0ad2a118e3d466bcc85e652b7ec1e4a38f2d3b4f9e915247088d20cd4d7
 TERMUX_PKG_DEPENDS="apr, apr-util, libc++"

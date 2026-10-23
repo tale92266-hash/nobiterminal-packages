@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Full featured CLI system information tool"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.3.41-1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://codeberg.org/smxi/inxi/archive/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=2f3b16d099fde1b250a4bf6500b0c8e32b13d77469625c5cfc7a5d195a0c8585
 # NOTE: auto-update first checks whether the latest version matches this regex and then

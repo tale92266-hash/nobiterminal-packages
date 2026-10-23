@@ -7,7 +7,7 @@ TERMUX_PKG_VERSION=(
 	21.1.3
 	21.1.1
 )
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL=(
 	https://github.com/llvm/llvm-project/releases/download/llvmorg-${TERMUX_PKG_VERSION[0]}/llvm-project-${TERMUX_PKG_VERSION[0]}.src.tar.xz
 	https://github.com/KhronosGroup/SPIRV-LLVM-Translator/archive/refs/tags/v${TERMUX_PKG_VERSION[1]}.tar.gz

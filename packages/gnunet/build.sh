@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A framework for secure peer-to-peer networking"
 TERMUX_PKG_LICENSE="AGPL-3.0-or-later"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.29.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://mirrors.kernel.org/gnu/gnunet/gnunet-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=c27055165d347388dd487a07d7d131506cae2eeca5ee2d49cfcccada1ac29acc
 TERMUX_PKG_AUTO_UPDATE=true

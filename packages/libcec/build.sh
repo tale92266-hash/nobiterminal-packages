@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Provides support for Pulse-Eight's USB-CEC adapter and o
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="8.1.7"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/Pulse-Eight/libcec/archive/refs/tags/libcec-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=e4ac4d1dd3559cf83189d29ab40fc5537b5a2beceb82916ef173dac7e50dbfa0
 TERMUX_PKG_AUTO_UPDATE=true

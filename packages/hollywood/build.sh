@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Fill your console with Hollywood melodrama technobabble"
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.25"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/dustinkirkland/hollywood/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=6eb1509ad1a19a2b475ecc09c4199017cc3fafbfb7fa990fe5ec408367f83962
 TERMUX_PKG_AUTO_UPDATE=true

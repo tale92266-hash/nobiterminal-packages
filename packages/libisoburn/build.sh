@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Frontend for libraries libburn and libisofs"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.5.8.pl02"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://files.libburnia-project.org/releases/libisoburn-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=a977b03dc3686d9fdca600458b1578f9cac2b875609bd5ec21f5ada55f20ec50
 TERMUX_PKG_AUTO_UPDATE=true

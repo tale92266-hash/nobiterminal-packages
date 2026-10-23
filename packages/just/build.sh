@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A handy way to save and run project-specific commands"
 TERMUX_PKG_LICENSE="CC0-1.0"
 TERMUX_PKG_MAINTAINER="@flipee"
 TERMUX_PKG_VERSION="1.59.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/casey/just/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=20f876880851f1cc67fc7eb7589c7f7ccaa7612d827feac75797cf4a6ed729aa
 TERMUX_PKG_AUTO_UPDATE=true

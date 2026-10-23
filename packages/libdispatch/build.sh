@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="The libdispatch project, for concurrency on multicore ha
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@finagolfin"
 TERMUX_PKG_VERSION="1:6.4.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/swiftlang/swift-corelibs-libdispatch/archive/refs/tags/swift-${TERMUX_PKG_VERSION:2}-RELEASE.tar.gz
 TERMUX_PKG_SHA256=af15fcc3da4514def6454ed672b82daa9ac1d40cb1d08fb69a6611cb8fc104c6
 TERMUX_PKG_AUTO_UPDATE=false

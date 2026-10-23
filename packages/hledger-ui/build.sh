@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="hledger-ui - terminal interface (TUI) for hledger, a rob
 TERMUX_PKG_LICENSE="GPL-3.0-or-later"
 TERMUX_PKG_MAINTAINER="Andriy Mykhaylyk <erp.lsf@gmail.com>"
 TERMUX_PKG_VERSION="1.52.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://hackage.haskell.org/package/hledger-ui-${TERMUX_PKG_VERSION}/hledger-ui-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=3cb3a7ffb3370a9e66a9fb585aaa561dc83eae07fff1a3d4e837c69be7f4eb23
 TERMUX_PKG_BUILD_IN_SRC=true

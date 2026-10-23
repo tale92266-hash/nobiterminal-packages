@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="FTP/HTTP client and file transfer program"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=4.9.3
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://lftp.yar.ru/ftp/lftp-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=68116cc184ab660a78a4cef323491e89909e5643b59c7b5f0a14f7c2b20e0a29
 TERMUX_PKG_DEPENDS="libandroid-support, libc++, libexpat, libiconv, openssl, readline, libidn2, zlib"

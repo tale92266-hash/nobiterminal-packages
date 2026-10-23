@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 # Revbump revdeps after updating
 TERMUX_PKG_VERSION=0.14.1
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://codeberg.org/gumbo-parser/gumbo-parser/archive/$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=ba5d13b9b508ec693613b3b61518163aced38f8e885f7e28dc047348a4e61365
 TERMUX_PKG_AUTO_UPDATE=true

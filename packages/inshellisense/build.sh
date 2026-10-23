@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="IDE style command line auto complete"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.0.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/microsoft/inshellisense/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=a621921f9fbd8ebabe986399cd82ba5b595bf8d99949869aa608e847bdd943cc
 TERMUX_PKG_AUTO_UPDATE=true

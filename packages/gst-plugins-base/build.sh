@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="GStreamer base plug-ins"
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.28.8"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=ade70e3381fcbb024f1f20aa9ede9b5654aeed39d5bd70b1a98f53015e501117
 TERMUX_PKG_AUTO_UPDATE=true

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Keychain manager for ssh-agent and gpg-agent"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.0.7"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/danielrobbins/keychain/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=573002c4da81efa27908d197fec7121e5bb7b0018605aa34f345c1cbf7486843
 TERMUX_PKG_DEPENDS="python"

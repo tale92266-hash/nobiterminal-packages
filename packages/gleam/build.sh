@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A friendly language for building type-safe, scalable sys
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.19.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/gleam-lang/gleam/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=d8796325dad02802dccc91568a90a00e43247cad1d87ddbd9779a99d3c435d61
 TERMUX_PKG_DEPENDS="erlang"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Icarus Verilog compiler and simulation tool"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=13.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/steveicarus/iverilog/archive/refs/tags/v${TERMUX_PKG_VERSION/./_}.tar.gz
 TERMUX_PKG_SHA256=c897bbfa9848688982c6d5c30529fc29d68df0b9ff22ffa73bad89db73a7ce49
 TERMUX_PKG_AUTO_UPDATE=true

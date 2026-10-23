@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="library for REVerses ENGineered formats filters"
 TERMUX_PKG_LICENSE="LGPL-2.1, MPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.0.6"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://sourceforge.net/projects/libwpd/files/librevenge/librevenge-${TERMUX_PKG_VERSION}/librevenge-${TERMUX_PKG_VERSION}.tar.xz"
 TERMUX_PKG_SHA256=19eacf5ce55d7fe6a990a45142589cdf7da0c7b68701797f133482cb44f189fa
 TERMUX_PKG_DEPENDS="boost, zlib"

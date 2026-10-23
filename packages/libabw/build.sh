@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="a library that parses the file format of AbiWord documen
 TERMUX_PKG_LICENSE="MPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.1.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://dev-www.libreoffice.org/src/libabw/libabw-${TERMUX_PKG_VERSION}.tar.xz"
 TERMUX_PKG_SHA256=fa2685a3440da6e03a66a778480d93cb95f6064e4541e58e37397680760fd6a0
 TERMUX_PKG_DEPENDS="librevenge, libxml2, zlib"

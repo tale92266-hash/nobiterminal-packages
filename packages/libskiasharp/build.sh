@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="MIT, BSD 3-Clause"
 TERMUX_PKG_LICENSE_FILE="LICENSE.txt, externals/skia/LICENSE"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.119.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="git+https://github.com/mono/SkiaSharp"
 
 TERMUX_PKG_DEPENDS="libexpat, libglvnd, libpng, libwebp, freetype, zlib, libjpeg-turbo"

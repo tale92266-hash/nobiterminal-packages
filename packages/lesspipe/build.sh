@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="An input filter for the pager less"
 TERMUX_PKG_LICENSE="GPL-2.0-or-later"
 TERMUX_PKG_MAINTAINER="Joshua Kahn <tom@termux.dev>"
 TERMUX_PKG_VERSION="2.28"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/wofr06/lesspipe/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=b4f65d054afdc5964bada9a91d0c65f0b9896024fdfbade4089e92e674d91142
 TERMUX_PKG_DEPENDS="file, less"

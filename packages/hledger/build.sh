@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Robust, friendly, fast plain text accounting software. (
 TERMUX_PKG_LICENSE="GPL-3.0-or-later"
 TERMUX_PKG_MAINTAINER="Andriy Mykhaylyk <erp.lsf@gmail.com>"
 TERMUX_PKG_VERSION="1.52.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://hackage.haskell.org/package/hledger-${TERMUX_PKG_VERSION}/hledger-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=7bd1d3968ba28d33d81780e4ed07b1286f3b54fffec3bc4d44770b0934ae9158
 TERMUX_PKG_BUILD_IN_SRC=true

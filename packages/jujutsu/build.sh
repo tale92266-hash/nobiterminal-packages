@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A Git-compatible VCS that is both simple and powerful"
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.46.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/jj-vcs/jj/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=6489f79d59dc4f9c11230c51d309dc9c6ec392921772b738546966c494b6d72c
 TERMUX_PKG_BUILD_IN_SRC=true

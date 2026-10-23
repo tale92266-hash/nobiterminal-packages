@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="typesetting system that reads plain text mixed with form
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.24.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://mirrors.kernel.org/gnu/groff/groff-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=f9c1efd5bebbe37fc6e1063db7473ce8df1e3e0be4ff0f43ce04fce57e9c5dd9
 TERMUX_PKG_DEPENDS="libc++, mandoc, perl, uchardet"
