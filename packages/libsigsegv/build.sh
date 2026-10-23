@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="GNU libsigsegv is a library for handling page faults in 
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.15"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/libsigsegv/libsigsegv-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=036855660225cb3817a190fc00e6764ce7836051bacb48d35e26444b8c1729d9
 TERMUX_PKG_BREAKS="libsigsegv-dev"

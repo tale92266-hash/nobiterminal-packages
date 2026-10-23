@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="mdbook preprocessor to add graphviz support"
 TERMUX_PKG_LICENSE="MPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.3.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/dylanowen/mdbook-graphviz/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=606842d7afbcefb2517c8fbd6993eadd18b41c5379eaa7602f5fb668d5b92b5d
 TERMUX_PKG_AUTO_UPDATE=true

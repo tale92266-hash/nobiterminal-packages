@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Utility for managing and monitoring processes, programs,
 TERMUX_PKG_LICENSE="AGPL-3.0-or-later"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="6.0.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://mmonit.com/monit/dist/monit-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256="ddacd2a8120aeb2351e4486ee04a17782b5004aee99f2041d829bc4dcf2a5b3b"
 TERMUX_PKG_DEPENDS="libandroid-glob, libandroid-support, zlib, openssl, libcrypt"

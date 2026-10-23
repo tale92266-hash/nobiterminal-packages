@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Markdown utilities and library (fork of hoedown -> sundo
 TERMUX_PKG_LICENSE="ISC"
 TERMUX_PKG_MAINTAINER="@flosnvjx"
 TERMUX_PKG_VERSION="3.2.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://kristaps.bsd.lv/lowdown/snapshots/lowdown-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=664afc7c00aadbaf16cdcf7dc464e64b529f432eba9dffc950acb0d55d1be90d
 #TERMUX_PKG_BUILD_DEPENDS="libseccomp" ## it is merely a checkdepends for now and we dont run check during build

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A comprehensive set of C++ libraries that cover all mode
 TERMUX_PKG_LICENSE="BSL-1.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.15.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/pocoproject/poco/archive/refs/tags/poco-${TERMUX_PKG_VERSION}-release.tar.gz
 TERMUX_PKG_SHA256=4635007f593646b3db8754bbb31ded34cd533487519d4d4a45c788dbff3fe07f
 TERMUX_PKG_DEPENDS="libandroid-posix-semaphore, libc++, libexpat, libsqlite, openssl, pcre2, utf8proc, zlib"

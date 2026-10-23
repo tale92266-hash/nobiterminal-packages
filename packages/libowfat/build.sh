@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="GPL reimplementation of libdjb"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=0.34
+TERMUX_PKG_REVISION=1
 # Official CVS (cvs.fefe.de) is still reachable, but last commit was 2025-05.
 TERMUX_PKG_SRCURL=https://web.archive.org/web/20251124195235/http://www.fefe.de/libowfat/libowfat-$TERMUX_PKG_VERSION.tar.xz # original site is down
 TERMUX_PKG_SHA256=d4330d373ac9581b397bc24a22ad1f7f5d58a7fe36d9d239fe352ceffc5d304b

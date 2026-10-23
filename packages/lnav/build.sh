@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="An advanced log file viewer for the small-scale"
 TERMUX_PKG_LICENSE="BSD 2-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.14.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/tstack/lnav/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=9eddf42dbbbd59af423cd25f49e744969c95a3901f9aba07e48481d4c41c4c4e
 TERMUX_PKG_AUTO_UPDATE=true

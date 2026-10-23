@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Extended Module Player C Library that renders tracker an
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="4.7.4"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/libxmp/libxmp/releases/download/libxmp-${TERMUX_PKG_VERSION}/libxmp-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=a25583aa3b031c78ba0b4e83387fa596fb05742622e60f60d1540ee2af79b8d9
 TERMUX_PKG_AUTO_UPDATE=true

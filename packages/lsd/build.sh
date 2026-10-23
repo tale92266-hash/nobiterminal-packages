@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Next gen ls command"
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="Krishna Kanhaiya @kcubeterm"
 TERMUX_PKG_VERSION="1.2.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/lsd-rs/lsd/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=dae8d43087686a4a1de0584922608e9cbab00727d0f72e4aa487860a9cbfeefa
 TERMUX_PKG_DEPENDS="zlib"

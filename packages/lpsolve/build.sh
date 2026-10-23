@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="a Mixed Integer Linear Programming (MILP) solver"
 TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="5.5.2.14"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/lp-solve/lp_solve/releases/download/${TERMUX_PKG_VERSION}/lp_solve_${TERMUX_PKG_VERSION}_source.tar.gz"
 TERMUX_PKG_SHA256=a4bbdc881128bdbe920a38e134c9add5db47f9aa814a0a018ba940b0f3c278c3
 TERMUX_PKG_AUTO_UPDATE=true

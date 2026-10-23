@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Free & open source, high-performance, distributed memory
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.6.45"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://www.memcached.org/files/memcached-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=d362c64e6d8d5287153501eabf7c85b4a761432fbf53f5d7b085d0bb1653c1dd
 TERMUX_PKG_AUTO_UPDATE=true

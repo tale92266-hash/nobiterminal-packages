@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A preprocessor for mdBook, pre-rendering LaTex equations
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.10.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/lzanini/mdbook-katex/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=89ef136a9f5cbdd9d9c4b930f8136d0905cc8d8935b1d72a063e29b752999bc4
 TERMUX_PKG_UPDATE_VERSION_REGEXP="\d+\.\d+\.\d+(?!-)"

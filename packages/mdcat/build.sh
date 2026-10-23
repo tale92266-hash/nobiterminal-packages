@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Fancy cat for Markdown: syntax highlighting, images, mat
 TERMUX_PKG_LICENSE="MPL-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2.19.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/BIRSAx2/mdcat/archive/refs/tags/mdcat-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=3be97adf9feff078d95e64f176c957074d20e1111046eb7d7331aefee2c65b9d
 TERMUX_PKG_DEPENDS="libcurl"
