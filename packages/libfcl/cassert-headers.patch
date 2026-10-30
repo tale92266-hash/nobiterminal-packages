@@ -1,0 +1,120 @@
+--- a/include/fcl/broadphase/default_broadphase_callbacks.h
++++ b/include/fcl/broadphase/default_broadphase_callbacks.h
+@@ -38,6 +38,7 @@
+ #define FCL_BROADPHASE_DEFAULTBROADPHASECALLBACKS_H
+ 
+ #include "fcl/narrowphase/collision.h"
++#include <cassert>
+ #include "fcl/narrowphase/collision_request.h"
+ #include "fcl/narrowphase/collision_result.h"
+ #include "fcl/narrowphase/continuous_collision.h"
+--- a/include/fcl/geometry/octree/octree-inl.h
++++ b/include/fcl/geometry/octree/octree-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_OCTREE_INL_H
+ 
+ #include "fcl/geometry/octree/octree.h"
++#include <cassert>
+ 
+ #include "fcl/config.h"
+ 
+--- a/include/fcl/geometry/shape/convex-inl.h
++++ b/include/fcl/geometry/shape/convex-inl.h
+@@ -40,6 +40,7 @@
+ #define FCL_SHAPE_CONVEX_INL_H
+ 
+ #include <map>
++#include <cassert>
+ #include <set>
+ #include <utility>
+ 
+--- a/include/fcl/math/motion/taylor_model/taylor_model-inl.h
++++ b/include/fcl/math/motion/taylor_model/taylor_model-inl.h
+@@ -42,6 +42,7 @@
+ #define FCL_CCD_TAYLOR_MODEL_INL_H
+ 
+ #include "fcl/math/motion/taylor_model/taylor_model.h"
++#include <cassert>
+ 
+ namespace fcl
+ {
+--- a/include/fcl/math/rng-inl.h
++++ b/include/fcl/math/rng-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_MATH_RNG_INL_H
+ 
+ #include "fcl/math/rng.h"
++#include <cassert>
+ 
+ namespace fcl
+ {
+--- a/include/fcl/narrowphase/detail/convexity_based_algorithm/gjk_libccd-inl.h
++++ b/include/fcl/narrowphase/detail/convexity_based_algorithm/gjk_libccd-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_NARROWPHASE_DETAIL_GJKLIBCCD_INL_H
+ 
+ #include "fcl/narrowphase/detail/convexity_based_algorithm/gjk_libccd.h"
++#include <cassert>
+ #include "fcl/narrowphase/detail/failed_at_this_configuration.h"
+ 
+ #include <array>
+--- a/include/fcl/narrowphase/detail/primitive_shape_algorithm/capsule_capsule-inl.h
++++ b/include/fcl/narrowphase/detail/primitive_shape_algorithm/capsule_capsule-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_NARROWPHASE_DETAIL_CAPSULECAPSULE_INL_H
+ 
+ #include "fcl/narrowphase/detail/primitive_shape_algorithm/capsule_capsule.h"
++#include <cassert>
+ 
+ namespace fcl
+ {
+--- a/include/fcl/narrowphase/detail/primitive_shape_algorithm/plane-inl.h
++++ b/include/fcl/narrowphase/detail/primitive_shape_algorithm/plane-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_NARROWPHASE_DETAIL_PLANE_INL_H
+ 
+ #include "fcl/narrowphase/detail/primitive_shape_algorithm/plane.h"
++#include <cassert>
+ 
+ namespace fcl
+ {
+--- a/include/fcl/narrowphase/detail/primitive_shape_algorithm/sphere_box-inl.h
++++ b/include/fcl/narrowphase/detail/primitive_shape_algorithm/sphere_box-inl.h
+@@ -38,6 +38,7 @@
+ #define FCL_NARROWPHASE_DETAIL_SPHEREBOX_INL_H
+ 
+ #include "fcl/narrowphase/detail/primitive_shape_algorithm/sphere_box.h"
++#include <cassert>
+ 
+ namespace fcl {
+ namespace detail {
+--- a/include/fcl/narrowphase/detail/primitive_shape_algorithm/sphere_cylinder-inl.h
++++ b/include/fcl/narrowphase/detail/primitive_shape_algorithm/sphere_cylinder-inl.h
+@@ -38,6 +38,7 @@
+ #define FCL_NARROWPHASE_DETAIL_SPHERECYLINDER_INL_H
+ 
+ #include "fcl/narrowphase/detail/primitive_shape_algorithm/sphere_cylinder.h"
++#include <cassert>
+ 
+ namespace fcl {
+ namespace detail {
+--- a/include/fcl/narrowphase/detail/traversal/distance/mesh_conservative_advancement_traversal_node-inl.h
++++ b/include/fcl/narrowphase/detail/traversal/distance/mesh_conservative_advancement_traversal_node-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_TRAVERSAL_MESHCONSERVATIVEADVANCEMENTTRAVERSALNODE_INL_H
+ 
+ #include "fcl/narrowphase/detail/traversal/distance/mesh_conservative_advancement_traversal_node.h"
++#include <cassert>
+ 
+ #include "fcl/math/bv/RSS.h"
+ #include "fcl/math/motion/triangle_motion_bound_visitor.h"
+--- a/include/fcl/narrowphase/distance-inl.h
++++ b/include/fcl/narrowphase/distance-inl.h
+@@ -39,6 +39,7 @@
+ #define FCL_DISTANCE_INL_H
+ 
+ #include "fcl/narrowphase/distance.h"
++#include <cassert>
+ 
+ #include "fcl/narrowphase/collision.h"
+ 

@@ -1,0 +1,34 @@
+--- a/autogen.sh
++++ b/autogen.sh
+@@ -28,7 +28,7 @@
+ if ${LIBTOOLIZE} --version < /dev/null > /dev/null 2>&1 ; then
+ 	libtool_version=`${LIBTOOLIZE} --version | sed '/^$/d;s/([^)]*)//g;s/^[^0-9]*//;s/[- ].*//g;q'`
+ 	case $libtool_version in
+-	    1.4*|1.5*|2.2*|2.4*)
++	    1.4*|1.5*|2.2*|2.4*|2.5*|2.6*|2.7*)
+ 		have_libtool=true
+ 		;;
+ 	esac
+@@ -57,7 +57,7 @@
+ 	DIE=1
+ }
+ 
+-for automake_version in 1.9 1.10 1.11 1.12 1.13 1.14 1.15 1.16; do
++for automake_version in 1.9 1.10 1.11 1.12 1.13 1.14 1.15 1.16 1.17 1.18 1.19; do
+     if automake-${automake_version} --version < /dev/null > /dev/null 2>&1 ; then
+         AUTOMAKE=automake-${automake_version}
+         ACLOCAL=aclocal-${automake_version}
+@@ -66,6 +66,13 @@
+ done
+ 
+ if test -z "${AUTOMAKE}"; then
++	if automake --version < /dev/null > /dev/null 2>&1; then
++		AUTOMAKE=automake
++		ACLOCAL=aclocal
++	fi
++fi
++
++if test -z "${AUTOMAKE}"; then
+ 	echo
+ 	echo "You must have automake >= 1.9.x installed to compile ${PROJECT}."
+ 	echo "Install the appropriate package for your distribution,"
