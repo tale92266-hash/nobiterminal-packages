@@ -27,6 +27,15 @@ termux_step_pre_configure() {
 termux_step_post_configure() {
 	# A late -std=c++11 from a linked interface target overrides the
 	# -std=gnu++14 from CMAKE_CXX_STANDARD on the compile line (r01 proof).
-	# Rewrite it in the generated build files (forestdb rules.ninja precedent).
-	grep -rl -- '-std=c++11' build.ninja rules.ninja CMakeFiles/ 2>/dev/null | xargs -r sed -i 's/-std=c++11/-std=c++14/g'
+	# Rewrite it in the generated build files. v2's bare grep|xargs pipeline
+	# aborted the build (exit 2) when an operand was missing (generator/cwd
+	# mismatch), so v3 is guarded and can never fail the build.
+	local d="${TERMUX_PKG_BUILDDIR:-.}"
+	for f in "$d/build.ninja" "$d/rules.ninja"; do
+		[ -f "$f" ] && sed -i 's/-std=c++11/-std=c++14/g' "$f" || true
+	done
+	if [ -d "$d/CMakeFiles" ]; then
+		grep -rl -- '-std=c++11' "$d/CMakeFiles/" 2>/dev/null | xargs -r sed -i 's/-std=c++11/-std=c++14/g' || true
+	fi
+	return 0
 }
