@@ -18,5 +18,6 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 termux_step_pre_configure() {
 	./autogen.sh
 	CFLAGS+=" -Wno-error=strict-prototypes"
+	CFLAGS+=" -Wno-error=deprecated-declarations"
 	export LIBS="-llog"
 }

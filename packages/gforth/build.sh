@@ -36,6 +36,7 @@ termux_step_host_build() {
 termux_step_pre_configure() {
 	local _PREFIX_FOR_BUILD=$TERMUX_PKG_HOSTBUILD_DIR/prefix
 	PATH=$_PREFIX_FOR_BUILD/bin:$PATH
+	CFLAGS+=" -Wno-error=incompatible-pointer-types"
 }
 
 termux_step_post_configure() {
