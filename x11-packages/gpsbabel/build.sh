@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="GPS file conversion plus transfer to/from GPS units"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1.10.0
+TERMUX_PKG_REVISION=4
 TERMUX_PKG_SRCURL="https://github.com/gpsbabel/gpsbabel/archive/refs/tags/gpsbabel_${TERMUX_PKG_VERSION//./_}.tar.gz"
 TERMUX_PKG_SHA256=a89756fb988a54f5c5f371413845b9aecb66628a594cd83bd529c0f18382c968
 TERMUX_PKG_AUTO_UPDATE=true

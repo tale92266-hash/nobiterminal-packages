@@ -28,7 +28,7 @@ termux_step_host_build() {
 	mkdir -p $_PREFIX_FOR_BUILD
 
 	find $TERMUX_PKG_SRCDIR -mindepth 1 -maxdepth 1 -exec cp -a \{\} ./ \;
-	./configure --prefix=$_PREFIX_FOR_BUILD CC="gcc -m$TERMUX_ARCH_BITS"
+	./configure --prefix=$_PREFIX_FOR_BUILD CC="gcc -m$TERMUX_ARCH_BITS -Wno-incompatible-pointer-types"
 	make -j $TERMUX_PKG_MAKE_PROCESSES
 	make install
 }
@@ -36,7 +36,7 @@ termux_step_host_build() {
 termux_step_pre_configure() {
 	local _PREFIX_FOR_BUILD=$TERMUX_PKG_HOSTBUILD_DIR/prefix
 	PATH=$_PREFIX_FOR_BUILD/bin:$PATH
-	CFLAGS+=" -Wno-error=incompatible-pointer-types"
+	CFLAGS+=" -Wno-incompatible-pointer-types"
 }
 
 termux_step_post_configure() {
