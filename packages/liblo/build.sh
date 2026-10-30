@@ -13,5 +13,6 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 "
 
 termux_step_pre_configure() {
+	CFLAGS+=" -Wno-error=deprecated-declarations"
 	autoreconf -fiv
 }

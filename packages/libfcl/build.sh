@@ -17,3 +17,16 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -DFCL_WITH_OCTOMAP=ON
 -DCMAKE_CXX_STANDARD=14
 "
+
+termux_step_pre_configure() {
+	# fcl's CMakeLists sets PKG_CFLAGS="-std=c++11" (pkg-config export);
+	# consumers compiling against Eigen via fcl need c++14 too.
+	sed -i 's/-std=c++11/-std=c++14/' CMakeLists.txt
+}
+
+termux_step_post_configure() {
+	# A late -std=c++11 from a linked interface target overrides the
+	# -std=gnu++14 from CMAKE_CXX_STANDARD on the compile line (r01 proof).
+	# Rewrite it in the generated build files (forestdb rules.ninja precedent).
+	grep -rl -- '-std=c++11' build.ninja rules.ninja CMakeFiles/ 2>/dev/null | xargs -r sed -i 's/-std=c++11/-std=c++14/g'
+}
