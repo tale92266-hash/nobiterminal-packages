@@ -4,8 +4,8 @@ TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=2.0.0
 TERMUX_PKG_REVISION=9
-TERMUX_PKG_SRCURL=https://www.digital-scurf.org/files/libgfshare/libgfshare-$TERMUX_PKG_VERSION.tar.bz2
-TERMUX_PKG_SHA256=86f602860133c828356b7cf7b8c319ba9b27adf70a624fe32275ba1ed268331f
+TERMUX_PKG_SRCURL=https://deb.debian.org/debian/pool/main/libg/libgfshare/libgfshare_${TERMUX_PKG_VERSION}.orig.tar.gz
+TERMUX_PKG_SHA256=04442efb602a5fc8d79604845816811ab2d970e07e9aa5c8962b86b88e284838
 TERMUX_PKG_BREAKS="libgfshare-dev"
 TERMUX_PKG_REPLACES="libgfshare-dev"
 
