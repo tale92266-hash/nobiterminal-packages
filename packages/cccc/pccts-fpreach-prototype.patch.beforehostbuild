@@ -11,12 +11,21 @@
  extern struct _tree *(*fpTraverse[])(...);
 --- a/pccts/antlr/globals.c
 +++ b/pccts/antlr/globals.c
-@@ -221,7 +221,7 @@
+@@ -221,12 +221,12 @@
  	(struct _set (*)(...)) rAction
  };
  #else
 -set (*fpReach[NumNodeTypes+1])() = {
 +set (*fpReach[NumNodeTypes+1])(Node *, int, set *) = {
  	NULL,
- 	rJunc,
- 	rRuleRef,
+-	rJunc,
+-	rRuleRef,
+-	rToken,
+-	rAction
++	(set (*)(Node *, int, set *))rJunc,
++	(set (*)(Node *, int, set *))rRuleRef,
++	(set (*)(Node *, int, set *))rToken,
++	(set (*)(Node *, int, set *))rAction
+ };
+ #endif
+ 

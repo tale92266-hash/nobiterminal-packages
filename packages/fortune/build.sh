@@ -8,7 +8,10 @@ TERMUX_PKG_SRCURL=(
 	"https://web.archive.org/web/2024id_/http://dl.fefe.de/fortune-${TERMUX_PKG_VERSION}.tar.bz2"
 	"http://dl.fefe.de/fortune-${TERMUX_PKG_VERSION}.tar.bz2"
 )
-TERMUX_PKG_SHA256=cbb246a500366db39ce035632eb4954e09f1e03b28f2c4688864bfa8661b236a
+TERMUX_PKG_SHA256=(
+	cbb246a500366db39ce035632eb4954e09f1e03b28f2c4688864bfa8661b236a
+	cbb246a500366db39ce035632eb4954e09f1e03b28f2c4688864bfa8661b236a
+)
 
 termux_step_make_install() {
 	cd $TERMUX_PKG_SRCDIR
