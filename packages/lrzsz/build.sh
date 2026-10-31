@@ -15,5 +15,11 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 "
 
 termux_step_pre_configure() {
+	# 0.13.1 git tree lacks config.rpath (vendored m4/ + po/ only); autoreconf
+	# skips autopoint, so automake fails. Supply it from the autopoint install.
+	for _f in /usr/share/gettext/config.rpath /usr/local/share/gettext/config.rpath; do
+		if [ -f "$_f" ]; then cp "$_f" ./config.rpath; break; fi
+	done
+	[ -f ./config.rpath ] || { echo "config.rpath not found" >&2; return 1; }
 	autoreconf -vfi
 }
