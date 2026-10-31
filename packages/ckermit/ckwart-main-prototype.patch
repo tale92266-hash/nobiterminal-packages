@@ -1,0 +1,11 @@
+--- a/ckwart.c
++++ b/ckwart.c
+@@ -528,7 +528,7 @@
+ #endif /* CK_SCOV5 */
+ #endif /* MAINTYPE */
+ #endif /* STRATUS */
+-main(argc,argv) int argc; char **argv; {
++int main(int argc, char **argv) {
+     trans head;
+     int state,c;
+     FILE *infile,*outfile;

@@ -1,0 +1,22 @@
+--- a/pccts/antlr/proto.h
++++ b/pccts/antlr/proto.h
+@@ -42,7 +42,7 @@
+ #ifdef __cplusplus
+ extern struct _set (*fpReach[])(...);
+ #else
+-extern struct _set (*fpReach[])();
++extern struct _set (*fpReach[])(Node *, int, set *);
+ #endif
+ #ifdef __cplusplus
+ extern struct _tree *(*fpTraverse[])(...);
+--- a/pccts/antlr/globals.c
++++ b/pccts/antlr/globals.c
+@@ -221,7 +221,7 @@
+ 	(struct _set (*)(...)) rAction
+ };
+ #else
+-set (*fpReach[NumNodeTypes+1])() = {
++set (*fpReach[NumNodeTypes+1])(Node *, int, set *) = {
+ 	NULL,
+ 	rJunc,
+ 	rRuleRef,
