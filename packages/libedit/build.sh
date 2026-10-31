@@ -4,8 +4,10 @@ TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=20260512-3.1
 TERMUX_PKG_REVISION=1
-TERMUX_PKG_SRCURL=https://thrysoee.dk/editline/libedit-${TERMUX_PKG_VERSION}.tar.gz
-TERMUX_PKG_SHA256=432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0
+TERMUX_PKG_SRCURL=(https://snapshot.debian.org/archive/debian/20261001T000000Z/pool/main/libe/libedit/libedit_3.1-20260512.orig.tar.gz
+		https://thrysoee.dk/editline/libedit-${TERMUX_PKG_VERSION}.tar.gz)
+TERMUX_PKG_SHA256=(432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0
+		432d5e7ea8b0116dd39f2eca7bc11d0eed77faa6b77ea526ace89907c23ea4a0)
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_DEPENDS="ncurses"
 TERMUX_PKG_BREAKS="libedit-dev"

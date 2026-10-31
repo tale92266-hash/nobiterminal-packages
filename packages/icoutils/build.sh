@@ -4,10 +4,8 @@ TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=0.32.3
 TERMUX_PKG_REVISION=2
-TERMUX_PKG_SRCURL=(https://deb.debian.org/debian/pool/main/i/icoutils/icoutils_0.32.3.orig.tar.bz2
-		https://savannah.nongnu.org/download/icoutils/icoutils-$TERMUX_PKG_VERSION.tar.bz2)
-TERMUX_PKG_SHA256=(17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0
-		17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0)
+TERMUX_PKG_SRCURL=https://snapshot.debian.org/archive/debian/20250101T000000Z/pool/main/i/icoutils/icoutils_0.32.3.orig.tar.bz2
+TERMUX_PKG_SHA256=17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0
 TERMUX_PKG_DEPENDS="libpng, perl"
 
 TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
