@@ -1,6 +1,12 @@
 --- a/pccts/antlr/proto.h
 +++ b/pccts/antlr/proto.h
-@@ -42,7 +42,7 @@
+@@ -37,17 +37,17 @@
+ #ifdef __cplusplus
+ extern void (*fpPrint[])(...);
+ #else
+-extern void (*fpPrint[])();
++extern void (*fpPrint[])(void *);
+ #endif
  #ifdef __cplusplus
  extern struct _set (*fpReach[])(...);
  #else
@@ -9,8 +15,32 @@
  #endif
  #ifdef __cplusplus
  extern struct _tree *(*fpTraverse[])(...);
+ #else
+-extern struct _tree *(*fpTraverse[])();
++extern struct _tree *(*fpTraverse[])(void *, int, struct _set *);
+ #endif
+ #ifdef __cplusplus
+ extern void (**fpTrans)(...);
 --- a/pccts/antlr/globals.c
 +++ b/pccts/antlr/globals.c
+@@ -199,12 +199,12 @@
+ 	(struct _tree *(*)(...)) tAction
+ };
+ #else
+-Tree *(*fpTraverse[NumNodeTypes+1])() = {
++Tree *(*fpTraverse[NumNodeTypes+1])(void *, int, set *) = {
+ 	NULL,
+-	tJunc,
+-	tRuleRef,
+-	tToken,
+-	tAction
++	(Tree *(*)(void *, int, set *))tJunc,
++	(Tree *(*)(void *, int, set *))tRuleRef,
++	(Tree *(*)(void *, int, set *))tToken,
++	(Tree *(*)(void *, int, set *))tAction
+ };
+ #endif
+ 
 @@ -221,12 +221,12 @@
  	(struct _set (*)(...)) rAction
  };
@@ -26,6 +56,24 @@
 +	(set (*)(void *, int, set *))rRuleRef,
 +	(set (*)(void *, int, set *))rToken,
 +	(set (*)(void *, int, set *))rAction
+ };
+ #endif
+ 
+@@ -240,12 +240,12 @@
+ 	(void (*)(...)) pAction
+ };
+ #else
+-void (*fpPrint[NumNodeTypes+1])() = {
++void (*fpPrint[NumNodeTypes+1])(void *) = {
+ 	NULL,
+-	pJunc,
+-	pRuleRef,
+-	pToken,
+-	pAction
++	(void (*)(void *))pJunc,
++	(void (*)(void *))pRuleRef,
++	(void (*)(void *))pToken,
++	(void (*)(void *))pAction
  };
  #endif
  
