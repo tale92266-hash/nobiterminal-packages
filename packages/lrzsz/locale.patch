@@ -1,26 +1,26 @@
---- ./src/lrz.c.orig	2021-11-10 10:16:37.913534371 +0100
-+++ ./src/lrz.c	2021-11-10 10:18:10.292214167 +0100
-@@ -195,8 +195,9 @@
+--- ./src/lrz.c.orig
++++ ./src/lrz.c
+@@ -265,7 +265,9 @@
  
- 	lrzsz_check_stderr(&config);
- 	chkinvok(argv[0]);	/* if called as [-]rzCOMMAND set flag */
--
+ 	openlog(lrzsz_progname,LOG_PID,SYSLOG_FACILITY);
+ 
 +#ifndef __ANDROID__
  	setlocale (LC_ALL, "");
 +#endif
+         setlocale (LC_TIME, "C"); /* do not translate just the timestamp of a syslog message. uh. */
  	bindtextdomain (PACKAGE, LOCALEDIR);
  	textdomain (PACKAGE);
+
+--- ./src/lsz.c.orig
++++ ./src/lsz.c
+@@ -328,7 +328,9 @@
  
---- ./src/lsz.c.orig	2021-11-10 10:28:24.495598664 +0100
-+++ ./src/lsz.c	2021-11-10 10:28:44.152693678 +0100
-@@ -268,8 +269,9 @@
- 		Restricted=1;
- 	lrzsz_check_stderr(&config);
- 	chkinvok(argv[0]);
--
+ 	openlog(lrzsz_progname,LOG_PID,SYSLOG_FACILITY);
+ 
 +#ifndef __ANDROID__
  	setlocale (LC_ALL, "");
 +#endif
+ 	setlocale (LC_TIME, "C"); /* do not translate just the timestamp of a syslog message. uh. */
  	bindtextdomain (PACKAGE, LOCALEDIR);
  	textdomain (PACKAGE);
- 
+
