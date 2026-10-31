@@ -5,7 +5,7 @@
  extern struct _set (*fpReach[])(...);
  #else
 -extern struct _set (*fpReach[])();
-+extern struct _set (*fpReach[])(Node *, int, set *);
++extern struct _set (*fpReach[])(void *, int, struct _set *);
  #endif
  #ifdef __cplusplus
  extern struct _tree *(*fpTraverse[])(...);
@@ -16,16 +16,16 @@
  };
  #else
 -set (*fpReach[NumNodeTypes+1])() = {
-+set (*fpReach[NumNodeTypes+1])(Node *, int, set *) = {
++set (*fpReach[NumNodeTypes+1])(void *, int, set *) = {
  	NULL,
 -	rJunc,
 -	rRuleRef,
 -	rToken,
 -	rAction
-+	(set (*)(Node *, int, set *))rJunc,
-+	(set (*)(Node *, int, set *))rRuleRef,
-+	(set (*)(Node *, int, set *))rToken,
-+	(set (*)(Node *, int, set *))rAction
++	(set (*)(void *, int, set *))rJunc,
++	(set (*)(void *, int, set *))rRuleRef,
++	(set (*)(void *, int, set *))rToken,
++	(set (*)(void *, int, set *))rAction
  };
  #endif
  
