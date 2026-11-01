@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A statically typed programming language for scientific c
 TERMUX_PKG_LICENSE="MIT, Apache-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="1.24.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/sharkdp/numbat/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=03c84d1d30bce73f2fcbfa79c8df51e580293918fef9c35966b158eaae234a08
 TERMUX_PKG_BUILD_IN_SRC=true

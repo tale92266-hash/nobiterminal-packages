@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A vi-like spreadsheet calculator"
 TERMUX_PKG_LICENSE="Public Domain"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="7.16-1.2.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/n-t-roff/sc/archive/refs/tags/${TERMUX_PKG_VERSION/-/_}.tar.gz
 TERMUX_PKG_SHA256=c53285a6a6f30d37e0bab21563e3e2c5c01ee62da63efeb2219029cde1c01ace
 TERMUX_PKG_DEPENDS="ncurses"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="a cmake lsp based on tower-lsp and treesitter"
 TERMUX_PKG_LICENSE=MIT
 TERMUX_PKG_MAINTAINER=@termux
 TERMUX_PKG_VERSION="0.11.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/neocmakelsp/neocmakelsp/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=eb88d467816f67c22cfa864f3d3ecc4eb5cfbc1afa018fac61a23915f21745e6
 TERMUX_PKG_DEPENDS="cmake"

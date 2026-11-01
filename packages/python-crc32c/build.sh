@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="LGPL-2.1-or-later, BSD 3-Clause"
 TERMUX_PKG_LICENSE_FILE="LICENSE, LICENSE.google-crc32c, LICENSE.slice-by-8"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2.9.post0+really2.8"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/ICRAR/crc32c/archive/refs/tags/v${TERMUX_PKG_VERSION#*really}.tar.gz"
 TERMUX_PKG_SHA256=1495beffd55781e41f915132085eda6a169d849cb69e434fced89f85ccea1497
 TERMUX_PKG_DEPENDS="python, python-pip"

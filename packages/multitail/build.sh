@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Tool to monitor logfiles and command output in multiple 
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="7.1.6"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/folkertvanheusden/multitail/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=bf614c53c212238bccc86bb7ab220b6b11f3997c1900a5767df4b1a79885f421
 TERMUX_PKG_AUTO_UPDATE=true
