@@ -5,7 +5,7 @@ TERMUX_PKG_LICENSE_FILE="LICENSE"
 TERMUX_PKG_MAINTAINER="@termux"
 _COMMIT=fbf5ca360337452ca5ef7437d64c2efd7d891aec
 TERMUX_PKG_VERSION=1.0.9
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL=git+https://github.com/gjk-cat/cat-prep
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_GIT_BRANCH=master
@@ -26,6 +26,12 @@ termux_step_post_get_source() {
 
 termux_step_pre_configure() {
 	termux_setup_rust
+
+	# NDK-r30 sys/cdefs.h rejects the unversioned --target=aarch64-linux-android
+	# triple the cc crate (via backtrace-sys 0.1.33) passes; defining the API
+	# level satisfies the header guard.
+	CFLAGS+=" -D__ANDROID_API__=$TERMUX_PKG_API_LEVEL"
+	export CFLAGS
 
 	: "${CARGO_HOME:=$HOME/.cargo}"
 	export CARGO_HOME
