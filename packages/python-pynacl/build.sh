@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Python binding to the Networking and Cryptography (NaCl)
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="1.6.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/pyca/pynacl/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=fa489623e2a802c1c7e2127188e3072f326c229dbe23f99994b3547407a85958
 TERMUX_PKG_AUTO_UPDATE=true

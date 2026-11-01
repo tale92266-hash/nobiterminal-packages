@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Microsoft's command-line tool for managing Azure cloud r
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2.91.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/Azure/azure-cli/archive/refs/tags/azure-cli-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=7584dc798f43729463fbdbebedccbafd9fb77e4e3dc64f19f2d6945d4eee5fa8
 TERMUX_PKG_AUTO_UPDATE=true
