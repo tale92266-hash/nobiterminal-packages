@@ -5,7 +5,7 @@ TERMUX_PKG_LICENSE_FILE="LICENSE"
 TERMUX_PKG_MAINTAINER="@termux"
 _COMMIT=fbf5ca360337452ca5ef7437d64c2efd7d891aec
 TERMUX_PKG_VERSION=1.0.9
-TERMUX_PKG_REVISION=3
+TERMUX_PKG_REVISION=4
 TERMUX_PKG_SRCURL=git+https://github.com/gjk-cat/cat-prep
 TERMUX_PKG_AUTO_UPDATE=false
 TERMUX_PKG_GIT_BRANCH=master
@@ -27,14 +27,16 @@ termux_step_post_get_source() {
 termux_step_pre_configure() {
 	termux_setup_rust
 
-	# NDK-r30 sys/cdefs.h rejects the unversioned --target=aarch64-linux-android
-	# triple the cc crate (via backtrace-sys 0.1.33) passes; defining the API
-	# level satisfies the header guard. The cc crate prefers the
+	# NDK-r30 sys/cdefs.h:365 rejects the unversioned --target=aarch64-linux-android
+	# triple the cc crate (via backtrace-sys 0.1.33) passes. The guard keys on
+	# __ANDROID_MIN_SDK_VERSION__ (NOT __ANDROID_API__ — cfix43/cfix45 proved
+	# the API define alone does not satisfy it; the driver defines both macros
+	# only for versioned triples). Define both. The cc crate prefers the
 	# target-specific CFLAGS_aarch64_linux_android, which the toolchain setup
-	# snapshots BEFORE pre_configure runs, so the define must be appended to
+	# snapshots BEFORE pre_configure runs, so the defines must be appended to
 	# that variable too (plain CFLAGS alone never reaches the compile).
-	CFLAGS+=" -D__ANDROID_API__=$TERMUX_PKG_API_LEVEL"
-	CFLAGS_aarch64_linux_android+=" -D__ANDROID_API__=$TERMUX_PKG_API_LEVEL"
+	CFLAGS+=" -D__ANDROID_API__=$TERMUX_PKG_API_LEVEL -D__ANDROID_MIN_SDK_VERSION__=$TERMUX_PKG_API_LEVEL"
+	CFLAGS_aarch64_linux_android+=" -D__ANDROID_API__=$TERMUX_PKG_API_LEVEL -D__ANDROID_MIN_SDK_VERSION__=$TERMUX_PKG_API_LEVEL"
 	export CFLAGS CFLAGS_aarch64_linux_android
 
 	: "${CARGO_HOME:=$HOME/.cargo}"
