@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="Official command-line client for Proton Drive"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.9.0"
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL="https://github.com/ProtonDriveApps/sdk/archive/refs/tags/cli/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=90f901e9962d031d7ec91dc7acf37c49ac1cb4cb6f87745bd8b5889d2225bf83
 TERMUX_PKG_AUTO_UPDATE=true
@@ -11,6 +11,12 @@ TERMUX_PKG_UPDATE_VERSION_REGEXP="^cli/v\K[0-9]+\.[0-9]+\.[0-9]+$"
 TERMUX_PKG_DEPENDS="bun"
 TERMUX_PKG_EXCLUDED_ARCHES="arm, i686"
 TERMUX_PKG_BUILD_IN_SRC=true
+
+termux_step_post_get_source() {
+	# Upstream pins engines.bun to exactly 1.4.2; the fork ships a newer bun.
+	# Relax the pin to a floor so any bun >= 1.4.2 satisfies the build check.
+	sed -i 's/"bun": "1.4.2"/"bun": ">=1.4.2"/' cli/package.json
+}
 
 termux_step_make() {
 	termux_setup_bun
