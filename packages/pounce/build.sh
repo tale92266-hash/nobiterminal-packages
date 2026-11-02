@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A multi-client, TLS-only IRC bouncer"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.2"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://git.causal.agency/pounce/snapshot/pounce-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=5aeebf6dd73a61dbd44b94d417f0e4e5cd30c90561ba5550ac6ea61bab391ac4
 TERMUX_PKG_DEPENDS="libcrypt, libretls"

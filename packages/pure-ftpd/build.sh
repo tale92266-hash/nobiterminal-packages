@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Pure-FTPd is a free (BSD), secure, production-quality an
 TERMUX_PKG_LICENSE="ISC"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.0.54"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=dc9140420ec44f7829579591ff378aa6396b4604b9c6aeae847368e0f35bd7b2
 TERMUX_PKG_AUTO_UPDATE=true

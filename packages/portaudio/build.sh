@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="A portable audio I/O library"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=19.07.00
-TERMUX_PKG_REVISION=3
+TERMUX_PKG_REVISION=4
 # There are no tags or releases in the last few years, but there are a lot of new commits
 TERMUX_PKG_SRCURL="https://github.com/PortAudio/portaudio/archive/57aa393109ec996799d3a5846c9ecb0a65b64644.tar.gz"
 TERMUX_PKG_SHA256=935d3e8b93baa057bb4bf114520687c21e57129a1c1df014c41dd51fb35be3c2

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Library for approximate and phonetic matching of strings
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="1.3.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://codeberg.org/jpt/jellyfish/archive/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=272d63eeee45e657ddd807317cf83cc8a1eb5aa116191086f91a96c2b47d8ed5
 TERMUX_PKG_AUTO_UPDATE=true
