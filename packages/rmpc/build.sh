@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A configurable TUI MPD client with album art support"
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.11.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/mierak/rmpc/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=930019066228d18e9530a8c0d77f10e231ab5efbbbca73b331efcd6fbb47557d
 TERMUX_PKG_SUGGESTS="cava, ffmpeg, python-yt-dlp"

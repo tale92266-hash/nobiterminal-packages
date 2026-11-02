@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="RPM Package Manager"
 TERMUX_PKG_LICENSE="GPL-2.0, LGPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=6.1.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://ftp.osuosl.org/pub/rpm/releases/rpm-${TERMUX_PKG_VERSION%.*}.x/rpm-${TERMUX_PKG_VERSION}.tar.bz2"
 TERMUX_PKG_SHA256=f520810d27c74bf1c5d8b8885845c61e0c845f62d33e68b02e020633a8b62fe3
 TERMUX_PKG_DEPENDS="libandroid-glob, libandroid-spawn, libarchive, libbz2, libgcrypt, libiconv, liblzma, libmagic, libpopt, libsqlite, lua54, readline, zlib, zstd"

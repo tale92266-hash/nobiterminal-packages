@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Command line trashcan (recycle bin) interface"
 TERMUX_PKG_LICENSE="GPL-2.0-only"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.26.9.29"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/andreafrancia/trash-cli/archive/refs/tags/$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=33ec648238d291f1fd247bea9a260ab158528e184b3f83c9da10ea792bd4cdd2
 TERMUX_PKG_DEPENDS="python, python-psutil, python-pip"

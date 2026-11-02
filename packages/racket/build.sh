@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Full-spectrum programming language going beyond Lisp and
 TERMUX_PKG_LICENSE="GPL-3.0, LGPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="9.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://www.cs.utah.edu/plt/installers/${TERMUX_PKG_VERSION}/racket-minimal-${TERMUX_PKG_VERSION}-src-builtpkgs.tgz
 TERMUX_PKG_SHA256=3a01324d559a15e3f1f58b0c57a92bb344dce534e72e564e0d8b75e3b9c65295
 TERMUX_PKG_AUTO_UPDATE=true

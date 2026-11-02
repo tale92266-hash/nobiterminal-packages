@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Python packaging operations for use by python-mupdf and 
 TERMUX_PKG_LICENSE="AGPL-3.0-only"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="13"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/ArtifexSoftware/pipcl/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=0ab48438ed24860d874aa59e1d5e043e6c055a6e926ec424d75076f507e96770
 TERMUX_PKG_DEPENDS="python, python-pip"

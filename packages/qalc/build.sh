@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Powerful and easy to use command line calculator"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="5.13.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/Qalculate/libqalculate/releases/download/v$TERMUX_PKG_VERSION/libqalculate-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=cf8d3eaf3d85030115701e997b6585e69573e71add88e7758486c5d1b01d3cc3
 TERMUX_PKG_AUTO_UPDATE=true

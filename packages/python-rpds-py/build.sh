@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Python bindings to Rust's persistent data structures (rp
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2026.9.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/crate-py/rpds/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=0a8498c378d5ad8a8c70dffa15869efa486fa66080742a08ec8828668c6600e6
 TERMUX_PKG_AUTO_UPDATE=true

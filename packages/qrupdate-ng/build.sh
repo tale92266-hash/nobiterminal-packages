@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A Library for Fast Updating of QR and Cholesky Decomposi
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2:1.3.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/mpimd-csc/qrupdate-ng/archive/refs/tags/v${TERMUX_PKG_VERSION#*:}.tar.gz
 TERMUX_PKG_SHA256=60135331193b79aba13de71dfb025bb8cd2508e64dabdea3442925a84e6c55ea
 TERMUX_PKG_DEPENDS="libopenblas"

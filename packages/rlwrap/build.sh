@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Wrapper using readline to enable editing of keyboard inp
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.48"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/hanslub42/rlwrap/releases/download/v${TERMUX_PKG_VERSION}/rlwrap-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=cdf69074a216a8284574dddd145dd046c904ad5330a616e0eed53c9043f2ecbc
 TERMUX_PKG_DEPENDS="ncurses, readline"

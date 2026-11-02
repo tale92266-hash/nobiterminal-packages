@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Feature rich, multi-protocol messaging and streaming bro
 TERMUX_PKG_LICENSE="MPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="4.4.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/rabbitmq/rabbitmq-server/releases/download/v${TERMUX_PKG_VERSION}/rabbitmq-server-generic-unix-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=68c22d5dafa15c0911463aeca73c362d638cd6fb8e407ad39512959c6cc37f0f
 TERMUX_PKG_BUILD_IN_SRC=true

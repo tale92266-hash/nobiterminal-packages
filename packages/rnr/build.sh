@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Batch rename files and directories using regular express
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@flosnvjx"
 TERMUX_PKG_VERSION="0.5.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/ismaelgv/rnr/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=af35b5d5afab08b01cab345686d7e7d2d37a33d268fa8827a8001c3164ef4722
 TERMUX_PKG_BUILD_IN_SRC=true
