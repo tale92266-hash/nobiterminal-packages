@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="CPL-1.0"
 TERMUX_PKG_LICENSE_FILE="CPLv1.0.txt, NOTICE"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=5.2.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://downloads.sourceforge.net/project/oorexx/oorexx/${TERMUX_PKG_VERSION}/oorexx-${TERMUX_PKG_VERSION}-13156.tar.gz
 TERMUX_PKG_SHA256=0c1378ee212ffae7a192412e908849c0df38fa9c4009f6400e6a5d43a53fbd73
 TERMUX_PKG_DEPENDS="libandroid-posix-semaphore, libandroid-spawn, libandroid-wordexp, libc++, libcrypt, ncurses"

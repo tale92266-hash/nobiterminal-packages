@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Painless compression and decompression for your terminal
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.8.3"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/ouch-org/ouch/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=f695393cbbd89cf5a2095c32235e585a85432ccfb902c78d2a2e9787abbb439c
 TERMUX_PKG_AUTO_UPDATE=true

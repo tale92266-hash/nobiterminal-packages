@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="HTTP load generator with realtime tui, inspired by rakyl
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION=1.16.0
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/hatoo/oha/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=8d856e2850efb521c0a1f8efed530eeaeebea34d09c6edc19a42dc5e13b14287
 TERMUX_PKG_DEPENDS="resolv-conf"

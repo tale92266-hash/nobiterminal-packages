@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Versatile partition editor"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.8"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/parted/parted-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=a2b7811f47b0ddb1f7b1d0aa456f7c1270da70708ce231c2fe054c7199eafa63
 TERMUX_PKG_DEPENDS="libblkid, libiconv, libuuid, ncurses, readline"

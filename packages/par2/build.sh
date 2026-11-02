@@ -4,6 +4,7 @@ TERMUX_PKG_DESCRIPTION="par2cmdline is a PAR 2.0 compatible file verification an
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="Oliver Schmidhauser @Neo-Oli"
 TERMUX_PKG_VERSION="1.4.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/Parchive/par2cmdline/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=c608d046977ad334d5fb230a63db336cb62682fa01c980127fce2e5283dcc629
 TERMUX_PKG_AUTO_UPDATE=true

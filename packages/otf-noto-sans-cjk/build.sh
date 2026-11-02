@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="OFL-1.1"
 TERMUX_PKG_LICENSE_FILE="LICENSE"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.004"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=(
 	https://raw.githubusercontent.com/notofonts/noto-cjk/Sans${TERMUX_PKG_VERSION}/Sans/OTC/NotoSansCJK-Regular.ttc
 	https://raw.githubusercontent.com/notofonts/noto-cjk/Sans${TERMUX_PKG_VERSION}/Sans/OTC/NotoSansCJK-Bold.ttc

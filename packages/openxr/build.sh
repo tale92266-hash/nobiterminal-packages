@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Open standard that provides a common set of APIs for dev
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.1.65"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-$TERMUX_PKG_VERSION/OpenXR-SDK-Source-release-$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=24594e93e43c93f734c55f6f857ed3950583f087636c36e1548ca7759bdbf329
 # configuration error if jsoncpp and jsoncpp-static are not both installed simultaneously

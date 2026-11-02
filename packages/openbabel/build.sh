@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Open Babel is a chemical toolbox designed to speak the m
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.2.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/openbabel/openbabel/archive/refs/tags/openbabel-${TERMUX_PKG_VERSION//./-}.tar.gz"
 TERMUX_PKG_SHA256=e140c25480fe1678d00b9a52462368fa4e7805fba67b12ee496784437f3e239e
 TERMUX_PKG_AUTO_UPDATE=true

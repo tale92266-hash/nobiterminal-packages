@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Forward-port of the original Colossal Cave Adventure fro
 TERMUX_PKG_LICENSE="BSD 2-Clause"
 TERMUX_PKG_MAINTAINER="Henrik Grimler @Grimler91"
 TERMUX_PKG_VERSION="1.22"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://gitlab.com/esr/open-adventure/-/archive/${TERMUX_PKG_VERSION}/open-adventure-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=a40127c8296a5872ff69b53ecf4028797999f87cbc0735b9c379cecd1cb446f7
 TERMUX_PKG_AUTO_UPDATE=true

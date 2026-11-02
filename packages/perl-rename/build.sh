@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="renames multiple files using perl expressions."
 TERMUX_PKG_LICENSE="Artistic-License-2.0, GPL-2.0" # https://metacpan.org/pod/Software::License::Perl_5
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1.14
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://cpan.metacpan.org/authors/id/P/PE/PEDERST/rename-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=4d19e5cb8fb09fe35e6df69ae07132cf621b0b2a82f54149091bce630642adbd
 TERMUX_PKG_DEPENDS="perl"

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Open source Message Passing Interface implementation"
 TERMUX_PKG_LICENSE="BSD 3-Clause"
 TERMUX_PKG_MAINTAINER="Henrik Grimler @Grimler91"
 TERMUX_PKG_VERSION=5.0.11
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://download.open-mpi.org/release/open-mpi/v${TERMUX_PKG_VERSION:0:3}/openmpi-$TERMUX_PKG_VERSION.tar.gz
 TERMUX_PKG_SHA256=77a402c64c22f1bd8a504f76fd411df23e36e168eedce6c9bcd12c8c0cd0619a
 TERMUX_PKG_DEPENDS="libandroid-posix-semaphore, libandroid-shmem, libevent, zlib"
