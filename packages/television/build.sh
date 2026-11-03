@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A very fast, portable and hackable fuzzy finder"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.15.9"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/alexpasmantier/television/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=5f46cbe7b14e1d6e3958f436b1d6ed8af86e9914d7d2aee5a9379e8e1772072d
 TERMUX_PKG_BUILD_IN_SRC=true

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A minimal, blazing fast, and extremely customizable prom
 TERMUX_PKG_LICENSE="ISC"
 TERMUX_PKG_MAINTAINER="Joshua Kahn <tom@termux.dev>"
 TERMUX_PKG_VERSION="1.27.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/starship/starship/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=f1887ffa88a7ba437d2932501794047e28d03387996f7d1c364631c053cffc44
 TERMUX_PKG_AUTO_UPDATE=true
