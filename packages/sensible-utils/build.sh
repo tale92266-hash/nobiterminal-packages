@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Small utilities used by programs to sensibly select and 
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.0.26"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://ftp.debian.org/debian/pool/main/s/sensible-utils/sensible-utils_${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=46adb7a12d32a9323b29711bc6470628fcc0f94f1748fe5bae4729df50531f68
 TERMUX_PKG_AUTO_UPDATE=true

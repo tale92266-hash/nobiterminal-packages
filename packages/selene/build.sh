@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A blazing-fast modern Lua linter written in Rust"
 TERMUX_PKG_LICENSE="MPL-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="0.32.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/Kampfkarren/selene/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=cd208a4b3bae38decc9c7bb797c19615caaecf67606b3e593ca60b64d3416cd5
 TERMUX_PKG_UPDATE_TAG_TYPE="newest-tag"
