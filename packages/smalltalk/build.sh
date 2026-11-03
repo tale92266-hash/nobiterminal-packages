@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="A free implementation of the Smalltalk-80 language"
 TERMUX_PKG_LICENSE="GPL-2.0, LGPL-2.1"
 TERMUX_PKG_MAINTAINER="Henrik Grimler @Grimler91"
 TERMUX_PKG_VERSION="3.2.91"
-TERMUX_PKG_REVISION=18
+TERMUX_PKG_REVISION=19
 TERMUX_PKG_SRCURL="ftp://alpha.gnu.org/gnu/smalltalk/smalltalk-$TERMUX_PKG_VERSION.tar.gz"
 TERMUX_PKG_SHA256=13a7480553c182dbb8092bd4f215781b9ec871758d1db7045c2d8587e4d1bef9
 TERMUX_PKG_DEPENDS="gdbm, glib, libandroid-execinfo, libandroid-support, libexpat, libffi, libgmp, libiconv, libltdl, libsigsegv, libsqlite, readline, zlib"
@@ -34,6 +34,9 @@ termux_step_host_build() {
 	popd
 
 	# Building bloxtk on archlinux fails with this error: https://bugs.gentoo.org/582936
+	# Host gcc defaults to C23: same K&R failure as the target build
+	# (regex.c old-style definitions parsed as zero-arg prototypes).
+	export CFLAGS+=" -std=gnu99"
 	"$TERMUX_PKG_SRCDIR"/configure --disable-gtk --disable-bloxtk
 	make
 }
