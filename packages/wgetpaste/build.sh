@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="wgetpaste is a shell script that allows its users to upl
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2.34"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/zlin/wgetpaste/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=097b77440460365976f8f66e99b0150c8a9527307f6ecade1db6b60a0bfad781
 TERMUX_PKG_AUTO_UPDATE=true

@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A fast static site generator in a single binary with eve
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.23.6"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/getzola/zola/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=193db594222cd9c1097387ce17272cbbe672c3a894c263f6f4c436a7fedb379f
 TERMUX_PKG_AUTO_UPDATE=true
