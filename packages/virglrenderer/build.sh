@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A virtual 3D GPU for use inside qemu virtual machines"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="1.3.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/virglrenderer-${TERMUX_PKG_VERSION}/virglrenderer-virglrenderer-${TERMUX_PKG_VERSION}.tar.gz
 TERMUX_PKG_SHA256=56170f8caa1bb642a2624b649e3bcca095ec2834814e5c308efc8a85a709e4ce
 TERMUX_PKG_AUTO_UPDATE=true

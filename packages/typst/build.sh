@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A new markup-based typesetting system that is powerful a
 TERMUX_PKG_LICENSE="Apache-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="0.15.1"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/typst/typst/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=c07909e01a2a6941e52c9b616e48c209c755eed416d62bcf5583c37a4aca01a3
 TERMUX_PKG_DEPENDS="openssl"

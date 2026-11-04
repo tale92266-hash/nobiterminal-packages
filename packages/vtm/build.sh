@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Terminal multiplexer with TUI window manager and multi-p
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="2026.10.12"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/directvt/vtm/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=48ef3b8cbd5a9479049791378787bd31ab28621c842f8997391240109d40e72d
 TERMUX_PKG_DEPENDS="freetype, harfbuzz, libc++, lua54, lunasvg"

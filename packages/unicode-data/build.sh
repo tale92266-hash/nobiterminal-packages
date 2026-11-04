@@ -4,6 +4,7 @@ TERMUX_PKG_LICENSE="custom"
 TERMUX_PKG_LICENSE_FILE="copyright.html"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="18.0.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=(
 	https://unicode.org/Public/${TERMUX_PKG_VERSION}/ucd/UCD.zip
 	https://unicode.org/Public/${TERMUX_PKG_VERSION}/ucd/Unihan.zip
