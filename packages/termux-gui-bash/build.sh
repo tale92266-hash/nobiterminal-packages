@@ -16,7 +16,7 @@ termux_step_post_get_source() {
 	# and CMake's Android module then compiles with the unversioned triple
 	# aarch64-none-linux-android, which NDK r30 cdefs.h rejects. Bake the
 	# versioned triple into the project's own CFLAGS.
-	sed -i "s|set(CMAKE_C_FLAGS "-Os")|set(CMAKE_C_FLAGS "-Os --target=${TERMUX_HOST_PLATFORM}${TERMUX_PKG_API_LEVEL}")|" \
-		"$TERMUX_PKG_SRCDIR/CMakeLists.txt"
-	grep -q -- "--target=${TERMUX_HOST_PLATFORM}${TERMUX_PKG_API_LEVEL}" "$TERMUX_PKG_SRCDIR/CMakeLists.txt"
+	local _triple="${TERMUX_HOST_PLATFORM}${TERMUX_PKG_API_LEVEL}"
+	sed -i 's/-Os"/-Os --target='"${_triple}"'"/' "$TERMUX_PKG_SRCDIR/CMakeLists.txt"
+	grep -q -- "--target=${_triple}" "$TERMUX_PKG_SRCDIR/CMakeLists.txt"
 }
