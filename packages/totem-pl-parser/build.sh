@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="Simple GObject-based library to parse and save a host of
 TERMUX_PKG_LICENSE="LGPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION="3.26.7"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://download.gnome.org/sources/totem-pl-parser/${TERMUX_PKG_VERSION%.*}/totem-pl-parser-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=60d517c1acabe54ae337f64451264fc76730696eaae26b5480fb37166689b5f3
 TERMUX_PKG_AUTO_UPDATE=true
