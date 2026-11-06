@@ -180,6 +180,7 @@ termux_step_make_install() {
 	rm -rf $TERMUX_PREFIX/lib/swift{,_static}/{Block,os}
 	rm $TERMUX_PREFIX/lib/swift{,_static}/dispatch/*.h
 	rm $TERMUX_PREFIX/lib/swift/android/lib{dispatch,BlocksRuntime}.so
+	mkdir -p "$TERMUX_PREFIX/opt/ndk-multilib/$TERMUX_ARCH-linux-android/lib"
 	mv $TERMUX_PREFIX/lib/swift/android/lib[^_]*.so $TERMUX_PREFIX/opt/ndk-multilib/$TERMUX_ARCH-linux-android*/lib
 	mv $TERMUX_PREFIX/lib/swift/android/lib_{Testing,Foundation}*.so $TERMUX_PREFIX/opt/ndk-multilib/$TERMUX_ARCH-linux-android*/lib
 	mv $TERMUX_PREFIX/lib/swift/android/lib*.a $TERMUX_PREFIX/lib/swift/android/$SWIFT_ARCH
