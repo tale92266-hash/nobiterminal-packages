@@ -4,7 +4,7 @@ TERMUX_PKG_LICENSE="PythonPL"
 TERMUX_PKG_MAINTAINER="@termux"
 _MAJOR_VERSION=2.7
 TERMUX_PKG_VERSION=${_MAJOR_VERSION}.18
-TERMUX_PKG_REVISION=16
+TERMUX_PKG_REVISION=17
 TERMUX_PKG_SRCURL=https://www.python.org/ftp/python/${TERMUX_PKG_VERSION}/Python-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43
 TERMUX_PKG_DEPENDS="gdbm, libandroid-posix-semaphore, libandroid-support, libbz2, libcrypt, libffi, libsqlite, ncurses, ncurses-ui-libs, openssl, readline, zlib"
@@ -71,6 +71,12 @@ termux_step_pre_configure() {
 	if [ $TERMUX_ARCH = x86_64 ]; then LDFLAGS+=64; fi
 
 	LDFLAGS+=" -landroid-posix-semaphore"
+
+	# cfix72: NDK r30 clang defaults to -std=c23, where bool/false/
+	# true are keywords; Python 2.7 Include/asdl.h does
+	# `typedef enum {false, true} bool;` (W18R r03 failure).
+	# Force C11 so the enum compiles as before.
+	CFLAGS+=" -std=gnu11"
 }
 
 termux_step_post_make_install() {

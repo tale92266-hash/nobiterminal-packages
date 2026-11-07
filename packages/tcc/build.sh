@@ -5,7 +5,7 @@ TERMUX_PKG_MAINTAINER="@termux"
 _COMMIT=6a24b762d3e1086dcffd002c68cb5ca3a33a5c6d
 _COMMIT_DATE=20230415
 TERMUX_PKG_VERSION=1:0.9.27-p${_COMMIT_DATE}
-TERMUX_PKG_REVISION=4
+TERMUX_PKG_REVISION=5
 TERMUX_PKG_SRCURL=git+https://repo.or.cz/tinycc.git
 TERMUX_PKG_SHA256=467792219d0172f594ec71bcd6bac9dbb25308cbe9f708bab455b717148b491b
 _UPSTREAM_VERSION="${TERMUX_PKG_VERSION#*:}"
@@ -31,16 +31,17 @@ termux_step_post_get_source() {
 		termux_error_exit "Checksum mismatch for source files."
 	fi
 
-	# cfix69: NDK r30 sys/cdefs.h rejects unversioned triples. tcc
-	# compiles libtcc1.a with itself; its built-in default triple
-	# aarch64-linux-android defines __ANDROID__ but no __ANDROID_API__
-	# (W18 x05: #error Unversioned target triples are not supported!).
-	# Predefine __ANDROID_API__ in tccpp.c target_os_defs, as clang
-	# does for versioned triples - fixes the lib build AND the
-	# installed tcc compiling user code against NDK r30 headers.
-	sed -i "s|    \"__ANDROID__.*|&\n    \"__ANDROID_API__ ${TERMUX_PKG_API_LEVEL}\\\\0\"|" \
+	# cfix69b: NDK r30 sys/cdefs.h:365 rejects unversioned triples.
+	# cfix69 defined only __ANDROID_API__ - PROVEN INSUFFICIENT (W18R
+	# r05 failed identically; same lesson as cfix59 v1 for termplay
+	# in W13R). The cdefs.h check tests __ANDROID_MIN_SDK_VERSION__
+	# (see x11-packages/chromium sysroot diff), the macro clang
+	# defines for versioned triples. Predefine BOTH macros in
+	# tccpp.c target_os_defs - fixes the lib build AND the installed
+	# tcc compiling user code against NDK r30 headers.
+	sed -i "s|    \"__ANDROID__.*|&\n    \"__ANDROID_API__ ${TERMUX_PKG_API_LEVEL}\\\\0\"\n    \"__ANDROID_MIN_SDK_VERSION__ ${TERMUX_PKG_API_LEVEL}\\\\0\"|" \
 		"$TERMUX_PKG_SRCDIR/tccpp.c"
-	grep -q "__ANDROID_API__ ${TERMUX_PKG_API_LEVEL}" "$TERMUX_PKG_SRCDIR/tccpp.c"
+	grep -q "__ANDROID_MIN_SDK_VERSION__ ${TERMUX_PKG_API_LEVEL}" "$TERMUX_PKG_SRCDIR/tccpp.c"
 }
 
 termux_step_pre_configure() {
