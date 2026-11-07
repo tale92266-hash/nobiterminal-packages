@@ -3,6 +3,7 @@ TERMUX_PKG_DESCRIPTION="A Computer Algebra System"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=()
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_VERSION+=(5.50.0)
 TERMUX_PKG_VERSION+=(26.5.5) # ECL version
 TERMUX_PKG_SRCURL=(https://downloads.sourceforge.net/sourceforge/maxima/Maxima-source/$TERMUX_PKG_VERSION-source/maxima-$TERMUX_PKG_VERSION.tar.gz
