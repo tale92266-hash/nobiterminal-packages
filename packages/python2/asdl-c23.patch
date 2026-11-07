@@ -1,0 +1,10 @@
+--- a/Include/asdl.h
++++ b/Include/asdl.h
+@@ -8,3 +8,7 @@
+ #ifndef __cplusplus
++#if !defined(__STDC_VERSION__) || __STDC_VERSION__ < 202311L
+ typedef enum {false, true} bool;
++#else
++/* C23: bool, false and true are keywords; no typedef needed. */
++#endif
+ #endif

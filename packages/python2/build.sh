@@ -4,7 +4,7 @@ TERMUX_PKG_LICENSE="PythonPL"
 TERMUX_PKG_MAINTAINER="@termux"
 _MAJOR_VERSION=2.7
 TERMUX_PKG_VERSION=${_MAJOR_VERSION}.18
-TERMUX_PKG_REVISION=17
+TERMUX_PKG_REVISION=18
 TERMUX_PKG_SRCURL=https://www.python.org/ftp/python/${TERMUX_PKG_VERSION}/Python-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43
 TERMUX_PKG_DEPENDS="gdbm, libandroid-posix-semaphore, libandroid-support, libbz2, libcrypt, libffi, libsqlite, ncurses, ncurses-ui-libs, openssl, readline, zlib"
@@ -42,7 +42,11 @@ lib/python${_MAJOR_VERSION}/*/tests
 
 termux_step_host_build() {
 	# We need a host-built Parser/pgen binary, copied into cross-compile build in termux_step_post_configure() below
-	$TERMUX_PKG_SRCDIR/configure
+	# cfix72b: host gcc defaults to C23 (asdl.h bool-enum fails;
+	# the W18R/W18R2 r03 failures were BOTH in this host build,
+	# which runs before pre_configure, so cfix72 could not help).
+	# Force gnu11 for the host configure (see asdl-c23.patch).
+	CFLAGS="-std=gnu11" $TERMUX_PKG_SRCDIR/configure
 	make Parser/pgen
 	# We need a python$_MAJOR_VERSION binary to be picked up by configure check:
 	make
