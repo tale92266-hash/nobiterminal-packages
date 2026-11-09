@@ -22,6 +22,14 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 --with-ssl-key-dir=$TERMUX_PREFIX/etc/ssl/private
 "
 TERMUX_PKG_BUILD_IN_SRC=true
+# cfix75c (2026-11-09): the bundled c-client build is parallel-unsafe —
+# imap/Makefile `build: OSTYPE rebuild rebuildclean bundled` runs all four
+# prerequisites concurrently under -j, so `rebuild` checks the OSTYPE file
+# before OSTYPE creates it ("Already built for --") and the osdepbas.c /
+# osdeplog.c targets are requested before the setup step symlinks them.
+# Serial make restores the intended order (OSTYPE touches `rebuild`, which
+# makes that target a no-op). Same pattern as at/calc/cccc/elinks/flang.
+TERMUX_PKG_MAKE_PROCESSES=1
 
 termux_pkg_auto_update() {
 	local latest_version
