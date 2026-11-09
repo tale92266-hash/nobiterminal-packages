@@ -51,21 +51,17 @@ termux_step_pre_configure() {
 
 	touch $TERMUX_PKG_SRCDIR/imap/lnxok
 
-	# cfix75 (2026-11-09): the tarball ships stale gettext-0.16.1 macros
-	# (m4/gettext.m4 serial 59, 2006-era) that loop aclocal 1.18
-	# ("aclocal: error: too many loops" at the system's m4/intlmacosx.m4,
-	# W22R r01 run 42588270151). Delete them so autoreconf regenerates
-	# the gettext set from the system's consistent modern macros.
-	# Keep the custom macros configure.ac needs (AX_PROG_CC_FOR_BUILD,
-	# ACX_PTHREAD) and the libtool set (aclocal re-installs those anyway).
-	rm -f m4/codeset.m4 m4/gettext.m4 m4/glibc2.m4 m4/glibc21.m4 m4/iconv.m4 \
-	      m4/intdiv0.m4 m4/intl.m4 m4/intldir.m4 m4/intmax.m4 m4/inttypes-pri.m4 \
-	      m4/inttypes.m4 m4/inttypes_h.m4 m4/isc-posix.m4 m4/lcmessage.m4 \
-	      m4/lib-ld.m4 m4/lib-link.m4 m4/lib-prefix.m4 m4/lock.m4 \
-	      m4/longdouble.m4 m4/longlong.m4 m4/nls.m4 m4/po.m4 \
-	      m4/printf-posix.m4 m4/progtest.m4 m4/size_max.m4 m4/stdint_h.m4 \
-	      m4/uintmax_t.m4 m4/ulonglong.m4 m4/visibility.m4 m4/wchar_t.m4 \
-	      m4/wint_t.m4 m4/xsize.m4
+	# cfix75b (2026-11-09): cfix75's rm of the stale gettext macros was
+	# USELESS (autopoint re-copies the identical 0.16.1 files; W22R2 r01
+	# looped identically). The real cause is aclocal-1.18's TWO-WAVE
+	# --install: pass 1 overwrites m4/gettext.m4 with the modern one,
+	# pass 2 then needs gt_INTL_MACOSX (new in gettext 0.23) and installs
+	# m4/intlmacosx.m4, and the third pass exceeds aclocal's hard limit
+	# of 2 ("too many loops"). Pre-copy intlmacosx.m4 into m4/ so pass 1
+	# installs everything in ONE wave and pass 2 finds nothing to do.
+	# (Reproduced + verified locally with the exact resolute toolchain:
+	# full autoreconf -fi rc=0 with the pre-copy, rc=255 without it.)
+	[[ -f /usr/share/aclocal/intlmacosx.m4 ]] && cp /usr/share/aclocal/intlmacosx.m4 m4/
 	autoreconf -fi
 }
 
