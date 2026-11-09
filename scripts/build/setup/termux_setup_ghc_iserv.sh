@@ -10,6 +10,19 @@ termux_setup_ghc_iserv() {
 
 	[[ -d "$TERMUX_ISERV_BIN" ]] && return
 
+	# cfix76 (2026-11-09): the ghc-cross iserv binary (termux/ghc-cross-tools)
+	# has RUNPATH /data/data/com.termux/files/usr/lib (official prefix) and
+	# DT_NEEDEDs libandroid-posix-semaphore.so etc. The fork prefix is
+	# /data/data/com.nobiterminal/files/usr, so inside proot (-R /) that
+	# RUNPATH is dead and the Android linker cannot load ghc-iserv
+	# ("CANNOT LINK EXECUTABLE .../ghc-iserv: library
+	# libandroid-posix-semaphore.so not found", W22R r02). Symlink the
+	# official app dir to the fork app dir so the RUNPATH resolves.
+	# Per-job (container-ephemeral); guarded so a second Haskell package
+	# in the same job does not re-create it.
+	local TERMUX_APP_DIR="${TERMUX_PREFIX%/files/usr}"
+	[[ -e /data/data/com.termux ]] || ln -s "$TERMUX_APP_DIR" /data/data/com.termux
+
 	mkdir -p "$TERMUX_ISERV_BIN"
 
 	local ghc_bin_dir
