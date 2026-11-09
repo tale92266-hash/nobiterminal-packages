@@ -1,0 +1,11 @@
+--- a/src/parallel/job_token.rs	2026-11-09 22:10:24.563357007 +0000
++++ b/src/parallel/job_token.rs	2026-11-09 22:10:24.575726641 +0000
+@@ -250,7 +250,7 @@
+             loop {
+                 let res = self
+                     .0
+-                    .fetch_update(AcqRel, Acquire, |tokens| tokens.checked_sub(1));
++                    .try_update(AcqRel, Acquire, |tokens| tokens.checked_sub(1));
+ 
+                 if res.is_ok() {
+                     break JobToken::new();

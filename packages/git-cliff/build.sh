@@ -3,7 +3,7 @@ TERMUX_PKG_DESCRIPTION="A highly customizable changelog generator that follows C
 TERMUX_PKG_LICENSE="MIT, Apache-2.0"
 TERMUX_PKG_MAINTAINER="Gouranga Das Samrat <gouranga.das.khulna@gmail.com>"
 TERMUX_PKG_VERSION="2.14.2"
-TERMUX_PKG_REVISION=1
+TERMUX_PKG_REVISION=2
 TERMUX_PKG_SRCURL="https://github.com/orhun/git-cliff/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=fbbb1f8ade8e9affeaacd632bedc94ac898fb726516f2f5a86d1bfba947635f4
 TERMUX_PKG_DEPENDS="libgit2, zlib"
@@ -29,6 +29,12 @@ termux_step_pre_configure() {
 	local dir="vendor/cc"
 	echo "Applying patch: $patch"
 	patch -p1 --ignore-whitespace -d "$dir" < "$patch"
+
+	# cfix78: cc 1.2.49 uses deprecated AtomicU32::fetch_update (renamed to
+	# try_update in Rust 1.85); #![deny(warnings)] makes it a hard error.
+	local patch2="$TERMUX_PKG_BUILDER_DIR/rust-cc-try-update.diff"
+	echo "Applying patch: $patch2"
+	patch -p1 --ignore-whitespace -d "$dir" < "$patch2"
 
 	# override cc crate in Cargo.toml
 	echo "" >> Cargo.toml
