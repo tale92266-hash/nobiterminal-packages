@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F83S6SQT9G"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-F83S6SQT9G');</script>
+  <title>The UK Mirror Service - 404</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="/include/style.css">
+ </head>
+ <body>
+
+<div id="header">
+<a href="/"><img src="/include/ukms-kent1.png" alt="UK Mirror Service"></a>
+</div>
+
+<div id="content">
+
+
+<div id="content_left">
+ <h1>404 - Not Found</h1>
+ <p>Sorry, the content you're looking for can't be found. If it's a single file missing then the most likely cause is that it has been removed from the upstream site. If, however, a whole site is missing it might be a mirror that we no longer carry. If that is the case, and you feel we should still mirror it, please <a href="mailto:help@mirrorservice.org">contact us</a> so that we can look in to it.</p>
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+<div id="footer">
+	<div id="footer_left">
+		<a href="http://www.cs.kent.ac.uk/"><img src="/include/CompLab-thin.jpg" alt="University of Kent Computing"></a>
+	</div>
+	<div id="footer_right">
+		<p>Comments or Questions: <a href="mailto:help@mirrorservice.org">help@mirrorservice.org</a></p>
+		<p style="font-size: xx-small">cassini</p>
+	</div>
+</div>
+
+
+ </body>
+</html>
