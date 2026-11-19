@@ -1,0 +1,59 @@
+# NobiTerminal fork fix (W51, 2026-11-19): generate-db.js builds the embedded
+# command database from the OFFICIAL termux Contents files
+# (packages-cf.termux.dev, paths under data/data/com.termux/...), but it
+# filters/looks them up with TERMUX_PREFIX, which in this fork is
+# data/data/com.nobiterminal/... — nothing matches, so the generated
+# commands-*.h headers are EMPTY (0 bytes) and the shipped binary can never
+# suggest a package (verified: hosted 3.5.0-20 binary has 248 strings, zero
+# command names; official has 12,293). This patch makes the Contents-path
+# lookups use the official prefix. Proven locally: patched generate-db.js
+# produces commands-aarch64-termux-main.h = 137,164 B / 9,924 lines.
+# MUST be preserved across future drift-syncs (bump PRESERVE list) — a
+# drift-sync that deletes it silently re-breaks command-not-found.
+--- a/generate-db.js
++++ b/generate-db.js
+@@ -20,7 +20,7 @@
+   throw new Error("TERMUX_ARCH environment variable is not defined");
+ }
+ 
+-const binPrefix = TERMUX_PREFIX.substring(1) + "/bin/";
++const binPrefix = "data/data/com.termux/files/usr" + "/bin/";
+ const repos = JSON.parse(await readFile(join(TERMUX_SCRIPTDIR, "repo.json")));
+ const pkg_format = repos["pkg_format"];
+ 
+@@ -242,7 +242,7 @@
+           alternativeEntry.link.lastIndexOf("/") + 1,
+         );
+ 
+-        const packageName = fileMap.get(join(TERMUX_PREFIX.substring(1), path));
++        const packageName = fileMap.get(join("data/data/com.termux/files/usr", path));
+         // This could happen when there exists alternative file but the package itself doesn't exist for some of the architecture.
+         // This is needed for the openjdk-25 package.
+         // Keep the warning as it might be also due to some other inconsistency in the alternatives file as well. So having it in the logs should be nice
+@@ -259,7 +259,7 @@
+         alternativeEntry.dependents.forEach(({ link, name: _, path }) => {
+           if (link.startsWith("bin/")) {
+             const depPackageName = fileMap.get(
+-              join(TERMUX_PREFIX.substring(1), path),
++              join("data/data/com.termux/files/usr", path),
+             );
+             const depBinary = link.substring(link.lastIndexOf("/") + 1);
+             if (!binMap.has(depPackageName)) {
+@@ -270,7 +270,7 @@
+           // Register the link in the fileMap for the package
+           // This is used by vim.alternatives where bin/vim is a link with alternative libexec/vim/vim
+           // and bin/editor is a link with alternative bin/vim
+-          fileMap.set(join(TERMUX_PREFIX.substring(1), link), packageName);
++          fileMap.set(join("data/data/com.termux/files/usr", link), packageName);
+           if (!binMap.has(packageName)) {
+             binMap.set(packageName, []);
+           }
+@@ -281,7 +281,7 @@
+       // This is used by vim.alternatives where bin/vim is a link with alternative libexec/vim/vim
+       // and bin/editor is a link with alternative bin/vim
+       fileMap.set(
+-        join(TERMUX_PREFIX.substring(1), alternativeEntry.link),
++        join("data/data/com.termux/files/usr", alternativeEntry.link),
+         packageName,
+       );
+     });
