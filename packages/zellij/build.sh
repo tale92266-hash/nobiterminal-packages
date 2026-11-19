@@ -2,11 +2,11 @@ TERMUX_PKG_HOMEPAGE="https://zellij.dev/"
 TERMUX_PKG_DESCRIPTION="A terminal workspace with batteries included"
 TERMUX_PKG_LICENSE="MIT"
 TERMUX_PKG_MAINTAINER="Jonathan Lei <me@xjonathan.dev>"
-TERMUX_PKG_VERSION="0.45.1"
-TERMUX_PKG_REVISION=3
+TERMUX_PKG_VERSION="0.46.0"
+TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL="https://github.com/zellij-org/zellij/archive/refs/tags/v${TERMUX_PKG_VERSION}.tar.gz"
-TERMUX_PKG_SHA256=5cbe711437d2a61afd9287165f6aca0bcccb9ab1473633665a5b11ed55467852
-TERMUX_PKG_DEPENDS="libnghttp2, libngtcp2, libnghttp3, libssh2, openssl"
+TERMUX_PKG_SHA256=2dfa237fea447f3cc98954e81b0097b9d25841010036720e11f67880fe7861f0
+TERMUX_PKG_DEPENDS="openssl"
 TERMUX_PKG_BUILD_DEPENDS="zlib"
 TERMUX_PKG_BUILD_IN_SRC=true
 TERMUX_PKG_AUTO_UPDATE=true
@@ -36,18 +36,11 @@ termux_step_pre_configure() {
 
 	# clash with rust host build
 	unset CFLAGS
-
-	# W15 x06: curl-sys vendored libcurl is built with libssh2/QUIC
-	# support, but emits no -l flags for those libs, so the final Rust
-	# link fails with undefined ngtcp2/nghttp3/libssh2 symbols.
-	# The libs are DEPENDS above; force the link args here.
-	local _zellij_env_host
-	_zellij_env_host="$(printf '%s' "$CARGO_TARGET_NAME" | tr 'a-z' 'A-Z' | tr '-' '_')"
-	export CARGO_TARGET_${_zellij_env_host}_RUSTFLAGS+=" -C link-arg=-lssh2 -C link-arg=-lngtcp2 -C link-arg=-lngtcp2_crypto_ossl -C link-arg=-lnghttp3 -C link-arg=-lnghttp2"
 }
 
 termux_step_make() {
-	cargo build --jobs ${TERMUX_PKG_MAKE_PROCESSES} --target ${CARGO_TARGET_NAME} --release
+	cargo build --jobs ${TERMUX_PKG_MAKE_PROCESSES} --target ${CARGO_TARGET_NAME} --release \
+		--no-default-features --features plugins_from_target,vendored_curl,web_server_capability
 }
 
 termux_step_make_install() {
