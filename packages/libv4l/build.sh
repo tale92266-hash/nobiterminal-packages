@@ -4,7 +4,12 @@ TERMUX_PKG_LICENSE="LGPL-2.1"
 TERMUX_PKG_MAINTAINER="@termux"
 TERMUX_PKG_VERSION=1.32.0
 TERMUX_PKG_REVISION=2
-TERMUX_PKG_SRCURL=https://linuxtv.org/downloads/v4l-utils/v4l-utils-${TERMUX_PKG_VERSION}.tar.xz
+# MIRROR (2026-11-20): linuxtv.org serves a bot-check HTML page instead of the
+# tarball (verified 2026-11-20 from VM and CI runner). Tarball below is
+# byte-identical to the upstream release (SHA256 verified against the recipe;
+# sourced from deb.debian.org v4l-utils_1.32.0.orig.tar.xz). Served from this
+# repo so CI runners can fetch it. Regenerate on version bump.
+TERMUX_PKG_SRCURL=https://raw.githubusercontent.com/tale92266-hash/nobiterminal-packages/master/mirror/v4l-utils-${TERMUX_PKG_VERSION}.tar.xz
 TERMUX_PKG_SHA256=6828828a17775526eb93fb258a9294d1d1073d633c344dd71ecd4e7a1ffb7dfc
 TERMUX_PKG_DEPENDS="libandroid-execinfo, libandroid-glob, libjpeg-turbo"
 TERMUX_PKG_BUILD_DEPENDS="argp, libiconv"
