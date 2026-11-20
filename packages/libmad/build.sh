@@ -1,14 +1,27 @@
-TERMUX_PKG_HOMEPAGE=https://drobilla.net/category/zix
-TERMUX_PKG_DESCRIPTION="lightweight C99 portability and data structure library"
-TERMUX_PKG_LICENSE="BSD"
+TERMUX_PKG_HOMEPAGE=http://www.underbit.com/products/mad/
+TERMUX_PKG_DESCRIPTION="MAD is a high-quality MPEG audio decoder"
+TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="0.6.2"
+TERMUX_PKG_VERSION="0.16.5"
 TERMUX_PKG_REVISION=2
-# MIRROR (2026-11-20): download.drobilla.net times out intermittently for CI
-# runners (curl 28, 30s; failed wave-1 c01 and c05, verified 2026-11-20).
-# Tarball below is byte-identical to the upstream release (SHA256 verified
-# against the recipe; sourced from deb.debian.org zix_0.6.2.orig.tar.xz).
+# MIRROR (2026-11-20): codeberg.org archive endpoint too slow for CI runners
+# (curl "Operation too slow", <1KB/s, verified 2026-11-20; git endpoint works).
+# Tarball below is byte-identical to the Codeberg archive (git archive
+# --prefix=libmad/ 0.16.5 | gzip -n, SHA256 verified against the recipe).
 # Served from this repo so CI runners can fetch it. Regenerate on version bump.
-TERMUX_PKG_SRCURL=https://raw.githubusercontent.com/tale92266-hash/nobiterminal-packages/master/mirror/zix-${TERMUX_PKG_VERSION}.tar.xz
-TERMUX_PKG_SHA256=4bc771abf4fcf399ea969a1da6b375f0117784f8fd0e2db356a859f635f616a7
+TERMUX_PKG_SRCURL=https://raw.githubusercontent.com/tale92266-hash/nobiterminal-packages/master/mirror/libmad-${TERMUX_PKG_VERSION}.tar.gz
+TERMUX_PKG_SHA256=e32320a010e3cc00bfa66e0cde523a969313cddfd81e07ec4e3ef06d10ad3fe0
 TERMUX_PKG_AUTO_UPDATE=true
+TERMUX_PKG_BREAKS="libmad-dev"
+TERMUX_PKG_REPLACES="libmad-dev"
+TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
+-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+-DCMAKE_SYSTEM_NAME=Linux
+"
+
+termux_step_post_massage() {
+	local _GUARD_FILE="lib/libmad.so.0"
+	if [ ! -e "${_GUARD_FILE}" ]; then
+		termux_error_exit "file ${_GUARD_FILE} not found."
+	fi
+}

@@ -1,0 +1,46 @@
+From: NobiTerminal fork
+Date: 2026-11-20
+Subject: [PATCH] a52: use avcodec_get_supported_config() for FFmpeg 9
+
+FFmpeg 9 removed the AVCodec.sample_fmts field (deprecated since
+FFmpeg 7 in favour of avcodec_get_supported_config()). The a52
+plugin used rec->codec->sample_fmts[0] to pick the encoder's first
+supported sample format, which no longer compiles against FFmpeg 9
+headers (error: no member named 'sample_fmts' in 'struct AVCodec').
+
+Replace it with avcodec_get_supported_config(NULL, codec,
+AV_CODEC_CONFIG_SAMPLE_FORMAT, ...), which returns the same
+first-supported-format list (terminated by AV_SAMPLE_FMT_NONE).
+If the codec reports all formats supported (NULL list), fall back
+to AV_SAMPLE_FMT_FLT, the AC3 encoder's native format.
+
+This is the only use of a removed AVCodec field in alsa-plugins
+1.2.12 (verified by source grep). Upstream has not fixed this yet
+(alsa-plugins 1.2.12 is current upstream as of 2026-11-20); the
+fix is fork-side until upstream adopts it.
+---
+ a52/pcm_a52.c | 11 +++++++++--
+ 1 file changed, 9 insertions(+), 2 deletions(-)
+
+diff --git a/a52/pcm_a52.c b/a52/pcm_a52.c
+--- a/a52/pcm_a52.c
++++ b/a52/pcm_a52.c
+@@ -1202,8 +1202,16 @@
+ 	rec->io.flags = SND_PCM_IOPLUG_FLAG_BOUNDARY_WA;
+ #endif
+ #ifdef USE_AVCODEC_FRAME
+-	rec->av_format = rec->codec->sample_fmts[0];
+-	rec->is_planar = av_sample_fmt_is_planar(rec->av_format);
++	{
++		const enum AVSampleFormat *fmts = NULL;
++		if (avcodec_get_supported_config(NULL, rec->codec,
++						 AV_CODEC_CONFIG_SAMPLE_FORMAT, 0,
++						 (const void **)&fmts, NULL) < 0 || !fmts)
++			fmts = NULL;
++		/* NULL list means all formats supported; AC3 is natively float. */
++		rec->av_format = fmts ? fmts[0] : AV_SAMPLE_FMT_FLT;
++	}
++	rec->is_planar = av_sample_fmt_is_planar(rec->av_format);
+ #else
+ 	rec->av_format = AV_SAMPLE_FMT_S16;
+ #endif
