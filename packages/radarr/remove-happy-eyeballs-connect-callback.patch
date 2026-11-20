@@ -1,1 +1,10 @@
-../sonarr/remove-happy-eyeballs-connect-callback.patch
+--- a/src/NzbDrone.Common/Http/Dispatchers/ManagedHttpDispatcher.cs
++++ b/src/NzbDrone.Common/Http/Dispatchers/ManagedHttpDispatcher.cs
+@@ -154,7 +154,6 @@
+                 Credentials = GetCredentialCache(),
+                 PreAuthenticate = true,
+                 MaxConnectionsPerServer = 12,
+-                ConnectCallback = Socket.OSSupportsIPv6 ? _httpHappyEyeballs.OnConnect : null,
+                 SslOptions = new SslClientAuthenticationOptions
+                 {
+                     RemoteCertificateValidationCallback = _certificateValidationService.ShouldByPassValidationError
