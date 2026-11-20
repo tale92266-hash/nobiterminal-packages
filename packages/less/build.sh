@@ -5,7 +5,12 @@ TERMUX_PKG_LICENSE="GPL-3.0, custom"
 TERMUX_PKG_LICENSE_FILE='COPYING, LICENSE'
 TERMUX_PKG_MAINTAINER="Joshua Kahn <tom@termux.dev>"
 TERMUX_PKG_VERSION="710"
-TERMUX_PKG_SRCURL="https://www.greenwoodsoftware.com/less/less-${TERMUX_PKG_VERSION}.tar.gz"
+# MIRROR (2026-11-20): greenwoodsoftware.com returns HTTP 403 to CI runners
+# (bot protection; VM gets 200, verified 2026-11-20 — same class as linuxtv.org).
+# Tarball below is the genuine upstream release (SHA256 verified against the
+# recipe; downloaded via VM). Served from this repo so CI runners can fetch
+# it. Regenerate on version bump.
+TERMUX_PKG_SRCURL="https://raw.githubusercontent.com/tale92266-hash/nobiterminal-packages/master/mirror/less-${TERMUX_PKG_VERSION}.tar.gz"
 TERMUX_PKG_SHA256=d1008fb78dcae1323ddab664bcb352a61f022b1b131bd8018548e021d975ec7a
 TERMUX_PKG_DEPENDS="ncurses, pcre2"
 TERMUX_PKG_REPLACES="lazyread"
