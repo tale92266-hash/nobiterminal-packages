@@ -15,5 +15,12 @@ TERMUX_PKG_AUTO_UPDATE=true
 # output plugin (builds fine without it, verified). Removing this edge breaks the
 # cycle at the correct (soft) place.
 # TERMUX_PKG_BUILD_DEPENDS="pulseaudio"
+# NOTE (NobiTerminal B-cycle trial 2026-11-20): the cycle SURVIVED via the mpg123
+# subpackage (mpg123.subpackage.sh TERMUX_SUBPKG_DEPENDS="pulseaudio") — buildorder.py
+# merges subpackage deps into the parent, so the pulseaudio BUILD_DEPENDS fix alone
+# changed nothing (libsndfile was already in pulseaudio's DEPENDS; ffmpeg order kept
+# pulseaudio 109 before libsndfile 114). ANTI_BUILD_DEPENDS below cuts the soft edge
+# for build ordering only; the mpg123 CLI still declares pulseaudio as a runtime dep.
+TERMUX_PKG_ANTI_BUILD_DEPENDS="pulseaudio"
 TERMUX_PKG_BREAKS="mpg123 (<< 1.33.1-1)"
 TERMUX_PKG_REPLACES="mpg123 (<< 1.33.1-1)"
