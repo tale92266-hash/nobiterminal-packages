@@ -7,6 +7,10 @@ on:
         description: 'Space-separated package names to build (aarch64)'
         required: true
         default: 'git krb5 ldns libdb libedit libexpat libresolv-wrapper openssh termux-auth'
+      seed:
+        description: 'Seed manifest name in scripts/nobi-seed/ (empty = build deps from source)'
+        required: false
+        default: ''
 
 jobs:
   build:
@@ -22,6 +26,12 @@ jobs:
 
       - name: Build package builder image
         run: docker build -t ghcr.io/termux/package-builder:latest scripts/
+
+      - name: Seed hosted deps (if requested)
+        if: ${{ inputs.seed != '' }}
+        run: |
+          chmod +x scripts/nobi-seed-deps.sh
+          ./scripts/run-docker.sh ./scripts/nobi-seed-deps.sh ${{ inputs.seed }}
 
       - name: Build packages (deps from source, no -I)
         run: |
