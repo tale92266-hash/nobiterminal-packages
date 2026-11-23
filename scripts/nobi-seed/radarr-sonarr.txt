@@ -1,5 +1,5 @@
 # NobiTerminal seeded-deps manifest: radarr + sonarr seeded run
-# Generated from nightly/work/radarr-sonarr-seed-manifest.json (322 debs pre-verified)
+# Generated from nightly/work/radarr-sonarr-seed-manifest.json (314 debs pre-verified)
 # PKG <package> <fullversion> <sha256> <url>
 # MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
 
@@ -47,7 +47,6 @@ PKG fribidi 1.0.18-2 e2758e3190770f52cf5e1916c7b97c6eeda5297f314b5fc9fddffe46261
 PKG fribidi-static 1.0.18-2 9cdb26122bee5064ed08aa1f809bbd61a9cc5798c88cbc211b8d901d76a9eac9 https://tale92266-hash.github.io/nobiterminal-repo-8/fribidi-static_1.0.18-2_aarch64.deb
 PKG game-music-emu 0.6.5-1 862ab004dc374830b08960d23c3e750c37a0a49f597b6e9897391dd685ef0850 https://tale92266-hash.github.io/nobiterminal-repo-3/game-music-emu_0.6.5-1_aarch64.deb
 PKG game-music-emu-static 0.6.5-1 ffe8186ef92ffff6cc0cb7e7749ed64cbc39f28eace62e4fb09e22ac45338a23 https://tale92266-hash.github.io/nobiterminal-repo-3/game-music-emu-static_0.6.5-1_aarch64.deb
-PKG gawk-static 5.4.1 30c2718c5a275aa56d8dd1601edb2587d658124fd11dac9735a97d1a1974ec35 https://tale92266-hash.github.io/nobiterminal-repo-4/gawk-static_5.4.1_aarch64.deb
 PKG gdbm 1.26-2 0eff11badadee5ef8d3e7d52b78a124e06184fc29638009c57a9ba7b6297b623 https://tale92266-hash.github.io/nobiterminal-repo/gdbm_1.26-2_aarch64.deb
 PKG gdbm-static 1.26-2 594cfb28261a1440b993c2721c237a3186d9f73f39c2d389f9a335aeb50fbd7d https://tale92266-hash.github.io/nobiterminal-repo/gdbm-static_1.26-2_aarch64.deb
 PKG gdk-pixbuf 2.44.8-2 ff09f4d7c6519a9834325442125a6b0e51969065fee49a8c2cce5f89760affb2 https://tale92266-hash.github.io/nobiterminal-repo/gdk-pixbuf_2.44.8-2_aarch64.deb
@@ -68,12 +67,10 @@ PKG imath 3.2.3-1 42394dbb366e252ffb66a229e20c702ff38998e22e667db1b4198f7538805d
 PKG krb5 1.22.2-1 bb44b4b610b9398176ddee3a7609b6c672e61ec1a85bdc08e5f6277ca40072de https://tale92266-hash.github.io/nobiterminal-repo/krb5_1.22.2-1_aarch64.deb
 PKG ladspa-sdk 1.17-4 695d60905bd292b523f924abe0c56f04ff10b77c229ecdfedf305d7abc1d471a https://tale92266-hash.github.io/nobiterminal-repo-12/ladspa-sdk_1.17-4_aarch64.deb
 PKG ldd 0.3-3 3e9fa210a0a074a9741f2e702f8ae3560844fbcd6a38d2b0c52708118c17f5e4 https://tale92266-hash.github.io/nobiterminal-repo-3/ldd_0.3-3_aarch64.deb
-PKG libacl-static 2.4.0 7311eb1f291240343393b5bdd9cbefeb45f2145571dcd6ff9d8e9a82d86643ef https://tale92266-hash.github.io/nobiterminal-repo-4/libacl-static_2.4.0_aarch64.deb
 PKG libandroid-execinfo 0.1-4 9d1fc7bc406d642cee9422be874c8f0389cf5d032d51997fc801d688efa72128 https://tale92266-hash.github.io/nobiterminal-repo/libandroid-execinfo_0.1-4_aarch64.deb
 PKG libandroid-execinfo-static 0.1-4 3585b3401ab727acae1ac93dce65b52dbc38d36b38f97b3f77d8e70f453575ef https://tale92266-hash.github.io/nobiterminal-repo/libandroid-execinfo-static_0.1-4_aarch64.deb
 PKG libandroid-glob 0.6-4 3d3bd53558687c6d3bad9bf5d6d24b1e2b798a8e2cd6ac3f5ef4ecf3a34676b2 https://tale92266-hash.github.io/nobiterminal-repo/libandroid-glob_0.6-4_aarch64.deb
 PKG libandroid-glob-static 0.6-4 f49231db7dbd11df238ad0f1be9c9c4320631f7387430700b8e0a9e067436d46 https://tale92266-hash.github.io/nobiterminal-repo/libandroid-glob-static_0.6-4_aarch64.deb
-PKG libandroid-posix-semaphore-static 0.1-4 cfb9c14c8cffe846abec25eed0b489068866f56780f78bdad25c9b95180c39d5 https://tale92266-hash.github.io/nobiterminal-repo-4/libandroid-posix-semaphore-static_0.1-4_aarch64.deb
 PKG libandroid-shmem 0.7-1 a4aab588f77488d98c15436b2038b4324f9d5baace1499e262e4e62d196b6dae https://tale92266-hash.github.io/nobiterminal-repo/libandroid-shmem_0.7-1_aarch64.deb
 PKG libandroid-shmem-static 0.7-1 2f73ced757cae30b7422b4047310ee36477210a43d0a1f1b1d071e5827e67ddb https://tale92266-hash.github.io/nobiterminal-repo/libandroid-shmem-static_0.7-1_aarch64.deb
 PKG libandroid-spawn 0.3-1 5d698b6939c561e3b07e5301ffe61d092f4bac23c592a8211b26d6c317c844cb https://tale92266-hash.github.io/nobiterminal-repo/libandroid-spawn_0.3-1_aarch64.deb
@@ -119,12 +116,10 @@ PKG libffi-static 3.8.1-1 eda1db80d2673c18b9ca049e19a2202f769a479efb5ec4ce979dbc
 PKG flac 1.5.0-2 5a58748d5e5a2c4d573bdf2da27093315edeb09e24446bf0a71e26e15d826343 https://tale92266-hash.github.io/nobiterminal-repo/flac_1.5.0-2_aarch64.deb
 PKG libflac 1.5.0-2 6f4ea0da6c11f2a9fe47d17bb2a2ad9635ea30c3c8cc9161f9be3f6be2635062 https://tale92266-hash.github.io/nobiterminal-repo/libflac_1.5.0-2_aarch64.deb
 PKG libflac-static 1.5.0-2 1d22d4150d247469990c62d1d112dcce9863a8614447cc08e96c48f3a58b83b7 https://tale92266-hash.github.io/nobiterminal-repo/libflac-static_1.5.0-2_aarch64.deb
-PKG libgcrypt-static 1.12.4 292bff0bf3369d67a3ec731ef678d88aa6feaf14b754f147220f2869e2f00d9b https://tale92266-hash.github.io/nobiterminal-repo-4/libgcrypt-static_1.12.4_aarch64.deb
 PKG libglvnd 1.7.0-2 a000f7fbc8df6080a4347581e58df0695d30bd414548d8e6c5ce5144d3281cfb https://tale92266-hash.github.io/nobiterminal-repo-2/libglvnd_1.7.0-2_aarch64.deb
 PKG libglvnd-dev 1.7.0-2 aae6982c20aa9ee8b941ab0f575c6e9fdb0ff592130e4d86174751f6fe74be1d https://tale92266-hash.github.io/nobiterminal-repo-2/libglvnd-dev_1.7.0-2_all.deb
 PKG libgmp 6.3.0-3 9c3ee9658e42b3aa58d0914dbd13edd81df5484b958d79b1511c8e6074eb7cd3 https://tale92266-hash.github.io/nobiterminal-repo/libgmp_6.3.0-3_aarch64.deb
 PKG libgmp-static 6.3.0-3 fdbaaa5d1410150e596eeed335527c3a12539858c8acf7267fb7d3ee80cec985 https://tale92266-hash.github.io/nobiterminal-repo/libgmp-static_6.3.0-3_aarch64.deb
-PKG libgpg-error-static 1.61 2384e0b2b2d3c3ce66bbdb5b88dd798551856d9de4f36a77429f588f928409fd https://tale92266-hash.github.io/nobiterminal-repo-4/libgpg-error-static_1.61_aarch64.deb
 PKG libgraphite 1.3.15-1 e6fb6265f3c3bee701ea79dbe10431dd221df0d1a36167aeb2ef0ffd7b0b9b1e https://tale92266-hash.github.io/nobiterminal-repo-2/libgraphite_1.3.15-1_aarch64.deb
 PKG iconv 1.19.1-1 4f42725a949067bf94ce11a81bf454b7d6328e0e926815f5b22a055fb40b523e https://tale92266-hash.github.io/nobiterminal-repo-8/iconv_1.19.1-1_aarch64.deb
 PKG libiconv 1.19.1-1 ea07de5d56de2fa7f39e71ccaa4a6544259d17a8effdadc691965f1b0b91b05e https://tale92266-hash.github.io/nobiterminal-repo-8/libiconv_1.19.1-1_aarch64.deb
@@ -145,7 +140,6 @@ PKG liblzo-static 2.10-6 1bed3306741ea874097ef7d75594d4157ca92bdb23a2036ac8376b0
 PKG lame 4.0-2 a0b42c9d1c17bc936d711ee808645499cd77e8264e44cc455b52df14b1832fde https://tale92266-hash.github.io/nobiterminal-repo/lame_4.0-2_aarch64.deb
 PKG libmp3lame 4.0-2 e30f8d810371505ec94d8caca547585cc2c437d4104443f05426e6083bacaa5d https://tale92266-hash.github.io/nobiterminal-repo/libmp3lame_4.0-2_aarch64.deb
 PKG libmp3lame-static 4.0-2 545a4aeb251da495ea89f5b5bdcb6f3bc841fbf5543b3a3a6075bf1b3feb589f https://tale92266-hash.github.io/nobiterminal-repo/libmp3lame-static_4.0-2_aarch64.deb
-PKG libmpfr-static 4.2.2 0b5bcfacf8a7bfe186216a65d069699d4e6dd391c703c3161ee75300c516f152 https://tale92266-hash.github.io/nobiterminal-repo-4/libmpfr-static_4.2.2_aarch64.deb
 PKG libmpg123 1.33.7-1 32e51e40ff0fb740768617cfc04dd13bbd8dd5fd6b21e20a349ff26daffcc620 https://tale92266-hash.github.io/nobiterminal-repo/libmpg123_1.33.7-1_aarch64.deb
 PKG libmpg123-static 1.33.7-1 66915c5a1c08528b1a782bdc268fe37da86a174ac7b768991dbd2a94d5d528ad https://tale92266-hash.github.io/nobiterminal-repo/libmpg123-static_1.33.7-1_aarch64.deb
 PKG mpg123 1.33.7-1 8cf2726735c71e55d448c8f5ff303da198628b295e4fe86a9114ed567a3b1c87 https://tale92266-hash.github.io/nobiterminal-repo/mpg123_1.33.7-1_aarch64.deb
@@ -265,7 +259,6 @@ PKG pcre2-static 10.49-1 73210ef8fe3e6ab20f1fbf49eb8306c66bae933a2a0c1100125b416
 PKG pcre2grep 10.49-1 5200c34ce3b01ef60a8f82f917fe1e91522b0eeac653096f435fd28ee8e801fa https://tale92266-hash.github.io/nobiterminal-repo/pcre2grep_10.49-1_aarch64.deb
 PKG perl 5.44.0-1 b7a9b29acc1034f2a2dc413a6d89888216ab757fb814cb4c0445b3ed41ab7fcb https://tale92266-hash.github.io/nobiterminal-repo/perl_5.44.0-1_aarch64.deb
 PKG pkg-config 0.29.2-4 415708fbc53213d757c207f7e4186c6de65b39a31929e6843769c1b771e42d84 https://tale92266-hash.github.io/nobiterminal-repo/pkg-config_0.29.2-4_aarch64.deb
-PKG procps-static 4.0.7-2 fa419e74063c5e7c3944d4b70e846289b906534ced9ef5935672b303da38914a https://tale92266-hash.github.io/nobiterminal-repo-4/procps-static_4.0.7-2_aarch64.deb
 PKG psmisc 23.7-2 632cc92782a78472f6d982f78b4420edc59e1f92d388e32921861b9f68ed1235 https://tale92266-hash.github.io/nobiterminal-repo/psmisc_23.7-2_aarch64.deb
 PKG pulseaudio 17.0-6 3a5de82d65318991c23022a6274598928ab4eea2355aecc6c680fdd5f7d3141d https://tale92266-hash.github.io/nobiterminal-repo/pulseaudio_17.0-6_aarch64.deb
 PKG pulseaudio-glib 17.0-6 b8f2665a4032e437499b469576069d59d067494fdeed4d3311b6c277583a4001 https://tale92266-hash.github.io/nobiterminal-repo/pulseaudio-glib_17.0-6_aarch64.deb
@@ -293,7 +286,6 @@ PKG svt-av1 4.3.0-1 2658cdfd062a0c0be3ecb5adfbc09ba7fc319d89aa52d45528772ef43498
 PKG tcl 8.6.16-1 6797087fc5c4d47bcd6a246b92e89979d7a986e61bb1e4703e47e9fb5d29abbb https://tale92266-hash.github.io/nobiterminal-repo-2/tcl_8.6.16-1_aarch64.deb
 PKG termux-core 0.4.0-2 71a03712e2fb37e789ab11c0e71a7b454157e9a64c48f2879bba70e60168a224 https://tale92266-hash.github.io/nobiterminal-repo/termux-core_0.4.0-2_aarch64.deb
 PKG termux-core-static 0.4.0-2 00d0a7144681b05f7abc6b4445b9dd520b98ec8dbf4137febbdb967d125a8f93 https://tale92266-hash.github.io/nobiterminal-repo/termux-core-static_0.4.0-2_aarch64.deb
-PKG termux-exec-static 1:2.5.0-1 086e0ad54b96dca8f5551f21ff45d7586b09050bade958ff85e2323ab82e9388 https://tale92266-hash.github.io/nobiterminal-repo-4/termux-exec-static_1:2.5.0-1_aarch64.deb
 PKG texinfo 7.3-1 742d96e3c60eefdb10110f9c8742b3f5ca404ce442b29e448e1be9285a406a2f https://tale92266-hash.github.io/nobiterminal-repo-2/texinfo_7.3-1_aarch64.deb
 PKG update-info-dir 7.3-1 24f754d5deeaf73737bf68d4606448a01382e934068e2ea5ec3cfae4f8448739 https://tale92266-hash.github.io/nobiterminal-repo-2/update-info-dir_7.3-1_all.deb
 PKG tk 8.6.14-2 8b8dd9cdc7ae59fac5e0a98f9c3a965c4ce45caa6b5592d22d67008f71032b8a https://tale92266-hash.github.io/nobiterminal-repo-5/tk_8.6.14-2_aarch64.deb
@@ -377,8 +369,6 @@ MARKER fribidi-static 1.0.18-2
 MARKER g-ir-scanner 1.86.0-3
 MARKER game-music-emu 0.6.5-1
 MARKER game-music-emu-static 0.6.5-1
-MARKER gawk 5.4.1
-MARKER gawk-static 5.4.1
 MARKER gdbm 1.26-2
 MARKER gdbm-static 1.26-2
 MARKER gdk-pixbuf 2.44.8-2
@@ -401,14 +391,10 @@ MARKER krb5 1.22.2-1
 MARKER ladspa-sdk 1.17-4
 MARKER lame 4.0-2
 MARKER ldd 0.3-3
-MARKER libacl 2.4.0
-MARKER libacl-static 2.4.0
 MARKER libandroid-execinfo 0.1-4
 MARKER libandroid-execinfo-static 0.1-4
 MARKER libandroid-glob 0.6-4
 MARKER libandroid-glob-static 0.6-4
-MARKER libandroid-posix-semaphore 0.1-4
-MARKER libandroid-posix-semaphore-static 0.1-4
 MARKER libandroid-shmem 0.7-1
 MARKER libandroid-shmem-static 0.7-1
 MARKER libandroid-spawn 0.3-1
@@ -451,14 +437,10 @@ MARKER libffi 3.8.1-1
 MARKER libffi-static 3.8.1-1
 MARKER libflac 1.5.0-2
 MARKER libflac-static 1.5.0-2
-MARKER libgcrypt 1.12.4
-MARKER libgcrypt-static 1.12.4
 MARKER libglvnd 1.7.0-2
 MARKER libglvnd-dev 1.7.0-2
 MARKER libgmp 6.3.0-3
 MARKER libgmp-static 6.3.0-3
-MARKER libgpg-error 1.61
-MARKER libgpg-error-static 1.61
 MARKER libgraphite 1.3.15-1
 MARKER libiconv 1.19.1-1
 MARKER libiconv-static 1.19.1-1
@@ -477,8 +459,6 @@ MARKER liblzo-static 2.10-6
 MARKER libmount 2.42.4-1
 MARKER libmp3lame 4.0-2
 MARKER libmp3lame-static 4.0-2
-MARKER libmpfr 4.2.2
-MARKER libmpfr-static 4.2.2
 MARKER libmpg123 1.33.7-1
 MARKER libmpg123-static 1.33.7-1
 MARKER libmysofa 1.3.5-1
@@ -593,8 +573,6 @@ MARKER pcre2-static 10.49-1
 MARKER pcre2grep 10.49-1
 MARKER perl 5.44.0-1
 MARKER pkg-config 0.29.2-4
-MARKER procps 4.0.7-2
-MARKER procps-static 4.0.7-2
 MARKER psmisc 23.7-2
 MARKER pulseaudio 17.0-6
 MARKER pulseaudio-glib 17.0-6
@@ -627,8 +605,6 @@ MARKER svt-av1 4.3.0-1
 MARKER tcl 8.6.16-1
 MARKER termux-core 0.4.0-2
 MARKER termux-core-static 0.4.0-2
-MARKER termux-exec 1:2.5.0-1
-MARKER termux-exec-static 1:2.5.0-1
 MARKER texinfo 7.3-1
 MARKER tk 8.6.14-2
 MARKER ttf-dejavu 2.37-9
