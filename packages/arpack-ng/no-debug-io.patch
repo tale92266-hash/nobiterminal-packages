@@ -1,16 +1,19 @@
-# NobiTerminal fork fix (Wave 5 C1, 2026-11-26): the NDK r30 flang toolchain's
+# NobiTerminal fork fix (Wave 5 C1, 2026-11-26, v2): the NDK r30 flang toolchain's
 # libflang_rt.runtime.a is built WITHOUT -fPIC, so its formatted-I/O objects
 # (utf.cpp.o, unit.cpp.o, binary-to-decimal.cpp.o) cannot link into a shared
-# library (ld.lld: "recompile with -fPIC"). arpack's only formatted I/O is
-# the msglvl debug timing summary in the 6 *aupd.f drivers (write(6,1000) /
-# write(6,1100)); removing those 12 statements stops the linker pulling the
-# non-PIC runtime objects in. Numerics untouched; only the msglvl>0 debug
-# printout goes away. The -fPIC Fortran flag alone cannot fix this: it only
-# covers arpack's own objects, not the toolchain's runtime archive.
-# (Run 45856658514 failed on exactly these 3 archive members, 20 errors.)
+# library (ld.lld: "recompile with -fPIC"). arpack's formatted I/O is ONLY
+# debug printing: 12 write(6,...) in the 6 *aupd.f drivers + 166 WRITE in the
+# 9 UTIL print routines (cmout/cvout/dmout/dvout/ivout/smout/svout/zmout/zvout),
+# which are compiled into libarpack and called from SRC when debugging. Removing
+# all 178 WRITEs (+48 continuations) stops the linker pulling the non-PIC runtime
+# objects in. Numerics untouched; the print routines become no-ops and the
+# msglvl debug output goes away. The -fPIC Fortran flag alone cannot fix this:
+# it only covers arpack's own objects, not the toolchain's runtime archive.
+# (v1 removed only the 12 *aupd WRITEs; run 45859789229 failed identically on
+# the same 3 archive members -- the UTIL WRITEs were the remaining source.)
 diff -ruN orig/SRC/cnaupd.f patched/SRC/cnaupd.f
---- a/SRC/cnaupd.f	2026-11-26 16:31:17.005916593 +0000
-+++ b/SRC/cnaupd.f	2026-11-26 16:31:17.096739786 +0000
+--- a/SRC/cnaupd.f	2026-11-26 16:44:41.191011681 +0000
++++ b/SRC/cnaupd.f	2026-11-26 16:44:41.579852166 +0000
 @@ -620,10 +620,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -23,8 +26,8 @@ diff -ruN orig/SRC/cnaupd.f patched/SRC/cnaupd.f
       &      5x, '=============================================',/
       &      5x, '= Complex implicit Arnoldi update code      =',/
 diff -ruN orig/SRC/dnaupd.f patched/SRC/dnaupd.f
---- a/SRC/dnaupd.f	2026-11-26 16:31:17.006243934 +0000
-+++ b/SRC/dnaupd.f	2026-11-26 16:31:17.095145280 +0000
+--- a/SRC/dnaupd.f	2026-11-26 16:44:41.191978923 +0000
++++ b/SRC/dnaupd.f	2026-11-26 16:44:41.582659119 +0000
 @@ -649,10 +649,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -37,8 +40,8 @@ diff -ruN orig/SRC/dnaupd.f patched/SRC/dnaupd.f
       &      5x, '=============================================',/
       &      5x, '= Nonsymmetric implicit Arnoldi update code =',/
 diff -ruN orig/SRC/dsaupd.f patched/SRC/dsaupd.f
---- a/SRC/dsaupd.f	2026-11-26 16:31:17.006480008 +0000
-+++ b/SRC/dsaupd.f	2026-11-26 16:31:17.093359573 +0000
+--- a/SRC/dsaupd.f	2026-11-26 16:44:41.219060334 +0000
++++ b/SRC/dsaupd.f	2026-11-26 16:44:41.585987253 +0000
 @@ -647,10 +647,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -51,8 +54,8 @@ diff -ruN orig/SRC/dsaupd.f patched/SRC/dsaupd.f
       &      5x, '==========================================',/
       &      5x, '= Symmetric implicit Arnoldi update code =',/
 diff -ruN orig/SRC/snaupd.f patched/SRC/snaupd.f
---- a/SRC/snaupd.f	2026-11-26 16:31:17.007000188 +0000
-+++ b/SRC/snaupd.f	2026-11-26 16:31:17.091580495 +0000
+--- a/SRC/snaupd.f	2026-11-26 16:44:41.272142314 +0000
++++ b/SRC/snaupd.f	2026-11-26 16:44:41.589617341 +0000
 @@ -649,10 +649,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -65,8 +68,8 @@ diff -ruN orig/SRC/snaupd.f patched/SRC/snaupd.f
       &      5x, '=============================================',/
       &      5x, '= Nonsymmetric implicit Arnoldi update code =',/
 diff -ruN orig/SRC/ssaupd.f patched/SRC/ssaupd.f
---- a/SRC/ssaupd.f	2026-11-26 16:31:17.007198956 +0000
-+++ b/SRC/ssaupd.f	2026-11-26 16:31:17.089719014 +0000
+--- a/SRC/ssaupd.f	2026-11-26 16:44:41.285867101 +0000
++++ b/SRC/ssaupd.f	2026-11-26 16:44:41.592469681 +0000
 @@ -647,10 +647,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -79,8 +82,8 @@ diff -ruN orig/SRC/ssaupd.f patched/SRC/ssaupd.f
       &      5x, '==========================================',/
       &      5x, '= Symmetric implicit Arnoldi update code =',/
 diff -ruN orig/SRC/znaupd.f patched/SRC/znaupd.f
---- a/SRC/znaupd.f	2026-11-26 16:31:17.007837954 +0000
-+++ b/SRC/znaupd.f	2026-11-26 16:31:17.087642921 +0000
+--- a/SRC/znaupd.f	2026-11-26 16:44:41.313044927 +0000
++++ b/SRC/znaupd.f	2026-11-26 16:44:41.601586934 +0000
 @@ -620,10 +620,6 @@
  c        | Version Number & Version Date are defined in version.h |
  c        %--------------------------------------------------------%
@@ -92,3 +95,846 @@ diff -ruN orig/SRC/znaupd.f patched/SRC/znaupd.f
   1000    format (//,
       &      5x, '=============================================',/
       &      5x, '= Complex implicit Arnoldi update code      =',/
+diff -ruN orig/UTIL/cmout.f patched/UTIL/cmout.f
+--- a/UTIL/cmout.f	2026-11-26 16:44:41.358625861 +0000
++++ b/UTIL/cmout.f	2026-11-26 16:44:41.603611832 +0000
+@@ -51,7 +51,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( M.LE.0 .OR. N.LE.0 .OR. LDA.LE.0 )
+@@ -69,12 +68,9 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 40 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 30 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9994 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9984 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    30          CONTINUE
+    40       CONTINUE
+@@ -82,12 +78,9 @@
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 60 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 50 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9993 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9983 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    50          CONTINUE
+    60       CONTINUE
+@@ -95,21 +88,16 @@
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 80 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 70 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9992 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9982 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    70          CONTINUE
+    80       CONTINUE
+ *
+          ELSE
+             DO 100 K1 = 1, N
+-               WRITE( LOUT, 9995 ) ICOL, K1
+                DO 90 I = 1, M
+-                  WRITE( LOUT, 9991 )I, A( I, K1 )
+    90          CONTINUE
+   100       CONTINUE
+          END IF
+@@ -122,16 +110,11 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 120 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 110 I = 1, M
+                   IF ((K1+3).LE.N) THEN
+-                     WRITE( LOUT, 9974 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+3-N).EQ.1) THEN
+-                     WRITE( LOUT, 9964 )I, ( A( I, J ), J = k1, K2 )
+                   ELSE IF ((K1+3-N).EQ.2) THEN
+-                     WRITE( LOUT, 9954 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+3-N).EQ.3) THEN
+-                     WRITE( LOUT, 9944 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   110          CONTINUE
+   120       CONTINUE
+@@ -139,14 +122,10 @@
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 140 K1 = 1, N, 3
+                K2 = MIN0( N, K1+ 2)
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 130 I = 1, M
+                   IF ((K1+2).LE.N) THEN
+-                     WRITE( LOUT, 9973 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.1) THEN
+-                     WRITE( LOUT, 9963 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.2) THEN
+-                     WRITE( LOUT, 9953 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   130          CONTINUE
+   140       CONTINUE
+@@ -154,14 +133,10 @@
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 160 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-                  WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 150 I = 1, M
+                   IF ((K1+2).LE.N) THEN
+-                     WRITE( LOUT, 9972 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.1) THEN
+-                     WRITE( LOUT, 9962 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.2) THEN
+-                     WRITE( LOUT, 9952 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   150          CONTINUE
+   160       CONTINUE
+@@ -169,18 +144,14 @@
+          ELSE
+             DO 180 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9995 )( ICOL, I, I = K1, K2 )
+                DO 170 I = 1, M
+                   IF ((K1+1).LE.N) THEN
+-                     WRITE( LOUT, 9971 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9961 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   170          CONTINUE
+   180       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9990 )
+ *
+  9998 FORMAT( 11X, 4( 9X, 3A1, I4, 9X ) )
+  9997 FORMAT( 10X, 4( 11X, 3A1, I4, 11X ) )
+diff -ruN orig/UTIL/cvout.f patched/UTIL/cvout.f
+--- a/UTIL/cvout.f	2026-11-26 16:44:41.358665300 +0000
++++ b/UTIL/cvout.f	2026-11-26 16:44:41.605640647 +0000
+@@ -44,7 +44,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( N.LE.0 )
+@@ -63,38 +62,25 @@
+             DO 30 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9998 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9997 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    30       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 40 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9988 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9987 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    40       CONTINUE
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 50 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9978 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9977 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    50       CONTINUE
+          ELSE
+             DO 60 K1 = 1, N
+-               WRITE( LOUT, 9968 )K1, K1, CX( I )
+    60       CONTINUE
+          END IF
+ *
+@@ -107,61 +93,36 @@
+             DO 70 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+                IF ((K1+3).LE.N) THEN
+-                  WRITE( LOUT, 9958 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9957 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9956 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9955 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    70       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 80 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9948 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9947 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9946 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    80       CONTINUE
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 90 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9938 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9937 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9936 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    90       CONTINUE
+          ELSE
+             DO 100 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9928 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9927 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+   100       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9994 )
+       RETURN
+ *
+ *=======================================================================
+diff -ruN orig/UTIL/dmout.f patched/UTIL/dmout.f
+--- a/UTIL/dmout.f	2026-11-26 16:44:41.358705019 +0000
++++ b/UTIL/dmout.f	2026-11-26 16:44:41.607341560 +0000
+@@ -57,7 +57,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, FMT = 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A, / 1X, A )
+ *
+       IF( M.LE.0 .OR. N.LE.0 .OR. LDA.LE.0 )
+@@ -75,36 +74,28 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 40 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, FMT = 9998 )( ICOL, I, I = K1, K2 )
+                DO 30 I = 1, M
+-                  WRITE( LOUT, FMT = 9994 )I, ( A( I, J ), J = K1, K2 )
+    30          CONTINUE
+    40       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 60 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, FMT = 9997 )( ICOL, I, I = K1, K2 )
+                DO 50 I = 1, M
+-                  WRITE( LOUT, FMT = 9993 )I, ( A( I, J ), J = K1, K2 )
+    50          CONTINUE
+    60       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 80 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-               WRITE( LOUT, FMT = 9996 )( ICOL, I, I = K1, K2 )
+                DO 70 I = 1, M
+-                  WRITE( LOUT, FMT = 9992 )I, ( A( I, J ), J = K1, K2 )
+    70          CONTINUE
+    80       CONTINUE
+ *
+          ELSE
+             DO 100 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, FMT = 9995 )( ICOL, I, I = K1, K2 )
+                DO 90 I = 1, M
+-                  WRITE( LOUT, FMT = 9991 )I, ( A( I, J ), J = K1, K2 )
+    90          CONTINUE
+   100       CONTINUE
+          END IF
+@@ -117,41 +108,32 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 120 K1 = 1, N, 10
+                K2 = MIN0( N, K1+9 )
+-               WRITE( LOUT, FMT = 9998 )( ICOL, I, I = K1, K2 )
+                DO 110 I = 1, M
+-                  WRITE( LOUT, FMT = 9994 )I, ( A( I, J ), J = K1, K2 )
+   110          CONTINUE
+   120       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 140 K1 = 1, N, 8
+                K2 = MIN0( N, K1+7 )
+-               WRITE( LOUT, FMT = 9997 )( ICOL, I, I = K1, K2 )
+                DO 130 I = 1, M
+-                  WRITE( LOUT, FMT = 9993 )I, ( A( I, J ), J = K1, K2 )
+   130          CONTINUE
+   140       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 160 K1 = 1, N, 6
+                K2 = MIN0( N, K1+5 )
+-               WRITE( LOUT, FMT = 9996 )( ICOL, I, I = K1, K2 )
+                DO 150 I = 1, M
+-                  WRITE( LOUT, FMT = 9992 )I, ( A( I, J ), J = K1, K2 )
+   150          CONTINUE
+   160       CONTINUE
+ *
+          ELSE
+             DO 180 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, FMT = 9995 )( ICOL, I, I = K1, K2 )
+                DO 170 I = 1, M
+-                  WRITE( LOUT, FMT = 9991 )I, ( A( I, J ), J = K1, K2 )
+   170          CONTINUE
+   180       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, FMT = 9990 )
+ *
+  9998 FORMAT( 10X, 10( 4X, 3A1, I4, 1X ) )
+  9997 FORMAT( 10X, 8( 5X, 3A1, I4, 2X ) )
+diff -ruN orig/UTIL/dvout.f patched/UTIL/dvout.f
+--- a/UTIL/dvout.f	2026-11-26 16:44:41.358745751 +0000
++++ b/UTIL/dvout.f	2026-11-26 16:44:41.607669912 +0000
+@@ -48,7 +48,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, FMT = 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A, / 1X, A )
+ *
+       IF( N.LE.0 )
+@@ -66,22 +65,18 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 30 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, FMT = 9998 )K1, K2, ( SX( I ), I = K1, K2 )
+    30       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 40 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, FMT = 9997 )K1, K2, ( SX( I ), I = K1, K2 )
+    40       CONTINUE
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 50 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-               WRITE( LOUT, FMT = 9996 )K1, K2, ( SX( I ), I = K1, K2 )
+    50       CONTINUE
+          ELSE
+             DO 60 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, FMT = 9995 )K1, K2, ( SX( I ), I = K1, K2 )
+    60       CONTINUE
+          END IF
+ *
+@@ -93,26 +88,21 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 70 K1 = 1, N, 10
+                K2 = MIN0( N, K1+9 )
+-               WRITE( LOUT, FMT = 9998 )K1, K2, ( SX( I ), I = K1, K2 )
+    70       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 80 K1 = 1, N, 8
+                K2 = MIN0( N, K1+7 )
+-               WRITE( LOUT, FMT = 9997 )K1, K2, ( SX( I ), I = K1, K2 )
+    80       CONTINUE
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 90 K1 = 1, N, 6
+                K2 = MIN0( N, K1+5 )
+-               WRITE( LOUT, FMT = 9996 )K1, K2, ( SX( I ), I = K1, K2 )
+    90       CONTINUE
+          ELSE
+             DO 100 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, FMT = 9995 )K1, K2, ( SX( I ), I = K1, K2 )
+   100       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, FMT = 9994 )
+       RETURN
+  9998 FORMAT( 1X, I4, ' - ', I4, ':', 1P, 10D12.3 )
+  9997 FORMAT( 1X, I4, ' - ', I4, ':', 1X, 1P, 8D14.5 )
+diff -ruN orig/UTIL/ivout.f patched/UTIL/ivout.f
+--- a/UTIL/ivout.f	2026-11-26 16:44:41.359032431 +0000
++++ b/UTIL/ivout.f	2026-11-26 16:44:41.607994369 +0000
+@@ -38,7 +38,6 @@
+           LINE(I:I) = ' '
+     2 CONTINUE
+ C
+-      WRITE ( LOUT, 2000 ) IFMT, LINE(1:LLL)
+  2000 FORMAT ( /1X, A  /1X, A )
+ C
+       IF (N .LE. 0) RETURN
+@@ -55,25 +54,21 @@
+       IF (NDIGIT .LE. 4) THEN
+          DO 10 K1 = 1, N, 10
+             K2 = MIN0(N,K1+9)
+-            WRITE(LOUT,1000) K1,K2,(IX(I),I=K1,K2)
+    10    CONTINUE
+ C
+       ELSE IF (NDIGIT .LE. 6) THEN
+          DO 30 K1 = 1, N, 7
+             K2 = MIN0(N,K1+6)
+-            WRITE(LOUT,1001) K1,K2,(IX(I),I=K1,K2)
+    30    CONTINUE
+ C
+       ELSE IF (NDIGIT .LE. 10) THEN
+          DO 50 K1 = 1, N, 5
+             K2 = MIN0(N,K1+4)
+-            WRITE(LOUT,1002) K1,K2,(IX(I),I=K1,K2)
+    50    CONTINUE
+ C
+       ELSE
+          DO 70 K1 = 1, N, 3
+             K2 = MIN0(N,K1+2)
+-            WRITE(LOUT,1003) K1,K2,(IX(I),I=K1,K2)
+    70    CONTINUE
+       END IF
+ C
+@@ -86,29 +81,24 @@
+       IF (NDIGIT .LE. 4) THEN
+          DO 90 K1 = 1, N, 20
+             K2 = MIN0(N,K1+19)
+-            WRITE(LOUT,1000) K1,K2,(IX(I),I=K1,K2)
+    90    CONTINUE
+ C
+       ELSE IF (NDIGIT .LE. 6) THEN
+          DO 110 K1 = 1, N, 15
+             K2 = MIN0(N,K1+14)
+-            WRITE(LOUT,1001) K1,K2,(IX(I),I=K1,K2)
+   110    CONTINUE
+ C
+       ELSE IF (NDIGIT .LE. 10) THEN
+          DO 130 K1 = 1, N, 10
+             K2 = MIN0(N,K1+9)
+-            WRITE(LOUT,1002) K1,K2,(IX(I),I=K1,K2)
+   130    CONTINUE
+ C
+       ELSE
+          DO 150 K1 = 1, N, 7
+             K2 = MIN0(N,K1+6)
+-            WRITE(LOUT,1003) K1,K2,(IX(I),I=K1,K2)
+   150    CONTINUE
+       END IF
+       END IF
+-      WRITE (LOUT,1004)
+ C
+  1000 FORMAT(1X,I4,' - ',I4,':',20(1X,I5))
+  1001 FORMAT(1X,I4,' - ',I4,':',15(1X,I7))
+diff -ruN orig/UTIL/smout.f patched/UTIL/smout.f
+--- a/UTIL/smout.f	2026-11-26 16:44:41.359237489 +0000
++++ b/UTIL/smout.f	2026-11-26 16:44:41.609819528 +0000
+@@ -47,7 +47,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( M.LE.0 .OR. N.LE.0 .OR. LDA.LE.0 )
+@@ -65,36 +64,28 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 40 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 30 I = 1, M
+-                  WRITE( LOUT, 9994 )I, ( A( I, J ), J = K1, K2 )
+    30          CONTINUE
+    40       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 60 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 50 I = 1, M
+-                  WRITE( LOUT, 9993 )I, ( A( I, J ), J = K1, K2 )
+    50          CONTINUE
+    60       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 80 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-               WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 70 I = 1, M
+-                  WRITE( LOUT, 9992 )I, ( A( I, J ), J = K1, K2 )
+    70          CONTINUE
+    80       CONTINUE
+ *
+          ELSE
+             DO 100 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9995 )( ICOL, I, I = K1, K2 )
+                DO 90 I = 1, M
+-                  WRITE( LOUT, 9991 )I, ( A( I, J ), J = K1, K2 )
+    90          CONTINUE
+   100       CONTINUE
+          END IF
+@@ -107,41 +98,32 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 120 K1 = 1, N, 10
+                K2 = MIN0( N, K1+9 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 110 I = 1, M
+-                  WRITE( LOUT, 9994 )I, ( A( I, J ), J = K1, K2 )
+   110          CONTINUE
+   120       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 140 K1 = 1, N, 8
+                K2 = MIN0( N, K1+7 )
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 130 I = 1, M
+-                  WRITE( LOUT, 9993 )I, ( A( I, J ), J = K1, K2 )
+   130          CONTINUE
+   140       CONTINUE
+ *
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 160 K1 = 1, N, 6
+                K2 = MIN0( N, K1+5 )
+-               WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 150 I = 1, M
+-                  WRITE( LOUT, 9992 )I, ( A( I, J ), J = K1, K2 )
+   150          CONTINUE
+   160       CONTINUE
+ *
+          ELSE
+             DO 180 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, 9995 )( ICOL, I, I = K1, K2 )
+                DO 170 I = 1, M
+-                  WRITE( LOUT, 9991 )I, ( A( I, J ), J = K1, K2 )
+   170          CONTINUE
+   180       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9990 )
+ *
+  9998 FORMAT( 10X, 10( 4X, 3A1, I4, 1X ) )
+  9997 FORMAT( 10X, 8( 5X, 3A1, I4, 2X ) )
+diff -ruN orig/UTIL/svout.f patched/UTIL/svout.f
+--- a/UTIL/svout.f	2026-11-26 16:44:41.359277148 +0000
++++ b/UTIL/svout.f	2026-11-26 16:44:41.610091216 +0000
+@@ -38,7 +38,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( N.LE.0 )
+@@ -56,22 +55,18 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 30 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, 9998 )K1, K2, ( SX( I ), I = K1, K2 )
+    30       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 40 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, 9997 )K1, K2, ( SX( I ), I = K1, K2 )
+    40       CONTINUE
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 50 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-               WRITE( LOUT, 9996 )K1, K2, ( SX( I ), I = K1, K2 )
+    50       CONTINUE
+          ELSE
+             DO 60 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9995 )K1, K2, ( SX( I ), I = K1, K2 )
+    60       CONTINUE
+          END IF
+ *
+@@ -83,26 +78,21 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 70 K1 = 1, N, 10
+                K2 = MIN0( N, K1+9 )
+-               WRITE( LOUT, 9998 )K1, K2, ( SX( I ), I = K1, K2 )
+    70       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 80 K1 = 1, N, 8
+                K2 = MIN0( N, K1+7 )
+-               WRITE( LOUT, 9997 )K1, K2, ( SX( I ), I = K1, K2 )
+    80       CONTINUE
+          ELSE IF( NDIGIT.LE.10 ) THEN
+             DO 90 K1 = 1, N, 6
+                K2 = MIN0( N, K1+5 )
+-               WRITE( LOUT, 9996 )K1, K2, ( SX( I ), I = K1, K2 )
+    90       CONTINUE
+          ELSE
+             DO 100 K1 = 1, N, 5
+                K2 = MIN0( N, K1+4 )
+-               WRITE( LOUT, 9995 )K1, K2, ( SX( I ), I = K1, K2 )
+   100       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9994 )
+       RETURN
+  9998 FORMAT( 1X, I4, ' - ', I4, ':', 1P10E12.3 )
+  9997 FORMAT( 1X, I4, ' - ', I4, ':', 1X, 1P8E14.5 )
+diff -ruN orig/UTIL/zmout.f patched/UTIL/zmout.f
+--- a/UTIL/zmout.f	2026-11-26 16:44:41.359320854 +0000
++++ b/UTIL/zmout.f	2026-11-26 16:44:41.611981543 +0000
+@@ -51,7 +51,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( M.LE.0 .OR. N.LE.0 .OR. LDA.LE.0 )
+@@ -69,12 +68,9 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 40 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 30 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9994 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9984 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    30          CONTINUE
+    40       CONTINUE
+@@ -82,12 +78,9 @@
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 60 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 50 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9993 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9983 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    50          CONTINUE
+    60       CONTINUE
+@@ -95,21 +88,16 @@
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 80 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 70 I = 1, M
+                   IF (K1.NE.N) THEN
+-                     WRITE( LOUT, 9992 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9982 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+    70          CONTINUE
+    80       CONTINUE
+ *
+          ELSE
+             DO 100 K1 = 1, N
+-               WRITE( LOUT, 9995 ) ICOL, K1
+                DO 90 I = 1, M
+-                  WRITE( LOUT, 9991 )I, A( I, K1 )
+    90          CONTINUE
+   100       CONTINUE
+          END IF
+@@ -122,16 +110,11 @@
+          IF( NDIGIT.LE.4 ) THEN
+             DO 120 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+-               WRITE( LOUT, 9998 )( ICOL, I, I = K1, K2 )
+                DO 110 I = 1, M
+                   IF ((K1+3).LE.N) THEN
+-                     WRITE( LOUT, 9974 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+3-N).EQ.1) THEN
+-                     WRITE( LOUT, 9964 )I, ( A( I, J ), J = k1, K2 )
+                   ELSE IF ((K1+3-N).EQ.2) THEN
+-                     WRITE( LOUT, 9954 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+3-N).EQ.3) THEN
+-                     WRITE( LOUT, 9944 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   110          CONTINUE
+   120       CONTINUE
+@@ -139,14 +122,10 @@
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 140 K1 = 1, N, 3
+                K2 = MIN0( N, K1+ 2)
+-               WRITE( LOUT, 9997 )( ICOL, I, I = K1, K2 )
+                DO 130 I = 1, M
+                   IF ((K1+2).LE.N) THEN
+-                     WRITE( LOUT, 9973 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.1) THEN
+-                     WRITE( LOUT, 9963 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.2) THEN
+-                     WRITE( LOUT, 9953 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   130          CONTINUE
+   140       CONTINUE
+@@ -154,14 +133,10 @@
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 160 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+-                  WRITE( LOUT, 9996 )( ICOL, I, I = K1, K2 )
+                DO 150 I = 1, M
+                   IF ((K1+2).LE.N) THEN
+-                     WRITE( LOUT, 9972 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.1) THEN
+-                     WRITE( LOUT, 9962 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE IF ((K1+2-N).EQ.2) THEN
+-                     WRITE( LOUT, 9952 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   150          CONTINUE
+   160       CONTINUE
+@@ -169,18 +144,14 @@
+          ELSE
+             DO 180 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+-               WRITE( LOUT, 9995 )( ICOL, I, I = K1, K2 )
+                DO 170 I = 1, M
+                   IF ((K1+1).LE.N) THEN
+-                     WRITE( LOUT, 9971 )I, ( A( I, J ), J = K1, K2 )
+                   ELSE
+-                     WRITE( LOUT, 9961 )I, ( A( I, J ), J = K1, K2 )
+                   END IF
+   170          CONTINUE
+   180       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9990 )
+ *
+  9998 FORMAT( 11X, 4( 9X, 3A1, I4, 9X ) )
+  9997 FORMAT( 10X, 4( 11X, 3A1, I4, 11X ) )
+diff -ruN orig/UTIL/zvout.f patched/UTIL/zvout.f
+--- a/UTIL/zvout.f	2026-11-26 16:44:41.359382827 +0000
++++ b/UTIL/zvout.f	2026-11-26 16:44:41.613813732 +0000
+@@ -44,7 +44,6 @@
+          LINE( I: I ) = ' '
+    20 CONTINUE
+ *
+-      WRITE( LOUT, 9999 )IFMT, LINE( 1: LLL )
+  9999 FORMAT( / 1X, A / 1X, A )
+ *
+       IF( N.LE.0 )
+@@ -63,38 +62,25 @@
+             DO 30 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9998 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9997 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    30       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 40 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9988 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9987 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    40       CONTINUE
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 50 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF (K1.NE.N) THEN
+-                  WRITE( LOUT, 9978 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE
+-                  WRITE( LOUT, 9977 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    50       CONTINUE
+          ELSE
+             DO 60 K1 = 1, N
+-               WRITE( LOUT, 9968 )K1, K1, CX( I )
+    60       CONTINUE
+          END IF
+ *
+@@ -107,61 +93,36 @@
+             DO 70 K1 = 1, N, 4
+                K2 = MIN0( N, K1+3 )
+                IF ((K1+3).LE.N) THEN
+-                  WRITE( LOUT, 9958 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9957 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9956 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+3-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9955 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    70       CONTINUE
+          ELSE IF( NDIGIT.LE.6 ) THEN
+             DO 80 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9948 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9947 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9946 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    80       CONTINUE
+          ELSE IF( NDIGIT.LE.8 ) THEN
+             DO 90 K1 = 1, N, 3
+                K2 = MIN0( N, K1+2 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9938 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9937 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 2) THEN
+-                  WRITE( LOUT, 9936 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+    90       CONTINUE
+          ELSE
+             DO 100 K1 = 1, N, 2
+                K2 = MIN0( N, K1+1 )
+                IF ((K1+2).LE.N) THEN
+-                  WRITE( LOUT, 9928 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                ELSE IF ((K1+2-N) .EQ. 1) THEN
+-                  WRITE( LOUT, 9927 )K1, K2, ( CX( I ),
+-     $                   I = K1, K2 )
+                END IF
+   100       CONTINUE
+          END IF
+       END IF
+-      WRITE( LOUT, 9994 )
+       RETURN
+ *
+ *=======================================================================
