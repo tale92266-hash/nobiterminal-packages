@@ -1,0 +1,5 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w5-c7-biome2 (biome2)
+# Generated from nightly/work/wave5-w5-c7-biome2-seed-manifest.json (0 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
