@@ -1,0 +1,11 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w5-c1-arpack-ng (arpack-ng)
+# Generated from nightly/work/wave5-w5-c1-arpack-ng-seed-manifest.json (3 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
+PKG blas-openblas 0.3.34-1 f92708254bff3a8b8d2dd9e792b2bfe295120794cd342daa7e0c17e93198383a https://tale92266-hash.github.io/nobiterminal-repo-2/./blas-openblas_0.3.34-1_aarch64.deb
+PKG libopenblas 0.3.34-1 09dd798c0635662360110e1bf6577760a55c37993fbbf1f0fd403e3ba1076052 https://tale92266-hash.github.io/nobiterminal-repo-2/./libopenblas_0.3.34-1_aarch64.deb
+PKG libopenblas-static 0.3.34-1 b4552f4bbd99e39e3b2e549d526a4c2b6e5bef3357dea43bfd900c0c0d7134f0 https://tale92266-hash.github.io/nobiterminal-repo-2/./libopenblas-static_0.3.34-1_aarch64.deb
+MARKER blas-openblas 0.3.34-1
+MARKER libopenblas 0.3.34-1
+MARKER libopenblas-static 0.3.34-1
