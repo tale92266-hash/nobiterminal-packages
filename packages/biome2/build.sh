@@ -11,6 +11,11 @@ TERMUX_PKG_BUILD_IN_SRC=true
 
 termux_step_make() {
 	termux_setup_rust
+	# NobiTerminal: biome's own .cargo/config.toml sets lto = true; the final
+	# biome_cli LTO link is OOM-killed (SIGKILL) on the 7 GB runner (C7 run
+	# 45889711915). Disable only the cross-crate LTO link; the binary is
+	# functionally identical, just built without LTO.
+	export CARGO_PROFILE_RELEASE_LTO=false
 	BIOME_VERSION="$TERMUX_PKG_VERSION" cargo build --package biome_cli --jobs "$TERMUX_PKG_MAKE_PROCESSES" --target "$CARGO_TARGET_NAME" --release
 }
 
