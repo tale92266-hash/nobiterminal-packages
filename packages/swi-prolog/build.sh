@@ -95,6 +95,7 @@ termux_step_host_build() {
 		"libodbcinst2"
 		"libpython3-dev"
 		"libpython3.14-dev"
+		"libutf8proc-dev"
 		"nettle-dev"
 		"python3-dev"
 		"python3.14-dev"
