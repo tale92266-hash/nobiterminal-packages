@@ -1,0 +1,531 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w5-d4-drift (gradle, gh, kubectl, ruff, python-yt-dlp, composer)
+# Generated from nightly/work/wave5-w5-d4-drift-seed-manifest.json (263 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
+PKG abseil-cpp 20260817.0-1 2c72fbab024ca80cd069cb66f7b8665a61c36a7686bdca852fafdc7406d19b49 https://tale92266-hash.github.io/nobiterminal-repo/./abseil-cpp_20260817.0-1_aarch64.deb
+PKG alsa-lib 1.2.16.1-1 f8bed8ad252c122865961421628097b283d2bc326cb7318f58f42b957240b0fb https://tale92266-hash.github.io/nobiterminal-repo/./alsa-lib_1.2.16.1-1_aarch64.deb
+PKG alsa-plugins 1.2.12-3 d57abf3bfe106a4bffee00baabf1933efc362ef364559227dd9250ca66fcbbec https://tale92266-hash.github.io/nobiterminal-repo-12/./alsa-plugins_1.2.12-3_aarch64.deb
+PKG apache2 1:2.4.71-1 1682ebbcf61d6e26351c51f62e1f1926932ea95d7a51e55e0cdb637d5f20018a https://tale92266-hash.github.io/nobiterminal-repo-10/./apache2_1:2.4.71-1_aarch64.deb
+PKG apr 1.7.6-3 630c9dd097ec8c9e846269fc2d851a6098c345d13fadb7918a6132d23f5080c8 https://tale92266-hash.github.io/nobiterminal-repo/./apr_1.7.6-3_aarch64.deb
+PKG apr-static 1.7.6-3 2ea38a7c6790cf4966cd8837c0a8c0d354d3a07e31e077d0bbdd62048a31665a https://tale92266-hash.github.io/nobiterminal-repo/./apr-static_1.7.6-3_aarch64.deb
+PKG apr-util 1.6.6-1 076efb06a8b0e5cd00cab233970b5516e28d081331ee0ee9372e98ee9a9d8c9a https://tale92266-hash.github.io/nobiterminal-repo-10/./apr-util_1.6.6-1_aarch64.deb
+PKG apr-util-static 1.6.6-1 db3ec47e474b318d1a5d075482f5a662311bbba96225657a9f6c4a1964eba3b3 https://tale92266-hash.github.io/nobiterminal-repo-10/./apr-util-static_1.6.6-1_aarch64.deb
+PKG attr 2.6.0-1 09e034969007fb56a75de1ff11629432a26f4f664f3a5842c5c8fa1b0e42de18 https://tale92266-hash.github.io/nobiterminal-repo/./attr_2.6.0-1_aarch64.deb
+PKG attr-static 2.6.0-1 459793c649d755f5af0e04a15e498a83f86ad00560a8c0ae5c43e82d546f2f00 https://tale92266-hash.github.io/nobiterminal-repo/./attr-static_2.6.0-1_aarch64.deb
+PKG bash-completion 2.18.0-1 3966d14d7677bf225e61debe412ffb7778c4fa78ab7e9dc7e9ea410f3d54c1eb https://tale92266-hash.github.io/nobiterminal-repo/./bash-completion_2.18.0-1_all.deb
+PKG binutils 2.47-1 907891a95fcf8a04f3638b5e12f81a7a0ca9bfdd329f816f1643390cea96e9ec https://tale92266-hash.github.io/nobiterminal-repo/./binutils_2.47-1_aarch64.deb
+PKG binutils-cross 2.47-1 fa10280627e580c5536e17952ba9be7e38a16487668d2927a80be34422d118c6 https://tale92266-hash.github.io/nobiterminal-repo/./binutils-cross_2.47-1_aarch64.deb
+PKG brotli 1.2.1-1 db37986703511be40ce60036f389157c198dd14d66fe97256bc05b665c64c7aa https://tale92266-hash.github.io/nobiterminal-repo/./brotli_1.2.1-1_aarch64.deb
+PKG ca-certificates 1:2026.11.05-1 15bcdedbfb7d8c15dd223428108fb71a7f6fd1bc329683489d8d0254ff8a1e8a https://tale92266-hash.github.io/nobiterminal-repo-7/./ca-certificates_1:2026.11.05-1_all.deb
+PKG ca-certificates-java 1:2026.11.05-1 bce417b6f19c9601d4aadb37432e98fde370ce6639ca76e0fcaa2d3c50d36cb4 https://tale92266-hash.github.io/nobiterminal-repo-7/./ca-certificates-java_1:2026.11.05-1_all.deb
+PKG capstone 5.0.9-1 d0098f39f97712e7628b7366552aaefcd8f45786b992a492c1d763520eda26f8 https://tale92266-hash.github.io/nobiterminal-repo/./capstone_5.0.9-1_aarch64.deb
+PKG capstone-static 5.0.9-1 7cab29c2b30d50d2c602a083c1931c03b94a39a8c399adefa10825dd910d4176 https://tale92266-hash.github.io/nobiterminal-repo/./capstone-static_5.0.9-1_aarch64.deb
+PKG check 0.15.2-4 26edfcdb74b1864b0a8233eaa4441dc6edbe0600c258ba942434faf31c1b6d11 https://tale92266-hash.github.io/nobiterminal-repo-2/./check_0.15.2-4_aarch64.deb
+PKG check-static 0.15.2-4 c5d09fa7f528645000de2e61f5d4f7319e22fca74426f8d0c3fd1a48963f221c https://tale92266-hash.github.io/nobiterminal-repo-2/./check-static_0.15.2-4_aarch64.deb
+PKG cups 2.4.20-1 8d60ad656df6a4e49eaac34659c934d09359a380e24ee262d08dc2c1a8019eb9 https://tale92266-hash.github.io/nobiterminal-repo-2/./cups_2.4.20-1_aarch64.deb
+PKG cups-static 2.4.20-1 cf41eedf74556e83a63dc9bb46a54640cadbee910a24bb657084b6c427d45be6 https://tale92266-hash.github.io/nobiterminal-repo-2/./cups-static_2.4.20-1_aarch64.deb
+PKG dbus 1.16.4-1 1f843b501eab9dfbba103cc2b3629c619c3c109cedd21df07955e81f50af52f7 https://tale92266-hash.github.io/nobiterminal-repo-10/./dbus_1.16.4-1_aarch64.deb
+PKG dialog 1.3-20260721-1 8a7b16af2c01f6b969dd64f7791fd0610fb901d3206e44a6ec3eb4ebaaf1c17d https://tale92266-hash.github.io/nobiterminal-repo-6/./dialog_1.3-20260721-1_aarch64.deb
+PKG dialog-static 1.3-20260721-1 4d52055f6ab5bf977612adf697671d8bfd82ffcefd9ce50dc9e875f69b5c6788 https://tale92266-hash.github.io/nobiterminal-repo-6/./dialog-static_1.3-20260721-1_aarch64.deb
+PKG doxygen 1.18.0-1 f8f96c8d99a2370e1102805094c8d7ba73733705bd9e1000447ce731caf14970 https://tale92266-hash.github.io/nobiterminal-repo-2/./doxygen_1.18.0-1_aarch64.deb
+PKG findutils 4.11.0-1 108b6958375df109c93294000644f3c09e5a71bad7936718d6ebe76fef282775 https://tale92266-hash.github.io/nobiterminal-repo/./findutils_4.11.0-1_aarch64.deb
+PKG fontconfig 2.18.4-1 9ad74701b37cf1417c57de5d3c1ff44a4dba4c6a3352e437a88dc547aadc9085 https://tale92266-hash.github.io/nobiterminal-repo-11/./fontconfig_2.18.4-1_aarch64.deb
+PKG fontconfig-static 2.18.4-1 73eefe178cd166b2c0f748901b5919d5a47f315c11144fb9ff5bfe9b66ede768 https://tale92266-hash.github.io/nobiterminal-repo-11/./fontconfig-static_2.18.4-1_aarch64.deb
+PKG fontconfig-utils 2.18.4-1 1a28856d7057a6b69d4ebe9262b979e2424d6562e911f9f7bddf1447c50ae380 https://tale92266-hash.github.io/nobiterminal-repo-11/./fontconfig-utils_2.18.4-1_aarch64.deb
+PKG freetype 2.15.0-1 e9382b240c7f80d58879281e21834dd069342d056e4b000ba9eeacda0c7c4b78 https://tale92266-hash.github.io/nobiterminal-repo/./freetype_2.15.0-1_aarch64.deb
+PKG freetype-static 2.15.0-1 029a4fb1b34a16a556c655efc2d69ec4da4345d1b984c5b32ec50e134f4d34cf https://tale92266-hash.github.io/nobiterminal-repo/./freetype-static_2.15.0-1_aarch64.deb
+PKG gdbm 1.26-2 0eff11badadee5ef8d3e7d52b78a124e06184fc29638009c57a9ba7b6297b623 https://tale92266-hash.github.io/nobiterminal-repo/./gdbm_1.26-2_aarch64.deb
+PKG gdbm-static 1.26-2 594cfb28261a1440b993c2721c237a3186d9f73f39c2d389f9a335aeb50fbd7d https://tale92266-hash.github.io/nobiterminal-repo/./gdbm-static_1.26-2_aarch64.deb
+PKG gdk-pixbuf 2.44.8-2 ff09f4d7c6519a9834325442125a6b0e51969065fee49a8c2cce5f89760affb2 https://tale92266-hash.github.io/nobiterminal-repo/./gdk-pixbuf_2.44.8-2_aarch64.deb
+PKG giflib 6.1.3-1 4f87de480926a6e0be353c5d77fbfc8ec64c846bd993ba3bd7c2af06a97654d9 https://tale92266-hash.github.io/nobiterminal-repo/./giflib_6.1.3-1_aarch64.deb
+PKG giflib-static 6.1.3-1 4cd51ca77631166a7d2247e6759b553fd7bc0434106567744d682da5f18136c7 https://tale92266-hash.github.io/nobiterminal-repo/./giflib-static_6.1.3-1_aarch64.deb
+PKG giflib-utils 6.1.3-1 bbc62047c77b458510e10527f6f836a84076b67babb66c91de7e44d9f22c29a6 https://tale92266-hash.github.io/nobiterminal-repo/./giflib-utils_6.1.3-1_aarch64.deb
+PKG g-ir-scanner 1.86.0-3 787d4bc6b300708077db523ef3858199a9580289d3bedde0d5ad1e7054885727 https://tale92266-hash.github.io/nobiterminal-repo/./g-ir-scanner_1.86.0-3_aarch64.deb
+PKG gobject-introspection 1.86.0-3 fbb58ca4445dc9aab50666a9ccb41b2580633ddba6d2f7481fd70a6a7babc100 https://tale92266-hash.github.io/nobiterminal-repo/./gobject-introspection_1.86.0-3_aarch64.deb
+PKG gzip 1.15-1 716a4f5eb722350a4498957218d16154d836c33d3dfa1b6e876a06a1a1fdefe1 https://tale92266-hash.github.io/nobiterminal-repo/./gzip_1.15-1_aarch64.deb
+PKG ldd 0.3-3 3e9fa210a0a074a9741f2e702f8ae3560844fbcd6a38d2b0c52708118c17f5e4 https://tale92266-hash.github.io/nobiterminal-repo-3/./ldd_0.3-3_aarch64.deb
+PKG libandroid-execinfo 0.1-4 9d1fc7bc406d642cee9422be874c8f0389cf5d032d51997fc801d688efa72128 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-execinfo_0.1-4_aarch64.deb
+PKG libandroid-execinfo-static 0.1-4 3585b3401ab727acae1ac93dce65b52dbc38d36b38f97b3f77d8e70f453575ef https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-execinfo-static_0.1-4_aarch64.deb
+PKG libandroid-glob 0.6-4 3d3bd53558687c6d3bad9bf5d6d24b1e2b798a8e2cd6ac3f5ef4ecf3a34676b2 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-glob_0.6-4_aarch64.deb
+PKG libandroid-glob-static 0.6-4 f49231db7dbd11df238ad0f1be9c9c4320631f7387430700b8e0a9e067436d46 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-glob-static_0.6-4_aarch64.deb
+PKG libandroid-shmem 0.7-1 a4aab588f77488d98c15436b2038b4324f9d5baace1499e262e4e62d196b6dae https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-shmem_0.7-1_aarch64.deb
+PKG libandroid-shmem-static 0.7-1 2f73ced757cae30b7422b4047310ee36477210a43d0a1f1b1d071e5827e67ddb https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-shmem-static_0.7-1_aarch64.deb
+PKG libandroid-spawn 0.3-1 5d698b6939c561e3b07e5301ffe61d092f4bac23c592a8211b26d6c317c844cb https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-spawn_0.3-1_aarch64.deb
+PKG libandroid-spawn-static 0.3-1 e7071b4727c0a150f24d78f648fb4a61909aab38b279daff8951650942303bfb https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-spawn-static_0.3-1_aarch64.deb
+PKG libandroid-stub 30-3 ed88b2057310efd30825725b75d1186e39806b8f517024c1616e2821cf6587f8 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-stub_30-3_aarch64.deb
+PKG libandroid-support 29-2 04f3aada8395e9f73f1f17aa778aa6b281baa8bf121c053829167500b8a22975 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-support_29-2_aarch64.deb
+PKG libandroid-support-static 29-2 f6a25005d70b127564025b1f48d3d38a8ddb2d065cce6784b8e25f6d8d7c5f7a https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-support-static_29-2_aarch64.deb
+PKG libandroid-sysv-semaphore 0.1-2 91317d3335ecf918108efc1b5c81d172ba956b10c8c4de10181b102f6bfc42f8 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-sysv-semaphore_0.1-2_aarch64.deb
+PKG libandroid-sysv-semaphore-static 0.1-2 932f541bb2e8c8d8123bd5d4748edf8899caeecbfe6c430a2927298201b290e5 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-sysv-semaphore-static_0.1-2_aarch64.deb
+PKG libandroid-utimes 0.4-1 0bae13972979a1b9e53bc2d8292ff280bc217e6c2825869b02128490ac17fb61 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-utimes_0.4-1_aarch64.deb
+PKG libandroid-utimes-static 0.4-1 9fb45a6f0a877092ab146ef2ebb8a58dd47be0c2365ffb5189889f9a7d53d420 https://tale92266-hash.github.io/nobiterminal-repo/./libandroid-utimes-static_0.4-1_aarch64.deb
+PKG aom-tools 3.15.3-1 9d602e55cb402d3b6c707a5f86ecacc8cd9e5fc7770d80887fd7b55165401d71 https://tale92266-hash.github.io/nobiterminal-repo-8/./aom-tools_3.15.3-1_aarch64.deb
+PKG libaom 3.15.3-1 c32e024feceb50a09dfb2ffdced1ce786b30a21f9720b77e70072da2ce9ed1b1 https://tale92266-hash.github.io/nobiterminal-repo-8/./libaom_3.15.3-1_aarch64.deb
+PKG libaom-static 3.15.3-1 a98a3dbb26cb105f5f7076c3e6371b2b55b2fa3ecda3c93385b4fe1db3289288 https://tale92266-hash.github.io/nobiterminal-repo-8/./libaom-static_3.15.3-1_aarch64.deb
+PKG libavif 1.4.2-1 1ec55fa5546fe395d0f45188be4206b8d78cbf19bc828767e7fff151ee8a50ea https://tale92266-hash.github.io/nobiterminal-repo/./libavif_1.4.2-1_aarch64.deb
+PKG bzip2 1.0.8-9 886a2bf85e75e79bba07feb19bc52d2574175b863d2b143d6c99a55b0708cadb https://tale92266-hash.github.io/nobiterminal-repo/./bzip2_1.0.8-9_aarch64.deb
+PKG libbz2 1.0.8-9 033a24c6a2f9ac0f5b6803bdceb373e106b0ab7277352da7d06154a5e9e6d8f2 https://tale92266-hash.github.io/nobiterminal-repo/./libbz2_1.0.8-9_aarch64.deb
+PKG libc++ 30-1 a74e9e3ef99f8dcc992300ec10384747008e70b062a07648091ed59c07705824 https://tale92266-hash.github.io/nobiterminal-repo/./libc++_30-1_aarch64.deb
+PKG libcap-ng 2:0.9.6-1 0abe6276a511c940ab5826188008cfef15f9170443c4fa3817000c0f82dcc38f https://tale92266-hash.github.io/nobiterminal-repo/./libcap-ng_2:0.9.6-1_aarch64.deb
+PKG libcap-ng-static 2:0.9.6-1 15684f1a61072be3c966646e2e9fbb04312f0ada0de8164625bc2bedb59fd147 https://tale92266-hash.github.io/nobiterminal-repo/./libcap-ng-static_2:0.9.6-1_aarch64.deb
+PKG libcrypt 0.2-7 2cd2bf12a304ab85b8641c616710f24bf9d61a6ceead10088b7ea76c330bcfc7 https://tale92266-hash.github.io/nobiterminal-repo/./libcrypt_0.2-7_aarch64.deb
+PKG curl 8.23.0-1 33ec8ec02963a3037713b30701961536a238f2c427e50c34789b07de1b3f2232 https://tale92266-hash.github.io/nobiterminal-repo/./curl_8.23.0-1_aarch64.deb
+PKG libcurl 8.23.0-1 8aeff1f38d9fb62198afd26830fe26c2f463081b16b94575cb530dfb91727c14 https://tale92266-hash.github.io/nobiterminal-repo/./libcurl_8.23.0-1_aarch64.deb
+PKG libcurl-static 8.23.0-1 9a5bc051b3b12c0d980df90c27fa9115522bb204a684c691721074852b16aa38 https://tale92266-hash.github.io/nobiterminal-repo/./libcurl-static_8.23.0-1_aarch64.deb
+PKG libdav1d 1.5.5-1 05fdef0a2cea5cceffd13a20edd8ba8a49f7a9edd2b812eb4a836eb3db74fc52 https://tale92266-hash.github.io/nobiterminal-repo-11/./libdav1d_1.5.5-1_aarch64.deb
+PKG libde265 1.1.3-1 6d5a02790b31d4890f74314f080decbc3e00ae0e6ab33a47d1bb3078b3fec890 https://tale92266-hash.github.io/nobiterminal-repo/./libde265_1.1.3-1_aarch64.deb
+PKG libexpat 2.10.0-1 2081eb1c8942e6c122c2335a3df09a019d8abf29134bda609550932dd017c0b7 https://tale92266-hash.github.io/nobiterminal-repo-8/./libexpat_2.10.0-1_aarch64.deb
+PKG libexpat-static 2.10.0-1 2ce59a306214735faa4f7ab1b0d31bca52d6d44cc5a2fc3d436a2051e3f26dc4 https://tale92266-hash.github.io/nobiterminal-repo-8/./libexpat-static_2.10.0-1_aarch64.deb
+PKG libffi 3.8.1-1 3d0578e3679099300d24deac2757bd519f3236b9d409da702c5a02329402970a https://tale92266-hash.github.io/nobiterminal-repo-10/./libffi_3.8.1-1_aarch64.deb
+PKG libffi-static 3.8.1-1 eda1db80d2673c18b9ca049e19a2202f769a479efb5ec4ce979dbcc115457b56 https://tale92266-hash.github.io/nobiterminal-repo-10/./libffi-static_3.8.1-1_aarch64.deb
+PKG flac 1.5.0-2 5a58748d5e5a2c4d573bdf2da27093315edeb09e24446bf0a71e26e15d826343 https://tale92266-hash.github.io/nobiterminal-repo/./flac_1.5.0-2_aarch64.deb
+PKG libflac 1.5.0-2 6f4ea0da6c11f2a9fe47d17bb2a2ad9635ea30c3c8cc9161f9be3f6be2635062 https://tale92266-hash.github.io/nobiterminal-repo/./libflac_1.5.0-2_aarch64.deb
+PKG libflac-static 1.5.0-2 1d22d4150d247469990c62d1d112dcce9863a8614447cc08e96c48f3a58b83b7 https://tale92266-hash.github.io/nobiterminal-repo/./libflac-static_1.5.0-2_aarch64.deb
+PKG libgd 1:2.3.3-8 d2a3cde824f10666723b195eb3321aa8703662bb6dc3ef12bb9f0ae1d71c442e https://tale92266-hash.github.io/nobiterminal-repo/./libgd_1:2.3.3-8_aarch64.deb
+PKG libgd-static 1:2.3.3-8 4505b3a6a8f1389cde793f206b5291e98f451e9eb56f218eaf69fd28458403bd https://tale92266-hash.github.io/nobiterminal-repo/./libgd-static_1:2.3.3-8_aarch64.deb
+PKG libgmp 6.3.0-3 9c3ee9658e42b3aa58d0914dbd13edd81df5484b958d79b1511c8e6074eb7cd3 https://tale92266-hash.github.io/nobiterminal-repo/./libgmp_6.3.0-3_aarch64.deb
+PKG libgmp-static 6.3.0-3 fdbaaa5d1410150e596eeed335527c3a12539858c8acf7267fb7d3ee80cec985 https://tale92266-hash.github.io/nobiterminal-repo/./libgmp-static_6.3.0-3_aarch64.deb
+PKG gnutls 3.8.13-2 fde5fbe1ef2273da2ff6c1a4173e2f032882eebce441e87a05a93827b7b0e575 https://tale92266-hash.github.io/nobiterminal-repo/./gnutls_3.8.13-2_aarch64.deb
+PKG libgnutls 3.8.13-2 350bc4bb7ecb71ca5ba40ad4da068da3d3b34c3c63d086fc4d2614a90b0d58a1 https://tale92266-hash.github.io/nobiterminal-repo/./libgnutls_3.8.13-2_aarch64.deb
+PKG libgnutls-static 3.8.13-2 ae1463c8ce7661585878b37eb0bc472eca13b4e78f086dda725c2eb40df7e4df https://tale92266-hash.github.io/nobiterminal-repo/./libgnutls-static_3.8.13-2_aarch64.deb
+PKG libheif 1.23.7-1 84fd5efc88003ca8596c4986ac2d094658f1f20980fb527fc2b67fc50a8fa7d3 https://tale92266-hash.github.io/nobiterminal-repo-4/./libheif_1.23.7-1_aarch64.deb
+PKG libheif-progs 1.23.7-1 3444124bf5a1282a7c5f5e22c2aebd2bcecbe713d24e0378c9ee0d3fffe50017 https://tale92266-hash.github.io/nobiterminal-repo-4/./libheif-progs_1.23.7-1_aarch64.deb
+PKG libice 1.1.2-2 d8f3c72c68732467174a3a7bad8142e4a472fc1601c38ef47e9326e1b1019cd3 https://tale92266-hash.github.io/nobiterminal-repo-3/./libice_1.1.2-2_aarch64.deb
+PKG iconv 1.19.1-1 4f42725a949067bf94ce11a81bf454b7d6328e0e926815f5b22a055fb40b523e https://tale92266-hash.github.io/nobiterminal-repo-8/./iconv_1.19.1-1_aarch64.deb
+PKG libiconv 1.19.1-1 ea07de5d56de2fa7f39e71ccaa4a6544259d17a8effdadc691965f1b0b91b05e https://tale92266-hash.github.io/nobiterminal-repo-8/./libiconv_1.19.1-1_aarch64.deb
+PKG libiconv-static 1.19.1-1 4ec6841283a329e2d01a35ebd6b3416fc693c90e2177c2d44d892f21d73f0dde https://tale92266-hash.github.io/nobiterminal-repo-8/./libiconv-static_1.19.1-1_aarch64.deb
+PKG icu-devtools 79.1-1 44bc64ae5a389044d06dcc0c5614e1c7baa2ef100665f722282a81067d450586 https://tale92266-hash.github.io/nobiterminal-repo-8/./icu-devtools_79.1-1_aarch64.deb
+PKG libicu 79.1-1 7a8a3210b25e343bf3a846b95c277fa853899df84bcda26baefcd91e3c81389f https://tale92266-hash.github.io/nobiterminal-repo-8/./libicu_79.1-1_aarch64.deb
+PKG libicu-static 79.1-1 5929242103c11a778e5cbbacf3f574bff74c1544fa67ef0ba2775e7105570160 https://tale92266-hash.github.io/nobiterminal-repo-8/./libicu-static_79.1-1_aarch64.deb
+PKG libjpeg-turbo 3.2.1-1 786e13db45818769580eb492dfa3febc51dee1f0706b446224453d22619aa135 https://tale92266-hash.github.io/nobiterminal-repo-5/./libjpeg-turbo_3.2.1-1_aarch64.deb
+PKG libjpeg-turbo-progs 3.2.1-1 265fb45e4527bcd0b120e545c1517c75fba17f85e2e0cbaa418c54a65ae72d84 https://tale92266-hash.github.io/nobiterminal-repo-4/./libjpeg-turbo-progs_3.2.1-1_aarch64.deb
+PKG libjpeg-turbo-static 3.2.1-1 f3ec1e3e72cac66a0274fd06efd2f2ebe1785706d00be11dd8f1fe10d5a45299 https://tale92266-hash.github.io/nobiterminal-repo-5/./libjpeg-turbo-static_3.2.1-1_aarch64.deb
+PKG liblzma 5.8.4-1 e72435d5cc23383befef36a50631d21ba69b8b2fc4431b83e18c2525fc687ce4 https://tale92266-hash.github.io/nobiterminal-repo/./liblzma_5.8.4-1_aarch64.deb
+PKG liblzma-static 5.8.4-1 e24edfd25c16176df1aca3bf9800b641bfd0dba59ad7fda0954ebc3a02df1fbf https://tale92266-hash.github.io/nobiterminal-repo/./liblzma-static_5.8.4-1_aarch64.deb
+PKG xz-utils 5.8.4-1 8fe55389f7e3221a4a35f33fb1c58d452e946e6b969eee43b86eba3498af9f07 https://tale92266-hash.github.io/nobiterminal-repo/./xz-utils_5.8.4-1_aarch64.deb
+PKG lame 4.0-2 a0b42c9d1c17bc936d711ee808645499cd77e8264e44cc455b52df14b1832fde https://tale92266-hash.github.io/nobiterminal-repo/./lame_4.0-2_aarch64.deb
+PKG libmp3lame 4.0-2 e30f8d810371505ec94d8caca547585cc2c437d4104443f05426e6083bacaa5d https://tale92266-hash.github.io/nobiterminal-repo/./libmp3lame_4.0-2_aarch64.deb
+PKG libmp3lame-static 4.0-2 545a4aeb251da495ea89f5b5bdcb6f3bc841fbf5543b3a3a6075bf1b3feb589f https://tale92266-hash.github.io/nobiterminal-repo/./libmp3lame-static_4.0-2_aarch64.deb
+PKG libmpg123 1.33.7-1 32e51e40ff0fb740768617cfc04dd13bbd8dd5fd6b21e20a349ff26daffcc620 https://tale92266-hash.github.io/nobiterminal-repo/./libmpg123_1.33.7-1_aarch64.deb
+PKG libmpg123-static 1.33.7-1 66915c5a1c08528b1a782bdc268fe37da86a174ac7b768991dbd2a94d5d528ad https://tale92266-hash.github.io/nobiterminal-repo/./libmpg123-static_1.33.7-1_aarch64.deb
+PKG mpg123 1.33.7-1 8cf2726735c71e55d448c8f5ff303da198628b295e4fe86a9114ed567a3b1c87 https://tale92266-hash.github.io/nobiterminal-repo/./mpg123_1.33.7-1_aarch64.deb
+PKG libnettle 4.0+really3.10.2-1 e8f57e510cab6adc1a0f59b6b5b5a0a62b12b848da24d5dd3419feb4e3cd04e2 https://tale92266-hash.github.io/nobiterminal-repo/./libnettle_4.0+really3.10.2-1_aarch64.deb
+PKG libnettle-static 4.0+really3.10.2-1 0c6c38b39a54a1289966f1a9bf6974b6c71a2f0d927e40ee6dda7479fa06554e https://tale92266-hash.github.io/nobiterminal-repo/./libnettle-static_4.0+really3.10.2-1_aarch64.deb
+PKG nettle 4.0+really3.10.2-1 0a2cdacb93d30fdf1a5682ce3e8e32fd7ce30dc65480e5b0353426fd8690e1e1 https://tale92266-hash.github.io/nobiterminal-repo/./nettle_4.0+really3.10.2-1_aarch64.deb
+PKG libnghttp2 1.71.0-1 0517c3ebbcfbdc16f54def4b145c5285eb543bc025ae94141151fbc4f444fafd https://tale92266-hash.github.io/nobiterminal-repo-8/./libnghttp2_1.71.0-1_aarch64.deb
+PKG libnghttp2-static 1.71.0-1 2850ca336eefaa9251b8d363c3374ede691a0a58dc049530a5e58b1405520134 https://tale92266-hash.github.io/nobiterminal-repo-8/./libnghttp2-static_1.71.0-1_aarch64.deb
+PKG libnghttp3 1.19.0-1 0640ca9de1cfb15be8caf2ee642723a9999ff16064a949897e7be5ce640490a3 https://tale92266-hash.github.io/nobiterminal-repo-8/./libnghttp3_1.19.0-1_aarch64.deb
+PKG libnghttp3-static 1.19.0-1 b5ccf791409033835a0ed475bc07ed8a6246d2f06623aaa0f473f2e6b0398c87 https://tale92266-hash.github.io/nobiterminal-repo-8/./libnghttp3-static_1.19.0-1_aarch64.deb
+PKG libngtcp2 1.26.0-1 d79630c426fe711c83020dc07fc16515592dacdd12cfc9c43f292ab637585d4f https://tale92266-hash.github.io/nobiterminal-repo-8/./libngtcp2_1.26.0-1_aarch64.deb
+PKG libngtcp2-static 1.26.0-1 4f531b633fa6be055578f57cddc6fe2dab706f77b242b032aa984009d696f0b1 https://tale92266-hash.github.io/nobiterminal-repo-8/./libngtcp2-static_1.26.0-1_aarch64.deb
+PKG libogg 1.3.6-2 445c9895dee2355a1709c1085710e49d234b6588eac20e937c7cf2b481ca9fbd https://tale92266-hash.github.io/nobiterminal-repo/./libogg_1.3.6-2_aarch64.deb
+PKG libogg-static 1.3.6-2 37e7b5f8bcd3195b41180c5619c7fc2ed4effcf5ec4f442e4af4fc89e2b115d8 https://tale92266-hash.github.io/nobiterminal-repo/./libogg-static_1.3.6-2_aarch64.deb
+PKG libopus 1.6.1-1 c961214e3a58f7c7235524397d87b4a5db75c13bc74a75df27972707ee2badf0 https://tale92266-hash.github.io/nobiterminal-repo/./libopus_1.6.1-1_aarch64.deb
+PKG libopus-static 1.6.1-1 4cca1c326e240469d2158bbe9ff310d443f929844f272f33722be8cf3ac4f06e https://tale92266-hash.github.io/nobiterminal-repo/./libopus-static_1.6.1-1_aarch64.deb
+PKG libpng 1.6.59-1 84aecfe2f249ee397de4500e4676df35c6dc07423acde1738cf9157bd102f03c https://tale92266-hash.github.io/nobiterminal-repo/./libpng_1.6.59-1_aarch64.deb
+PKG libpng-static 1.6.59-1 304254ca2351161a32eb6a37fd56a736e81f9ed6c6988abb597b149ac732cd54 https://tale92266-hash.github.io/nobiterminal-repo/./libpng-static_1.6.59-1_aarch64.deb
+PKG librav1e 0.8.1-1 ec999970de52ac9ce39abc5850ce8b0d664e67a45c3018c25a883fbb9b65c770 https://tale92266-hash.github.io/nobiterminal-repo/./librav1e_0.8.1-1_aarch64.deb
+PKG librav1e-static 0.8.1-1 dfa9e309a3cb830f0550950db5e3003f796e6d8f5093edb4337d872c1dc89074 https://tale92266-hash.github.io/nobiterminal-repo/./librav1e-static_0.8.1-1_aarch64.deb
+PKG rav1e 0.8.1-1 a4da36d5a48bb634d07ba47d1f7e127a3f7d54d8eaf10ae923d045cd7a49a4dd https://tale92266-hash.github.io/nobiterminal-repo/./rav1e_0.8.1-1_aarch64.deb
+PKG libresolv-wrapper 1.1.8-1 08c93459341c442057ebefb83ee08e9fbf592fb18e38f73cee4d22a7094fb974 https://tale92266-hash.github.io/nobiterminal-repo/./libresolv-wrapper_1.1.8-1_aarch64.deb
+PKG libsasl 2.1.28-4 9a082be8f7ab774f48ad29ccd0c60279b9555831a2e6dc25079d12280d29dfd9 https://tale92266-hash.github.io/nobiterminal-repo/./libsasl_2.1.28-4_aarch64.deb
+PKG libsasl-static 2.1.28-4 51aded8f9851331b6fb41ce03d9b88e7dc47bee6533e6399b74e40284bf073f4 https://tale92266-hash.github.io/nobiterminal-repo/./libsasl-static_2.1.28-4_aarch64.deb
+PKG libsm 1.2.6-2 459139f5c346e60248cf408a9215a9cb028b8c3faca5c02ac44f93f96d6c9f4f https://tale92266-hash.github.io/nobiterminal-repo-3/./libsm_1.2.6-2_aarch64.deb
+PKG libsndfile 1.2.2-4 cb479124fbbdbd2523543deb1cdb9dbd39e420ab3b7b92264b3b095727bcef4b https://tale92266-hash.github.io/nobiterminal-repo/./libsndfile_1.2.2-4_aarch64.deb
+PKG libsndfile-static 1.2.2-4 fcef1e1ddee76a3ea00a912dde4dfa3300b07f05c2b7660a969dfc2e34d70cc5 https://tale92266-hash.github.io/nobiterminal-repo/./libsndfile-static_1.2.2-4_aarch64.deb
+PKG libsodium 1.0.22-2 ec6ac60e69a4a36fa898565fb1c65b7b1df21d7d79526680e616d5167f0cc766 https://tale92266-hash.github.io/nobiterminal-repo/./libsodium_1.0.22-2_aarch64.deb
+PKG libsodium-static 1.0.22-2 0b40e9ccc736b9ab0c867344bd5c1964d58045c9e23b3e9a8ec2678819928e1b https://tale92266-hash.github.io/nobiterminal-repo/./libsodium-static_1.0.22-2_aarch64.deb
+PKG libsoxr 0.1.3-9 c4092ebffc02f820c2ec1fc4e143ca32a2a0399f4a428606fe02206da5f5be30 https://tale92266-hash.github.io/nobiterminal-repo/./libsoxr_0.1.3-9_aarch64.deb
+PKG libsqlite 3.54.1-1 7db2ed075e3e3bc5c378b11ea58e755a67e99d1739c5fbee46a18fe08362631d https://tale92266-hash.github.io/nobiterminal-repo/./libsqlite_3.54.1-1_aarch64.deb
+PKG libsqlite-static 3.54.1-1 379d7cbfaf8f24028fec6cdb9e80ad73f4e168efa8679fd011761a28fa37e5ee https://tale92266-hash.github.io/nobiterminal-repo/./libsqlite-static_3.54.1-1_aarch64.deb
+PKG libsqlite-tcl 3.54.1-1 410106b80f750785303ecb3d76ddd7196083200bbf518f31e10633db377ae30a https://tale92266-hash.github.io/nobiterminal-repo/./libsqlite-tcl_3.54.1-1_aarch64.deb
+PKG sqlite 3.54.1-1 ff83368ae71cad79b63ca9cfa81117a0fd3164f1cbcb5dfa7deec1449fd4a7a1 https://tale92266-hash.github.io/nobiterminal-repo/./sqlite_3.54.1-1_aarch64.deb
+PKG libssh2 1.11.1-3 147b7e7cda7917d8523723f3fe78251b1a1e6693b0ba70951cf96d5e3745338d https://tale92266-hash.github.io/nobiterminal-repo/./libssh2_1.11.1-3_aarch64.deb
+PKG libssh2-static 1.11.1-3 8c4d79625b0bf75b1a695b76313e2f10c364952bcb572560b02209e7df214074 https://tale92266-hash.github.io/nobiterminal-repo/./libssh2-static_1.11.1-3_aarch64.deb
+PKG libtiff 4.7.2-1 198797846b3266737eff9b7a61566947e1951a4a4a518ae391f7f6a0c6f250eb https://tale92266-hash.github.io/nobiterminal-repo/./libtiff_4.7.2-1_aarch64.deb
+PKG libtiff-static 4.7.2-1 3a0380c60d65991a353dd979491a0b0e3ad5e3d6094af17d73f6452b15367125 https://tale92266-hash.github.io/nobiterminal-repo/./libtiff-static_4.7.2-1_aarch64.deb
+PKG libtiff-utils 4.7.2-1 ea7b0a2ce37ac6199f836fae961d0bfd2cfbc6f211772c05a1ed57d11a3b12be https://tale92266-hash.github.io/nobiterminal-repo/./libtiff-utils_4.7.2-1_aarch64.deb
+PKG libltdl 2.6.2-1 bdfef6e8a081ae1320c73c3499c51612b434859f3e87914af77837ed3b8337d6 https://tale92266-hash.github.io/nobiterminal-repo/./libltdl_2.6.2-1_aarch64.deb
+PKG libtool 2.6.2-1 657fc505fd4bec94214d94576f322178c559b4faab60eaa64eeb8468b35dd6a4 https://tale92266-hash.github.io/nobiterminal-repo/./libtool_2.6.2-1_aarch64.deb
+PKG libunbound 1.26.2-1 5730336ccb42d1b5184583613833b270c95437ba99274bbdc1bac6368fe42526 https://tale92266-hash.github.io/nobiterminal-repo-3/./libunbound_1.26.2-1_aarch64.deb
+PKG libunbound-static 1.26.2-1 2e95a54bc19e2630917bc77f184665b9ccf65d7068cd60fe958de0dcd731c065 https://tale92266-hash.github.io/nobiterminal-repo-3/./libunbound-static_1.26.2-1_aarch64.deb
+PKG pyunbound 1.26.2-1 8c184b1446f83d65b61e13a890d584d708524ac0b0751019ce6a49c06301649e https://tale92266-hash.github.io/nobiterminal-repo-3/./pyunbound_1.26.2-1_aarch64.deb
+PKG unbound 1.26.2-1 0ea5da89d3a004efcbc21e2eac54f6f5d370733c05b664d5a249cc3027d2cb4d https://tale92266-hash.github.io/nobiterminal-repo-3/./unbound_1.26.2-1_aarch64.deb
+PKG libunistring 1.5-1 f42b117687216277e5555e98dbb39936ea3ac83898365969870355e55ff0cbdb https://tale92266-hash.github.io/nobiterminal-repo-8/./libunistring_1.5-1_aarch64.deb
+PKG libunistring-static 1.5-1 be12a63490a90b7f4495db0f1f574291150b6343ee684b9e676ff4da5af09a12 https://tale92266-hash.github.io/nobiterminal-repo-8/./libunistring-static_1.5-1_aarch64.deb
+PKG libvorbis 1.3.7-5 3ff85bada0e3d969c7423e82251fa47af7c0917d6780656153548c06f1d9169e https://tale92266-hash.github.io/nobiterminal-repo/./libvorbis_1.3.7-5_aarch64.deb
+PKG libvorbis-static 1.3.7-5 2355f2ebb9b85a4314239908a59d3f59a70db6da93744623b4794701d31fbe4e https://tale92266-hash.github.io/nobiterminal-repo/./libvorbis-static_1.3.7-5_aarch64.deb
+PKG libwebp 1.6.0.0.0.1+really1.6.0-1 024cd22b32bca1900aa99ee3d66965ad79c36c59e298d12e8dda4485c2d020a1 https://tale92266-hash.github.io/nobiterminal-repo/./libwebp_1.6.0.0.0.1+really1.6.0-1_aarch64.deb
+PKG libwebrtc-audio-processing 2.1-1 76f185d4eddc97448f10eec9814778a165e7b79fba5855791bd74e67a214b4b6 https://tale92266-hash.github.io/nobiterminal-repo/./libwebrtc-audio-processing_2.1-1_aarch64.deb
+PKG libx11 1.8.14-1 cb353633e87176727d2bf8cd8eb33807eeb5dd551042171c5ce36e6a2b35b96c https://tale92266-hash.github.io/nobiterminal-repo/./libx11_1.8.14-1_aarch64.deb
+PKG libx11-static 1.8.14-1 c0ac0feaa297036a2884171c6698c84e40adbfc782459b585be289c139f3ccde https://tale92266-hash.github.io/nobiterminal-repo/./libx11-static_1.8.14-1_aarch64.deb
+PKG libx264 1:0.164.3191-2 771f9048974ff88d6af3e32705dfd14a68449335f0ac09a648918f540a5a435c https://tale92266-hash.github.io/nobiterminal-repo/./libx264_1:0.164.3191-2_aarch64.deb
+PKG libx264-static 1:0.164.3191-2 7d905d49c7ec54d33c1c38b78d2a2c01a3355ae2beda3de6ff54deb0b64dd88a https://tale92266-hash.github.io/nobiterminal-repo/./libx264-static_1:0.164.3191-2_aarch64.deb
+PKG x264 1:0.164.3191-2 35239a89d33784ff8cc6ffdeebd7261cddd4185ba0d7b1e94ce34e7e723c2fcf https://tale92266-hash.github.io/nobiterminal-repo/./x264_1:0.164.3191-2_aarch64.deb
+PKG libx265 4.3-1 3eeda7d936f59334e40369a4e0ea4171e2420f50d1e978ae9640bc72b3b7d1f7 https://tale92266-hash.github.io/nobiterminal-repo/./libx265_4.3-1_aarch64.deb
+PKG libx265-static 4.3-1 714db83b955e90ee571f1934511903b40f4616f8e41b7dd0dd1073b0f793e7de https://tale92266-hash.github.io/nobiterminal-repo/./libx265-static_4.3-1_aarch64.deb
+PKG x265 4.3-1 c464da1df6d69e5de32e9bcc6b7e0438172b27973f27f8fd1f3fa9ea00a5c317 https://tale92266-hash.github.io/nobiterminal-repo/./x265_4.3-1_aarch64.deb
+PKG libxau 1.0.12-3 857a24475a32850fedd62d4759bb7d69fdd7c28e72d48ec98fe3f2be90b856a3 https://tale92266-hash.github.io/nobiterminal-repo/./libxau_1.0.12-3_aarch64.deb
+PKG libxcb 1.17.0-2 e5c87ff6af7ace35f3070814f418ea994fedafcedb56c3b7af1c14e33e97901f https://tale92266-hash.github.io/nobiterminal-repo/./libxcb_1.17.0-2_aarch64.deb
+PKG libxcb-static 1.17.0-2 373c630bc448b09457db17685e3e96ae8a9e2c78ddc2dc4aee31ffd466d76057 https://tale92266-hash.github.io/nobiterminal-repo/./libxcb-static_1.17.0-2_aarch64.deb
+PKG libxdmcp 1.1.5-3 8143e5102e7d4f1f2e608193355f364d3023f55f576617a8290a832a9d55e913 https://tale92266-hash.github.io/nobiterminal-repo/./libxdmcp_1.1.5-3_aarch64.deb
+PKG libxdmcp-static 1.1.5-3 c411a54a53795d9579207ed8ab6ea7b97153de4faa93e5e63b3c42ba7e3c87b3 https://tale92266-hash.github.io/nobiterminal-repo/./libxdmcp-static_1.1.5-3_aarch64.deb
+PKG libxext 1.3.7-1 a367424fc7dbcc7d7f8c1bc5d71a5ab43669c1ba3dc24b3270ddf3c9897bbb88 https://tale92266-hash.github.io/nobiterminal-repo/./libxext_1.3.7-1_aarch64.deb
+PKG libxext-static 1.3.7-1 55ee30bda4aadfb1a8bcb8dbbcc876186534ec1f0016000b86af7bc2119248d1 https://tale92266-hash.github.io/nobiterminal-repo/./libxext-static_1.3.7-1_aarch64.deb
+PKG libxfixes 6.0.2-1 f3b9dc44663d717bd22e22a52849b179ae7945c9e8621ebbf94fd5df1ab3670c https://tale92266-hash.github.io/nobiterminal-repo-2/./libxfixes_6.0.2-1_aarch64.deb
+PKG libxfixes-static 6.0.2-1 a1af83665fb2f2dc6bcf29113c41524b9b6d8f5b11579bb500d329ed276f7e80 https://tale92266-hash.github.io/nobiterminal-repo-2/./libxfixes-static_6.0.2-1_aarch64.deb
+PKG libxft 2.3.9-2 ef8a1fe2ce372a3f96802c8f4bf2bb5c3cead66faee762756b7539c44836439e https://tale92266-hash.github.io/nobiterminal-repo-2/./libxft_2.3.9-2_aarch64.deb
+PKG libxft-static 2.3.9-2 5d8bf0cb539474ca790094fb5f8a4d22473602ce40983286cfadfff472049664 https://tale92266-hash.github.io/nobiterminal-repo-2/./libxft-static_2.3.9-2_aarch64.deb
+PKG libxi 1.8.4-1 f2dae0cab634863a7a6bbb914a724112b4ccde1042e9f6c2921c9bd201add88d https://tale92266-hash.github.io/nobiterminal-repo/./libxi_1.8.4-1_aarch64.deb
+PKG libxi-static 1.8.4-1 54a7b86bf568d491f7b89a132bdea33badb48bbc00ff2dd27ea0e5c416f4c2ec https://tale92266-hash.github.io/nobiterminal-repo/./libxi-static_1.8.4-1_aarch64.deb
+PKG libxml2 2.15.4-2 d8793e5a1f04ad88bb60ecbab93765e0a7c377966fda760a48fa3b6a4d255d1e https://tale92266-hash.github.io/nobiterminal-repo/./libxml2_2.15.4-2_aarch64.deb
+PKG libxml2-python 2.15.4-2 15b049c887a1ded519adacc6d2923cb0b6a4dea5508581398a20e58b3723edee https://tale92266-hash.github.io/nobiterminal-repo/./libxml2-python_2.15.4-2_aarch64.deb
+PKG libxml2-utils 2.15.4-2 bef8e1e64908e82a0519c56282177f1f3d620ade58c41c578ebbd7d56593d99e https://tale92266-hash.github.io/nobiterminal-repo/./libxml2-utils_2.15.4-2_aarch64.deb
+PKG libxrandr 1.5.5-1 4626853097138b37b0fc085d2b26e15dd8b17c684e2368737b92a691992ecbdf https://tale92266-hash.github.io/nobiterminal-repo-3/./libxrandr_1.5.5-1_aarch64.deb
+PKG libxrandr-static 1.5.5-1 0322d816456e6f6dcba17c253ecf1d85f986dddffb1fcc12a6538c5700a86615 https://tale92266-hash.github.io/nobiterminal-repo-3/./libxrandr-static_1.5.5-1_aarch64.deb
+PKG libxrender 0.9.13-1 560c84e37364084208eede65cd705c41e936485c4b6ab67c8228586b0808f51f https://tale92266-hash.github.io/nobiterminal-repo/./libxrender_0.9.13-1_aarch64.deb
+PKG libxslt 1.1.45-2 55b8ca4972096b4b09ca38192d31beae19811b89b7f98e6598393c833f79b699 https://tale92266-hash.github.io/nobiterminal-repo/./libxslt_1.1.45-2_aarch64.deb
+PKG xsltproc 1.1.45-2 758f10f4625ad00052143c67437c174d9f46d96a3e882a0de794d58c7b3a0808 https://tale92266-hash.github.io/nobiterminal-repo/./xsltproc_1.1.45-2_aarch64.deb
+PKG libxss 1.2.5-1 48df181c4dabb99b50b2c767cfba531e697fe2bed8a67af0c97451c899c4f4c2 https://tale92266-hash.github.io/nobiterminal-repo-3/./libxss_1.2.5-1_aarch64.deb
+PKG libxss-static 1.2.5-1 71eaa477c7d68963fad25cc2a6730fe8aad3b69c397f7f7ab0a37058f5634e5b https://tale92266-hash.github.io/nobiterminal-repo-3/./libxss-static_1.2.5-1_aarch64.deb
+PKG libxt 1.3.1-2 6882cc63a382a9db260e38a9254366341047c157546dddb417fc452f2e9f1c7d https://tale92266-hash.github.io/nobiterminal-repo-3/./libxt_1.3.1-2_aarch64.deb
+PKG libxt-static 1.3.1-2 ff376f55a2a1ea2de2b481d2042e031f26208c308907805eeabc9bf61ef75d53 https://tale92266-hash.github.io/nobiterminal-repo-3/./libxt-static_1.3.1-2_aarch64.deb
+PKG libxtst 1.2.6-1 8c0a74ae9b6650f4052c99452b2fdf2c0d809533ea5cfad7e9e6535abae19edc https://tale92266-hash.github.io/nobiterminal-repo/./libxtst_1.2.6-1_aarch64.deb
+PKG libxtst-static 1.2.6-1 2c0b48a8b6068dc098fb3687760b5f95e3a1eaefd14275e6caafe1a67c7d39cd https://tale92266-hash.github.io/nobiterminal-repo/./libxtst-static_1.2.6-1_aarch64.deb
+PKG libzip 1.12.1-1 0777f24fcb3d3a3ec452199a5b8c06e5394f63650170bf87c4b98e2dfe30b02c https://tale92266-hash.github.io/nobiterminal-repo/./libzip_1.12.1-1_aarch64.deb
+PKG littlecms 2.20-1 52d1f67e6ea91879444fa4f338293ba1e9f8912c624b04075137c11fbebc61d8 https://tale92266-hash.github.io/nobiterminal-repo-8/./littlecms_2.20-1_aarch64.deb
+PKG littlecms-static 2.20-1 417a57379e2b14ae446d80dd931aeb4f61a5ff030a672f176e3ea4c2b9afb5c7 https://tale92266-hash.github.io/nobiterminal-repo-8/./littlecms-static_2.20-1_aarch64.deb
+PKG littlecms-utils 2.20-1 b4c0dd1ee19a2507e4edf99ef67e842484a420b1a4895c746d15ba2a89294dda https://tale92266-hash.github.io/nobiterminal-repo-8/./littlecms-utils_2.20-1_aarch64.deb
+PKG ncurses 6.6.20260307+really6.5.20250830-1 6cfddf76e8f9a8912425062962cf9a27118e2cc8caf8f5c8ffbe311dd3c802b7 https://tale92266-hash.github.io/nobiterminal-repo/./ncurses_6.6.20260307+really6.5.20250830-1_aarch64.deb
+PKG ncurses-static 6.6.20260307+really6.5.20250830-1 636e5f627e8cac987fc7634c434dd9915dded9f8d760bc46ca8a89c2c713424c https://tale92266-hash.github.io/nobiterminal-repo/./ncurses-static_6.6.20260307+really6.5.20250830-1_aarch64.deb
+PKG ncurses-ui-libs 6.6.20260307+really6.5.20250830-1 06266ee39f8dbcf25c18512f1d889001b3a845772ef95f27293c7814f2eed1b6 https://tale92266-hash.github.io/nobiterminal-repo/./ncurses-ui-libs_6.6.20260307+really6.5.20250830-1_aarch64.deb
+PKG ncurses-ui-libs-static 6.6.20260307+really6.5.20250830-1 27e54969ab74593812f413bff991af949adee271bb184519e71a666dd2104ddc https://tale92266-hash.github.io/nobiterminal-repo/./ncurses-ui-libs-static_6.6.20260307+really6.5.20250830-1_aarch64.deb
+PKG ncurses-utils 6.6.20260307+really6.5.20250830-1 b4f5f92c056d0c108fbb1adfd9b32b9899597bb433865416bb668c81199d58cf https://tale92266-hash.github.io/nobiterminal-repo/./ncurses-utils_6.6.20260307+really6.5.20250830-1_aarch64.deb
+PKG oniguruma 6.9.10-2 cccfe7656960cf0f5f08ced66d510402bee07ed371deeed80bbfa48189cb6eeb https://tale92266-hash.github.io/nobiterminal-repo/./oniguruma_6.9.10-2_aarch64.deb
+PKG oniguruma-static 6.9.10-2 f5121c6e805657c4d564b1d4af9f7d46e32bba276f7480d2d1241f0af38cc240 https://tale92266-hash.github.io/nobiterminal-repo/./oniguruma-static_6.9.10-2_aarch64.deb
+PKG openjdk-21 21.0.13.1-1 5e9e72570c0c70da594ae0573cb7d29f58dceb0fbbc7dbf4f2cea81900b79982 https://github.com/tale92266-hash/nobiterminal-repo/releases/download/bigfiles-v22/openjdk-21_21.0.13.1-1_aarch64.deb
+PKG openjdk-21-source 21.0.13.1-1 654a659ad9213ce47c117ceb4b973d1216532fea2902ecc1fc1f67ba122dda3f https://github.com/tale92266-hash/nobiterminal-repo/releases/download/bigfiles-v22/openjdk-21-source_21.0.13.1-1_all.deb
+PKG openjdk-21-x 21.0.13.1-1 67b2b77f460f10cfb7b20f799b662a0627c5df351011783cb7c0932a19538a81 https://tale92266-hash.github.io/nobiterminal-repo-11/./openjdk-21-x_21.0.13.1-1_aarch64.deb
+PKG openldap 2.7.2-1 88e2284e8e8136933a62092d1854c34be3c96ff8537e8081253320aaa19682c4 https://tale92266-hash.github.io/nobiterminal-repo-5/./openldap_2.7.2-1_aarch64.deb
+PKG openldap-static 2.7.2-1 c91ff4eab313184871f9e486af323be7765c2f17a4baad48e473e0aaf870d6a9 https://tale92266-hash.github.io/nobiterminal-repo-5/./openldap-static_2.7.2-1_aarch64.deb
+PKG openssl 1:3.6.5-1 fe95e20e4c1fdcd70c5f2be80a14d3f099324f2a57694c32536d4da15b9c7037 https://tale92266-hash.github.io/nobiterminal-repo/./openssl_1:3.6.5-1_aarch64.deb
+PKG openssl-static 1:3.6.5-1 400cee31465efba5bde5d6e17043c6a668d20ce072408f9cc03349e889fa18c1 https://tale92266-hash.github.io/nobiterminal-repo/./openssl-static_1:3.6.5-1_aarch64.deb
+PKG openssl-tool 1:3.6.5-1 c5e34216ddb43fec8445d6d4d1060a9837c22f1a4bfb6580b8bc5e8b92bc697b https://tale92266-hash.github.io/nobiterminal-repo/./openssl-tool_1:3.6.5-1_aarch64.deb
+PKG p11-kit 0.26.6-1 32b15274e052465b0247ec9fc48376b4f7f82f539233c2369ed1c2d83771aff2 https://tale92266-hash.github.io/nobiterminal-repo-10/./p11-kit_0.26.6-1_aarch64.deb
+PKG pcre2 10.49-1 231631e2491e4fe340f23408bda3d16755d3e2078027696ca96fc27f9b691601 https://tale92266-hash.github.io/nobiterminal-repo/./pcre2_10.49-1_aarch64.deb
+PKG pcre2-static 10.49-1 73210ef8fe3e6ab20f1fbf49eb8306c66bae933a2a0c1100125b416b7b59568f https://tale92266-hash.github.io/nobiterminal-repo/./pcre2-static_10.49-1_aarch64.deb
+PKG pcre2grep 10.49-1 5200c34ce3b01ef60a8f82f917fe1e91522b0eeac653096f435fd28ee8e801fa https://tale92266-hash.github.io/nobiterminal-repo/./pcre2grep_10.49-1_aarch64.deb
+PKG perl 5.44.0-1 b7a9b29acc1034f2a2dc413a6d89888216ab757fb814cb4c0445b3ed41ab7fcb https://tale92266-hash.github.io/nobiterminal-repo/./perl_5.44.0-1_aarch64.deb
+PKG pkg-config 0.29.2-4 415708fbc53213d757c207f7e4186c6de65b39a31929e6843769c1b771e42d84 https://tale92266-hash.github.io/nobiterminal-repo/./pkg-config_0.29.2-4_aarch64.deb
+PKG libpq 18.7-1 062f29f795eb01d0c32730f15a8875ac8291d8fc31327a8829b8e33e7bc5cffc https://tale92266-hash.github.io/nobiterminal-repo-10/./libpq_18.7-1_aarch64.deb
+PKG libpq-static 18.7-1 87ca6f87583ea72c42a611ea611d36f7dafe210c0d10ea2de8a5c6cb36d5f10a https://tale92266-hash.github.io/nobiterminal-repo-10/./libpq-static_18.7-1_aarch64.deb
+PKG postgresql 18.7-1 7a991c58de74f9ecb3e2ac6a724b7b29648ead0de596b27bdf80be04c3e30154 https://tale92266-hash.github.io/nobiterminal-repo-10/./postgresql_18.7-1_aarch64.deb
+PKG postgresql-static 18.7-1 014fc59233285200351b88089c9884c4bba97c8742d98510e2fd675d993fdec8 https://tale92266-hash.github.io/nobiterminal-repo-10/./postgresql-static_18.7-1_aarch64.deb
+PKG psmisc 23.7-2 632cc92782a78472f6d982f78b4420edc59e1f92d388e32921861b9f68ed1235 https://tale92266-hash.github.io/nobiterminal-repo/./psmisc_23.7-2_aarch64.deb
+PKG pulseaudio 17.0-6 3a5de82d65318991c23022a6274598928ab4eea2355aecc6c680fdd5f7d3141d https://tale92266-hash.github.io/nobiterminal-repo/./pulseaudio_17.0-6_aarch64.deb
+PKG pulseaudio-glib 17.0-6 b8f2665a4032e437499b469576069d59d067494fdeed4d3311b6c277583a4001 https://tale92266-hash.github.io/nobiterminal-repo/./pulseaudio-glib_17.0-6_aarch64.deb
+PKG python 3.14.10-1 11ccfcc147353850f34ab050e86b1726c7c392adde4db681cc0baeeaf10ac0d1 https://tale92266-hash.github.io/nobiterminal-repo-8/./python_3.14.10-1_aarch64.deb
+PKG python-ensurepip-wheels 3.14.10-1 eb7dc1876075555ed99d750672f5001b149553c2fc8843e324e5698442417edb https://tale92266-hash.github.io/nobiterminal-repo-8/./python-ensurepip-wheels_3.14.10-1_all.deb
+PKG python-static 3.14.10-1 6d5135d2164308bb953cad957c1d4c0f05436e473c445fc918158d63e7d3f4ae https://tale92266-hash.github.io/nobiterminal-repo-8/./python-static_3.14.10-1_aarch64.deb
+PKG python-tkinter 3.14.10-1 edb17f140cbeac6228dfcda8280d1a09124949e3a84e458a630aee15ce1189d6 https://tale92266-hash.github.io/nobiterminal-repo-8/./python-tkinter_3.14.10-1_aarch64.deb
+PKG python-brotli 1.2.1-1 e3e2f4050319241dfe2cc38d9b9165df8872a0791e16fac404eddd0a170c03c8 https://tale92266-hash.github.io/nobiterminal-repo-5/./python-brotli_1.2.1-1_aarch64.deb
+PKG python-pip 26.3-1 48797fa22168835277e6c7ff30fbc89889b4bb1e790b5e57cbfe5b915418ace3 https://tale92266-hash.github.io/nobiterminal-repo-8/./python-pip_26.3-1_all.deb
+PKG python-pycryptodomex 3.24.2-1 266eb35653de40a22228b7c45c53bdb4afdec23bc4c2703734fb40bf357ba6ee https://tale92266-hash.github.io/nobiterminal-repo-7/./python-pycryptodomex_3.24.2-1_aarch64.deb
+PKG readline 8.3.6-1 2afc5f331c68a03dee5dee5db2af7470fcc83cc8f40d7870823a6e3356737c61 https://tale92266-hash.github.io/nobiterminal-repo/./readline_8.3.6-1_aarch64.deb
+PKG readline-static 8.3.6-1 91f45339fb9b4450292bb6aa7f7dbcd0863a2ba5703c687b8e757f4df047e174 https://tale92266-hash.github.io/nobiterminal-repo/./readline-static_8.3.6-1_aarch64.deb
+PKG sed 4.10-1 f1f63d27375a87a3e96f661beaa8ddcebd4290dfd48ca36b33f1824565ec664b https://tale92266-hash.github.io/nobiterminal-repo/./sed_4.10-1_aarch64.deb
+PKG speexdsp 1.2.1-2 5c1301fc4ef302b925caa63dbed7eb08c7e4f07717d0c4ab763b91300c2994a3 https://tale92266-hash.github.io/nobiterminal-repo/./speexdsp_1.2.1-2_aarch64.deb
+PKG speexdsp-static 1.2.1-2 637ede3847397e40ca3f552b470d537f305f0825e6ad73892b764631a1ac5917 https://tale92266-hash.github.io/nobiterminal-repo/./speexdsp-static_1.2.1-2_aarch64.deb
+PKG svt-av1 4.3.0-1 2658cdfd062a0c0be3ecb5adfbc09ba7fc319d89aa52d45528772ef43498eb43 https://tale92266-hash.github.io/nobiterminal-repo-8/./svt-av1_4.3.0-1_aarch64.deb
+PKG swig 4.5.1-1 67fbb66ba360a13e8c77676163a8fb021ff13ea1ab787fb10f89eb40abd73acd https://tale92266-hash.github.io/nobiterminal-repo-3/./swig_4.5.1-1_aarch64.deb
+PKG tcl 8.6.16-1 6797087fc5c4d47bcd6a246b92e89979d7a986e61bb1e4703e47e9fb5d29abbb https://tale92266-hash.github.io/nobiterminal-repo-2/./tcl_8.6.16-1_aarch64.deb
+PKG termux-core 0.4.0-2 71a03712e2fb37e789ab11c0e71a7b454157e9a64c48f2879bba70e60168a224 https://tale92266-hash.github.io/nobiterminal-repo/./termux-core_0.4.0-2_aarch64.deb
+PKG termux-core-static 0.4.0-2 00d0a7144681b05f7abc6b4445b9dd520b98ec8dbf4137febbdb967d125a8f93 https://tale92266-hash.github.io/nobiterminal-repo/./termux-core-static_0.4.0-2_aarch64.deb
+PKG texinfo 7.3-1 742d96e3c60eefdb10110f9c8742b3f5ca404ce442b29e448e1be9285a406a2f https://tale92266-hash.github.io/nobiterminal-repo-2/./texinfo_7.3-1_aarch64.deb
+PKG update-info-dir 7.3-1 24f754d5deeaf73737bf68d4606448a01382e934068e2ea5ec3cfae4f8448739 https://tale92266-hash.github.io/nobiterminal-repo-2/./update-info-dir_7.3-1_all.deb
+PKG tidy 5.9.14-next-4 f1455ba7f9c558af1750e550f4bcacdcf1e645717e18f636806cbe9e0a159e4f https://tale92266-hash.github.io/nobiterminal-repo/./tidy_5.9.14-next-4_aarch64.deb
+PKG tidy-static 5.9.14-next-4 cafadffa43228b987b0a51e8cc636d88ac8aaef4969d13ee15a55db7624e6cf0 https://tale92266-hash.github.io/nobiterminal-repo/./tidy-static_5.9.14-next-4_aarch64.deb
+PKG tk 8.6.14-2 8b8dd9cdc7ae59fac5e0a98f9c3a965c4ce45caa6b5592d22d67008f71032b8a https://tale92266-hash.github.io/nobiterminal-repo-5/./tk_8.6.14-2_aarch64.deb
+PKG ttf-dejavu 2.37-9 4924aeaf816fe96cffb8809cb66748e428958fd139c150dd8c6ad18e57406d0c https://tale92266-hash.github.io/nobiterminal-repo/./ttf-dejavu_2.37-9_all.deb
+PKG blk-utils 2.42.4-1 45516510ec786905f0595571b76e487e2769fd1ffe192af331375ee910cbd09c https://tale92266-hash.github.io/nobiterminal-repo/./blk-utils_2.42.4-1_aarch64.deb
+PKG fdisk 2.42.4-1 2fa3e0fae566d4fe3d5791a1bff84f929ff047cdd96db532400a144586a4e0b8 https://tale92266-hash.github.io/nobiterminal-repo/./fdisk_2.42.4-1_aarch64.deb
+PKG libblkid 2.42.4-1 673113e038107da85bc7bbb4fb0cf437b36a0ff18b3b5e35b0f6cc0c1f405cec https://tale92266-hash.github.io/nobiterminal-repo/./libblkid_2.42.4-1_aarch64.deb
+PKG libfdisk 2.42.4-1 bff15abcc859e902678fe7b06f496569aa3f23423d7b16adff68bd5b05f126f2 https://tale92266-hash.github.io/nobiterminal-repo/./libfdisk_2.42.4-1_aarch64.deb
+PKG libmount 2.42.4-1 b5431d98d4851368593bd174e1eca3226e3554e86f54b90753a962b610f27214 https://tale92266-hash.github.io/nobiterminal-repo/./libmount_2.42.4-1_aarch64.deb
+PKG libsmartcols 2.42.4-1 d7f74ea0925dfde60578447e8e8fdb180fabecffe588e5d62585689c26a7794a https://tale92266-hash.github.io/nobiterminal-repo/./libsmartcols_2.42.4-1_aarch64.deb
+PKG libuuid 2.42.4-1 9e90f500cb12d8348faa9ec3f682ef830f592952d5e095cba85fc62878ce3cc4 https://tale92266-hash.github.io/nobiterminal-repo/./libuuid_2.42.4-1_aarch64.deb
+PKG mount-utils 2.42.4-1 e5330ff15f5c725c910a955e51a47d097f410bdeaa987e0fb2a17601b41ff99e https://tale92266-hash.github.io/nobiterminal-repo/./mount-utils_2.42.4-1_aarch64.deb
+PKG util-linux 2.42.4-1 ecc8a74e5ebc2486950e30be08ace28b16ae70e2e3c23634d515c68a6dce9a09 https://tale92266-hash.github.io/nobiterminal-repo/./util-linux_2.42.4-1_aarch64.deb
+PKG util-linux-static 2.42.4-1 33b9d2b78a5de99982ae7ef754b5c3e90d0e025c827cc9078be9ee96a4d5273f https://tale92266-hash.github.io/nobiterminal-repo/./util-linux-static_2.42.4-1_aarch64.deb
+PKG uuid-utils 2.42.4-1 381923f6c8ade56b6b6a6cc0fb4b1b2c447797a14978335c8b47409535b44e07 https://tale92266-hash.github.io/nobiterminal-repo/./uuid-utils_2.42.4-1_aarch64.deb
+PKG python-xcbgen 1.17.0-4 737ad2d6ff94fa3c3012ed1e7c9b3b4dde246d2a73505301ff80b452ba6c551e https://tale92266-hash.github.io/nobiterminal-repo-6/./python-xcbgen_1.17.0-4_all.deb
+PKG xcb-proto 1.17.0-4 49f2af6a0b3bf0c70b74758fa34051b3a475ba8f798d82225f6477d25de57ea8 https://tale92266-hash.github.io/nobiterminal-repo-6/./xcb-proto_1.17.0-4_all.deb
+PKG xorg-util-macros 1.20.2-1 7a61e53a591c4cf5769befc349cd21ee8e0673cd7c13a03661f3bf8754d53682 https://tale92266-hash.github.io/nobiterminal-repo/./xorg-util-macros_1.20.2-1_all.deb
+PKG xorgproto 2026.1-1 279cf974797374360316e2150b1cf63aeb8c9d15909d919397317984a5d51a33 https://tale92266-hash.github.io/nobiterminal-repo/./xorgproto_2026.1-1_all.deb
+PKG xtrans 1.6.0-1 f42b6617a92022d6bbdbd60e9c097daa0a5e1eb61001d01eeae781ffd512975a https://tale92266-hash.github.io/nobiterminal-repo-6/./xtrans_1.6.0-1_all.deb
+PKG zlib 1.4-1 bd018343f91aeccbf9d348a1f52aa4cdfb7d33937eff2931f86bfedf10e3213a https://tale92266-hash.github.io/nobiterminal-repo-8/./zlib_1.4-1_aarch64.deb
+PKG zlib-static 1.4-1 2ec6f76912e68b79d1f6832135bae7f80fe57c1ec1a349b4a7d3191520191c86 https://tale92266-hash.github.io/nobiterminal-repo-8/./zlib-static_1.4-1_aarch64.deb
+MARKER abseil-cpp 20260817.0-1
+MARKER alsa-lib 1.2.16.1-1
+MARKER alsa-plugins 1.2.12-3
+MARKER aom-tools 3.15.3-1
+MARKER apache2 1:2.4.71-1
+MARKER apr 1.7.6-3
+MARKER apr-static 1.7.6-3
+MARKER apr-util 1.6.6-1
+MARKER apr-util-static 1.6.6-1
+MARKER attr 2.6.0-1
+MARKER attr-static 2.6.0-1
+MARKER bash-completion 2.18.0-1
+MARKER binutils 2.47-1
+MARKER binutils-cross 2.47-1
+MARKER blk-utils 2.42.4-1
+MARKER brotli 1.2.1-1
+MARKER bzip2 1.0.8-9
+MARKER ca-certificates 1:2026.11.05-1
+MARKER ca-certificates-java 1:2026.11.05-1
+MARKER capstone 5.0.9-1
+MARKER capstone-static 5.0.9-1
+MARKER check 0.15.2-4
+MARKER check-static 0.15.2-4
+MARKER cups 2.4.20-1
+MARKER cups-static 2.4.20-1
+MARKER curl 8.23.0-1
+MARKER dbus 1.16.4-1
+MARKER dialog 1.3-20260721-1
+MARKER dialog-static 1.3-20260721-1
+MARKER doxygen 1.18.0-1
+MARKER fdisk 2.42.4-1
+MARKER findutils 4.11.0-1
+MARKER flac 1.5.0-2
+MARKER fontconfig 2.18.4-1
+MARKER fontconfig-static 2.18.4-1
+MARKER fontconfig-utils 2.18.4-1
+MARKER freetype 2.15.0-1
+MARKER freetype-static 2.15.0-1
+MARKER g-ir-scanner 1.86.0-3
+MARKER gdbm 1.26-2
+MARKER gdbm-static 1.26-2
+MARKER gdk-pixbuf 2.44.8-2
+MARKER giflib 6.1.3-1
+MARKER giflib-static 6.1.3-1
+MARKER giflib-utils 6.1.3-1
+MARKER gnutls 3.8.13-2
+MARKER gobject-introspection 1.86.0-3
+MARKER gzip 1.15-1
+MARKER iconv 1.19.1-1
+MARKER icu-devtools 79.1-1
+MARKER lame 4.0-2
+MARKER ldd 0.3-3
+MARKER libandroid-execinfo 0.1-4
+MARKER libandroid-execinfo-static 0.1-4
+MARKER libandroid-glob 0.6-4
+MARKER libandroid-glob-static 0.6-4
+MARKER libandroid-shmem 0.7-1
+MARKER libandroid-shmem-static 0.7-1
+MARKER libandroid-spawn 0.3-1
+MARKER libandroid-spawn-static 0.3-1
+MARKER libandroid-stub 30-3
+MARKER libandroid-support 29-2
+MARKER libandroid-support-static 29-2
+MARKER libandroid-sysv-semaphore 0.1-2
+MARKER libandroid-sysv-semaphore-static 0.1-2
+MARKER libandroid-utimes 0.4-1
+MARKER libandroid-utimes-static 0.4-1
+MARKER libaom 3.15.3-1
+MARKER libaom-static 3.15.3-1
+MARKER libavif 1.4.2-1
+MARKER libblkid 2.42.4-1
+MARKER libbz2 1.0.8-9
+MARKER libc++ 30-1
+MARKER libcap-ng 2:0.9.6-1
+MARKER libcap-ng-static 2:0.9.6-1
+MARKER libcrypt 0.2-7
+MARKER libcurl 8.23.0-1
+MARKER libcurl-static 8.23.0-1
+MARKER libdav1d 1.5.5-1
+MARKER libde265 1.1.3-1
+MARKER libexpat 2.10.0-1
+MARKER libexpat-static 2.10.0-1
+MARKER libfdisk 2.42.4-1
+MARKER libffi 3.8.1-1
+MARKER libffi-static 3.8.1-1
+MARKER libflac 1.5.0-2
+MARKER libflac-static 1.5.0-2
+MARKER libgd 1:2.3.3-8
+MARKER libgd-static 1:2.3.3-8
+MARKER libgmp 6.3.0-3
+MARKER libgmp-static 6.3.0-3
+MARKER libgnutls 3.8.13-2
+MARKER libgnutls-static 3.8.13-2
+MARKER libheif 1.23.7-1
+MARKER libheif-progs 1.23.7-1
+MARKER libice 1.1.2-2
+MARKER libiconv 1.19.1-1
+MARKER libiconv-static 1.19.1-1
+MARKER libicu 79.1-1
+MARKER libicu-static 79.1-1
+MARKER libjpeg-turbo 3.2.1-1
+MARKER libjpeg-turbo-progs 3.2.1-1
+MARKER libjpeg-turbo-static 3.2.1-1
+MARKER libltdl 2.6.2-1
+MARKER liblzma 5.8.4-1
+MARKER liblzma-static 5.8.4-1
+MARKER libmount 2.42.4-1
+MARKER libmp3lame 4.0-2
+MARKER libmp3lame-static 4.0-2
+MARKER libmpg123 1.33.7-1
+MARKER libmpg123-static 1.33.7-1
+MARKER libnettle 4.0+really3.10.2-1
+MARKER libnettle-static 4.0+really3.10.2-1
+MARKER libnghttp2 1.71.0-1
+MARKER libnghttp2-static 1.71.0-1
+MARKER libnghttp3 1.19.0-1
+MARKER libnghttp3-static 1.19.0-1
+MARKER libngtcp2 1.26.0-1
+MARKER libngtcp2-static 1.26.0-1
+MARKER libogg 1.3.6-2
+MARKER libogg-static 1.3.6-2
+MARKER libopus 1.6.1-1
+MARKER libopus-static 1.6.1-1
+MARKER libpng 1.6.59-1
+MARKER libpng-static 1.6.59-1
+MARKER libpq 18.7-1
+MARKER libpq-static 18.7-1
+MARKER librav1e 0.8.1-1
+MARKER librav1e-static 0.8.1-1
+MARKER libresolv-wrapper 1.1.8-1
+MARKER libsasl 2.1.28-4
+MARKER libsasl-static 2.1.28-4
+MARKER libsm 1.2.6-2
+MARKER libsmartcols 2.42.4-1
+MARKER libsndfile 1.2.2-4
+MARKER libsndfile-static 1.2.2-4
+MARKER libsodium 1.0.22-2
+MARKER libsodium-static 1.0.22-2
+MARKER libsoxr 0.1.3-9
+MARKER libsqlite 3.54.1-1
+MARKER libsqlite-static 3.54.1-1
+MARKER libsqlite-tcl 3.54.1-1
+MARKER libssh2 1.11.1-3
+MARKER libssh2-static 1.11.1-3
+MARKER libtiff 4.7.2-1
+MARKER libtiff-static 4.7.2-1
+MARKER libtiff-utils 4.7.2-1
+MARKER libtool 2.6.2-1
+MARKER libunbound 1.26.2-1
+MARKER libunbound-static 1.26.2-1
+MARKER libunistring 1.5-1
+MARKER libunistring-static 1.5-1
+MARKER libuuid 2.42.4-1
+MARKER libvorbis 1.3.7-5
+MARKER libvorbis-static 1.3.7-5
+MARKER libwebp 1.6.0.0.0.1+really1.6.0-1
+MARKER libwebrtc-audio-processing 2.1-1
+MARKER libx11 1.8.14-1
+MARKER libx11-static 1.8.14-1
+MARKER libx264 1:0.164.3191-2
+MARKER libx264-static 1:0.164.3191-2
+MARKER libx265 4.3-1
+MARKER libx265-static 4.3-1
+MARKER libxau 1.0.12-3
+MARKER libxcb 1.17.0-2
+MARKER libxcb-static 1.17.0-2
+MARKER libxdmcp 1.1.5-3
+MARKER libxdmcp-static 1.1.5-3
+MARKER libxext 1.3.7-1
+MARKER libxext-static 1.3.7-1
+MARKER libxfixes 6.0.2-1
+MARKER libxfixes-static 6.0.2-1
+MARKER libxft 2.3.9-2
+MARKER libxft-static 2.3.9-2
+MARKER libxi 1.8.4-1
+MARKER libxi-static 1.8.4-1
+MARKER libxml2 2.15.4-2
+MARKER libxml2-python 2.15.4-2
+MARKER libxml2-utils 2.15.4-2
+MARKER libxrandr 1.5.5-1
+MARKER libxrandr-static 1.5.5-1
+MARKER libxrender 0.9.13-1
+MARKER libxslt 1.1.45-2
+MARKER libxss 1.2.5-1
+MARKER libxss-static 1.2.5-1
+MARKER libxt 1.3.1-2
+MARKER libxt-static 1.3.1-2
+MARKER libxtst 1.2.6-1
+MARKER libxtst-static 1.2.6-1
+MARKER libzip 1.12.1-1
+MARKER littlecms 2.20-1
+MARKER littlecms-static 2.20-1
+MARKER littlecms-utils 2.20-1
+MARKER mount-utils 2.42.4-1
+MARKER mpg123 1.33.7-1
+MARKER ncurses 6.6.20260307+really6.5.20250830-1
+MARKER ncurses-static 6.6.20260307+really6.5.20250830-1
+MARKER ncurses-ui-libs 6.6.20260307+really6.5.20250830-1
+MARKER ncurses-ui-libs-static 6.6.20260307+really6.5.20250830-1
+MARKER ncurses-utils 6.6.20260307+really6.5.20250830-1
+MARKER nettle 4.0+really3.10.2-1
+MARKER oniguruma 6.9.10-2
+MARKER oniguruma-static 6.9.10-2
+MARKER openjdk-21 21.0.13.1-1
+MARKER openjdk-21-source 21.0.13.1-1
+MARKER openjdk-21-x 21.0.13.1-1
+MARKER openldap 2.7.2-1
+MARKER openldap-static 2.7.2-1
+MARKER openssl 1:3.6.5-1
+MARKER openssl-static 1:3.6.5-1
+MARKER openssl-tool 1:3.6.5-1
+MARKER p11-kit 0.26.6-1
+MARKER pcre2 10.49-1
+MARKER pcre2-static 10.49-1
+MARKER pcre2grep 10.49-1
+MARKER perl 5.44.0-1
+MARKER pkg-config 0.29.2-4
+MARKER postgresql 18.7-1
+MARKER postgresql-static 18.7-1
+MARKER psmisc 23.7-2
+MARKER pulseaudio 17.0-6
+MARKER pulseaudio-glib 17.0-6
+MARKER python 3.14.10-1
+MARKER python-brotli 1.2.1-1
+MARKER python-ensurepip-wheels 3.14.10-1
+MARKER python-pip 26.3-1
+MARKER python-pycryptodomex 3.24.2-1
+MARKER python-static 3.14.10-1
+MARKER python-tkinter 3.14.10-1
+MARKER python-xcbgen 1.17.0-4
+MARKER pyunbound 1.26.2-1
+MARKER rav1e 0.8.1-1
+MARKER readline 8.3.6-1
+MARKER readline-static 8.3.6-1
+MARKER sed 4.10-1
+MARKER speexdsp 1.2.1-2
+MARKER speexdsp-static 1.2.1-2
+MARKER sqlite 3.54.1-1
+MARKER svt-av1 4.3.0-1
+MARKER swig 4.5.1-1
+MARKER tcl 8.6.16-1
+MARKER termux-core 0.4.0-2
+MARKER termux-core-static 0.4.0-2
+MARKER texinfo 7.3-1
+MARKER tidy 5.9.14-next-4
+MARKER tidy-static 5.9.14-next-4
+MARKER tk 8.6.14-2
+MARKER ttf-dejavu 2.37-9
+MARKER unbound 1.26.2-1
+MARKER update-info-dir 7.3-1
+MARKER util-linux 2.42.4-1
+MARKER util-linux-static 2.42.4-1
+MARKER uuid-utils 2.42.4-1
+MARKER x264 1:0.164.3191-2
+MARKER x265 4.3-1
+MARKER xcb-proto 1.17.0-4
+MARKER xorg-util-macros 1.20.2-1
+MARKER xorgproto 2026.1-1
+MARKER xsltproc 1.1.45-2
+MARKER xtrans 1.6.0-1
+MARKER xz-utils 5.8.4-1
+MARKER zlib 1.4-1
+MARKER zlib-static 1.4-1
