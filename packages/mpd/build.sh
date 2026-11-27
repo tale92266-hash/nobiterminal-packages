@@ -2,10 +2,10 @@ TERMUX_PKG_HOMEPAGE=https://www.musicpd.org
 TERMUX_PKG_DESCRIPTION="Music player daemon"
 TERMUX_PKG_LICENSE="GPL-2.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="0.24.19"
+TERMUX_PKG_VERSION="0.25"
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://github.com/MusicPlayerDaemon/MPD/archive/refs/tags/v$TERMUX_PKG_VERSION.tar.gz
-TERMUX_PKG_SHA256=93a810ec10a4f830b14d18df5a91fc7a274593eed87837e7664f8da4839c7bf9
+TERMUX_PKG_SHA256=14c021527ee4ab1dc722772db0b5d3e8e0eede13ef15b658fd79d431dc82e4e5
 TERMUX_PKG_AUTO_UPDATE=true
 TERMUX_PKG_DEPENDS="libchromaprint, dbus, ffmpeg, game-music-emu, libao, libbz2, libc++, libcurl, libexpat, libflac, libicu, libid3tag, libmad, libmp3lame, libmodplug, libmpdclient, libnfs, libogg, libopenmpt, libopus, libsamplerate, libsndfile, libsoxr, libsqlite, libvorbis, libwavpack, libmpg123, openal-soft, pcre2, pulseaudio, yajl, zlib, fmt"
 TERMUX_PKG_BUILD_DEPENDS="libiconv"
@@ -33,7 +33,7 @@ termux_step_pre_configure() {
 		termux_error_exit "Package '$TERMUX_PKG_NAME' is not safe for on-device builds."
 	fi
 
-	CXXFLAGS+=" -DTERMUX -UANDROID -std=c++20"
+	CXXFLAGS+=" -DTERMUX -UANDROID"
 	LDFLAGS+=" -lOpenSLES"
 	rm -f $TERMUX_PREFIX/etc/mpd.conf
 }
