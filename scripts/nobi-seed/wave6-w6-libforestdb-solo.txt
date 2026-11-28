@@ -1,0 +1,9 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w6-libforestdb-solo (libforestdb)
+# Generated from nightly/work/wave6-w6-libforestdb-solo-seed-manifest.json (2 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
+PKG libc++ 30-1 a74e9e3ef99f8dcc992300ec10384747008e70b062a07648091ed59c07705824 https://tale92266-hash.github.io/nobiterminal-repo/./libc++_30-1_aarch64.deb
+PKG libsnappy 1.3.1-1 5d1c3978e787b2b1ca958b134bcc59594ae1e5742775c0b25b100d85c4d5ff53 https://tale92266-hash.github.io/nobiterminal-repo-2/./libsnappy_1.3.1-1_aarch64.deb
+MARKER libc++ 30-1
+MARKER libsnappy 1.3.1-1
