@@ -1,0 +1,7 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w6-abseil-rebuild (abseil-cpp)
+# Generated from nightly/work/wave6-w6-abseil-rebuild-seed-manifest.json (1 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
+PKG libc++ 30-1 a74e9e3ef99f8dcc992300ec10384747008e70b062a07648091ed59c07705824 https://tale92266-hash.github.io/nobiterminal-repo/./libc++_30-1_aarch64.deb
+MARKER libc++ 30-1
