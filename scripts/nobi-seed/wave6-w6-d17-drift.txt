@@ -1,0 +1,15 @@
+# NobiTerminal seeded-deps manifest: Wave 5 w6-d17-drift (txr, ty, upx, uutils-coreutils, vale, vulkan-headers)
+# Generated from nightly/work/wave6-w6-d17-drift-seed-manifest.json (5 debs pre-verified)
+# PKG <package> <fullversion> <sha256> <url>
+# MARKER <package> <fullversion>  (written to /data/data/.built-packages/<package>)
+
+PKG libc++ 30-1 a74e9e3ef99f8dcc992300ec10384747008e70b062a07648091ed59c07705824 https://tale92266-hash.github.io/nobiterminal-repo/./libc++_30-1_aarch64.deb
+PKG libffi 3.8.2-1 671f06ac1b1528a7f8362a8ed2ecdd00fe74c1a6d189b4ccfedfc2252e20a196 https://tale92266-hash.github.io/nobiterminal-repo-12/./libffi_3.8.2-1_aarch64.deb
+PKG libffi-static 3.8.2-1 78f68cf529d2a35aa2ebc49b64a99d32368762e4e6a7225e0cadcc8134e3daf8 https://tale92266-hash.github.io/nobiterminal-repo-12/./libffi-static_3.8.2-1_aarch64.deb
+PKG zlib 1.4-1 bd018343f91aeccbf9d348a1f52aa4cdfb7d33937eff2931f86bfedf10e3213a https://tale92266-hash.github.io/nobiterminal-repo-8/./zlib_1.4-1_aarch64.deb
+PKG zlib-static 1.4-1 2ec6f76912e68b79d1f6832135bae7f80fe57c1ec1a349b4a7d3191520191c86 https://tale92266-hash.github.io/nobiterminal-repo-8/./zlib-static_1.4-1_aarch64.deb
+MARKER libc++ 30-1
+MARKER libffi 3.8.2-1
+MARKER libffi-static 3.8.2-1
+MARKER zlib 1.4-1
+MARKER zlib-static 1.4-1
