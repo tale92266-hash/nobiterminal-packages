@@ -2,10 +2,10 @@ TERMUX_PKG_HOMEPAGE=https://www.gnu.org/software/screen/
 TERMUX_PKG_DESCRIPTION="Terminal multiplexer with VT100/ANSI terminal emulation"
 TERMUX_PKG_LICENSE="GPL-3.0"
 TERMUX_PKG_MAINTAINER="@termux"
-TERMUX_PKG_VERSION="5.0.2"
+TERMUX_PKG_VERSION="5.0.3"
 TERMUX_PKG_REVISION=1
 TERMUX_PKG_SRCURL=https://mirrors.kernel.org/gnu/screen/screen-${TERMUX_PKG_VERSION}.tar.gz
-TERMUX_PKG_SHA256=ca9a2c7e240919bc7ac12124593ae4529bb4eb5f7349d8857829b7e3f0b3b332
+TERMUX_PKG_SHA256=941c98ffecdca4bff4bbd1cd6f08fbd18967353affc46521040a999dafbd39a2
 # libandroid-support is necessary as screen uses `wcwidth`, see #22688
 TERMUX_PKG_DEPENDS="libandroid-support, ncurses, termux-auth"
 TERMUX_PKG_BUILD_DEPENDS="libcrypt"
@@ -19,7 +19,8 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 "
 
 termux_pkg_auto_update() {
-	read -r latest < <(curl -fsSL "https://mirrors.kernel.org/gnu/screen" | sed -rn 's/.*screen-([0-9]+(\.[0-9]+)*).*/\1/p' | sort -Vr);
+	read -r latest < <(curl -fsSL --retry 3 --retry-all-errors "https://mirrors.kernel.org/gnu/screen" | sed -rn 's/.*screen-([0-9]+(\.[0-9]+)*).*/\1/p' | sort -Vr);
+	[[ -n "${latest}" ]] || termux_error_exit "Unable to get the latest version from https://mirrors.kernel.org/gnu/screen"
 	termux_pkg_upgrade_version "${latest}"
 }
 
